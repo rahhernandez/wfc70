@@ -7,6 +7,5 @@ site: bookdown::bookdown_site
 
 # Welcome to WFC 70
 
-The purpose of WFC 70 is to introduce and strength your data literacy skills. In this course, you will working with data sets, R and R Studio and understanding what data literacy is.
+The purpose of WFC 70 is to introduce and strength your data literacy skills. In this course, you will working with data sets, R and R Studio and understanding what data literacy is. This website aims to be a place where we demonstrate solutions to common mistakes, provide more practice, and provide resources to improve your R and data literacy skills.
 
-hello
