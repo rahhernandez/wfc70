@@ -9,26 +9,10 @@ R is the language you are using to create the graphs. R Studio is where you inpu
 We will need both on your computer before your first lab. Even if you are not going to be bringing your personal computer to lab, having it can be helpful for homework and the Data Story.
 
 ## Downloading on Mac
-```{r, eval=knitr::is_html_output(excludes = "epub"), results = 'asis', echo = F}
-cat(
-'<iframe width="560" height="315" 
-  src="https://www.youtube.com/embed/9AI3BkKQhn0"
-  frameborder="0" allow="accelerometer; autoplay; encrypted-media;
-  gyroscope; picture-in-picture" allowfullscreen>
-  </iframe>'
-)
-```
+
 
 
 
 ## Downloading on Windows
-```{r, eval=knitr::is_html_output(excludes = "epub"), results = 'asis', echo = F}
-cat(
-'<iframe width="560" height="315" 
-  src="https://www.youtube.com/embed/9AI3BkKQhn0"
-  frameborder="0" allow="accelerometer; autoplay; encrypted-media;
-  gyroscope; picture-in-picture" allowfullscreen>
-  </iframe>'
-)
-```
+
 Once you have successfully downloaded both, don't be afraid to open R Studio and play around! 

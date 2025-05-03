@@ -11,9 +11,5 @@ The purpose of WFC 70 is to introduce and strength your data literacy skills. In
 
 This website was created by Learning Assistants! We hope it is of use :)
 
-```{r, echo=FALSE}
 
-embed_url('https://www.youtube.com/watch?v=BD_n6ju9iRA')
-
-```
 ---
