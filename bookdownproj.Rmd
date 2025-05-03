@@ -4,6 +4,12 @@ author: "Rob Furrow"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
+--- 
+title: "WFC 70: Data Literacy for Wildlife Biologist"
+author: "Rob Furrow"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+---
 
 # Welcome to WFC 70 {-}
 
@@ -17,3 +23,22 @@ embed_url('https://www.youtube.com/watch?v=BD_n6ju9iRA')
 
 ```
 ---
+
+<!--chapter:end:index.Rmd-->
+
+
+# Getting Started
+
+Placeholder
+
+
+## Installing R and R Studio
+## Downloading on Mac
+## Downloading on Windows
+
+<!--chapter:end:02-tears.Rmd-->
+
+# 
+
+<!--chapter:end:03-race.Rmd-->
+

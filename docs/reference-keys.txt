@@ -1,6 +1,0 @@
-welcome-to-wfc-70
-getting-started
-installing-r-and-r-studio
-section
-downloading-on-mac
-downloading-on-windows
