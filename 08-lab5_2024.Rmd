@@ -1,11 +1,4 @@
----
-title: "Lab 5: data story work, wrangling warm-up"
-author: "WFC 98, Fall 2024"
-output: html_document
----
-
-
-## Goals
+# Lab 5: Data Story Work, Wrangling Warm-up
 
 In this lab, we will do a tiny big of wrangling, but mostly focus on getting 
 things started for the Data Story. More wrangling to come in the next two weeks.

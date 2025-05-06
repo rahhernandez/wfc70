@@ -10,7 +10,6 @@ By the end of this lab, you should be able to program in R to:
 -   create an object to hold a vector of values,
 -   convert from a set of vectors to a data frame.
 
-
 ------------------------------------------------------------------------
 
 ## Part 1: Orienting ourselves to RStudio (10 minutes, instructor will lead)
@@ -293,8 +292,8 @@ Finally, you should have a lot of code written out in your script. Make sure tha
 
 ------------------------------------------------------------------------
 
-## Extra material for interest (will not be assessed on any homework)
+# Extra material for interest (will not be assessed on any homework)
 
 -   Under the Tools tab (top of your workspace), you can open "Global Options...". Explore through here to see ways to customize your RStudio workspace. You may want to try out some other "Editor themes" in the "Appearance" tab.
 -   There is a great graduate student course called R-DAVIS that has lots of useful materials online. Check out their introductory lesson here: <https://gge-ucd.github.io/R-DAVIS/lesson_01_intro_r_rstudio.html>.
->>>>>>> 67cc3529f4cbb384876f573089bbe511324cbb94
+

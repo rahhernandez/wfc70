@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Tutorials | WFC 70: Data Literacy for Wildlife Biologist</title>
-  <meta name="description" content="Tutorials | WFC 70: Data Literacy for Wildlife Biologist" />
+  <title>H Lab 6: Mark-recapture | WFC 70: Data Literacy for Wildlife Biologist</title>
+  <meta name="description" content="H Lab 6: Mark-recapture | WFC 70: Data Literacy for Wildlife Biologist" />
   <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Tutorials | WFC 70: Data Literacy for Wildlife Biologist" />
+  <meta property="og:title" content="H Lab 6: Mark-recapture | WFC 70: Data Literacy for Wildlife Biologist" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Tutorials | WFC 70: Data Literacy for Wildlife Biologist" />
+  <meta name="twitter:title" content="H Lab 6: Mark-recapture | WFC 70: Data Literacy for Wildlife Biologist" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="getting-started.html"/>
-<link rel="next" href="checklist.html"/>
+<link rel="prev" href="lab-5-data-story-work-wrangling-warm-up.html"/>
+<link rel="next" href="lab-7-file-management-troubleshooting-data-story.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -317,17 +317,172 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="tutorials" class="section level1 unnumbered hasAnchor">
-<h1>Tutorials<a href="tutorials.html#tutorials" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>People make mistakes. It is a common process in coding that everyone, no just beginners experience. Here we will provide some tips if you make a mistake and provide tutorials for some potential complicated concepts.</p>
+<div id="lab-6-mark-recapture" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">H</span> Lab 6: Mark-recapture<a href="lab-6-mark-recapture.html#lab-6-mark-recapture" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Note: Had to remove code chunks so the coding looks slightly messy</p>
+<p>In this lab, we will use our wrangling skills to clean up a data frame
+in order to estimate population sizes using mark-recapture.</p>
+<p>By the end of this lab, you should be able to:</p>
+<ul>
+<li>calculate a population estimate from mark-recapture data,</li>
+<li>use one of the <code>_join()</code> functions to combine different data frames that
+have a shared “key” column,</li>
+<li>use <code>bind_rows()</code> to combine multiple data frames with
+identical columns.</li>
+</ul>
+<div id="resources-3" class="section level3 hasAnchor" number="9.0.1">
+<h3><span class="header-section-number">H.0.1</span> Resources<a href="lab-6-mark-recapture.html#resources-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We will use the data discussed during the mark-recapture lectures. These are
+data from a LTER (Long-term Ecological Research) site called the San Joaquin
+Experimental Range.<br />
+<a href="https://data.neonscience.org/data-products/DP1.10072.001">https://data.neonscience.org/data-products/DP1.10072.001</a></p>
+<hr />
+</div>
+<div id="part-1-reminder-of-lecture-data-10-minutes-instructor-leading" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">H.1</span> Part 1: Reminder of lecture data (10 minutes, instructor leading)<a href="lab-6-mark-recapture.html#part-1-reminder-of-lecture-data-10-minutes-instructor-leading" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This code should align with what we covered during lecture. Note, however,
+that you don’t even have to do the Schnabel calculation by hand. With the
+right vectors for M, T, and R, that final line does the multiplying, adding,
+and dividing, and should yield exactly what we found during lecture.</p>
+<p>loading tidyverse for our plotting and data wrangling needs</p>
+<p>library(tidyverse)</p>
+<p>loading data</p>
+<p>sjer_jan17 &lt;- read.csv(“<a href="https://raw.githubusercontent.com/refurrow/WFC70/main/mam_pertrapnight_2017_01_basic.csv" class="uri">https://raw.githubusercontent.com/refurrow/WFC70/main/mam_pertrapnight_2017_01_basic.csv</a>”)</p>
+<p>wrangling for a simpler data set with just one species</p>
+<p>pebo_jan17 &lt;- sjer_jan17 |&gt; #start with the full data, THEN
+filter(scientificName == “Peromyscus boylii”) |&gt; #filter for P. boylii, THEN
+select(collectDate, tagID, recapture, fate, plotID, nlcdClass) # selecting only these columns</p>
+<p>creating a table from the date column and the recapture column</p>
+<p>pebo_table &lt;- table(pebo_jan17<span class="math inline">\(collectDate,pebo_jan17\)</span>recapture)
+pebo_table</p>
+<p>entering our mark-recapture data</p>
+<p>pebo_M &lt;- c(4, 14)
+pebo_T &lt;- c(12, 6)
+pebo_R &lt;- c(2, 4)</p>
+<p>adding up sum of M*T values, then dividing by sum of R values</p>
+<p>sum(pebo_M*pebo_T)/sum(pebo_R)</p>
+<p>You estimate 22 individuals in this population, using the Schnabel estimator.
+Okay, in a moment we will set you loose to try things on your own, but
+first let’s do a quick <code>_join()</code>.</p>
+</div>
+<div id="adding-weather-data-joining-data-frames" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">H.2</span> Adding weather data (joining data frames)<a href="lab-6-mark-recapture.html#adding-weather-data-joining-data-frames" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Small mammal activity at night may depend on nighttime temperature or
+precipitation, so it would be interesting to see whether our sample size
+varies depending on the weather conditions. (For example, if our mice
+are inactive in very cold weather, we will expect to catch fewer mice in
+our traps on cold nights.)</p>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="lab-6-mark-recapture.html#cb146-1" tabindex="-1"></a><span class="co"># weather for the site</span></span>
+<span id="cb146-2"><a href="lab-6-mark-recapture.html#cb146-2" tabindex="-1"></a><span class="co"># the csv was having formatting issues, so we switched here to loading</span></span>
+<span id="cb146-3"><a href="lab-6-mark-recapture.html#cb146-3" tabindex="-1"></a><span class="co"># a txt file using read.delim()</span></span>
+<span id="cb146-4"><a href="lab-6-mark-recapture.html#cb146-4" tabindex="-1"></a>sjer_weather <span class="ot">&lt;-</span> <span class="fu">read.delim</span>(<span class="st">&quot;https://raw.githubusercontent.com/refurrow/WFC70/main/sjer_weather.txt&quot;</span>)</span></code></pre></div>
+<p>We have many fewer rows, because for each night we just have a single
+suite of measurements (rather than separate rows for each individual
+caught in our original data). <code>lowTemp</code> is the lowest temperature that night
+in degrees Fahrenheit, and <code>precip</code> is the overall rainfall in the previous
+24 hours, in inches.</p>
+<p>To think about overall activity, let’s not simply focus on <em>P. boylii</em>. Let’s
+instead use all of our data. We’ll want to remove all the rows with
+empty traps and only include rows with captures. There are many ways
+we could filter here. I noticed that the recapture column is always the empty
+string, ““, when the trap was empty and always has a value when an individual
+was caught, so we can filter by removing all the empty rows. The exclamation
+point, !, means NOT, so we will filter the rows that are NOT equal to”“.</p>
+<p>getting all catches (not just P. boylii)</p>
+<p>catches_jan17 &lt;- sjer_jan17 |&gt;
+filter(recapture != ““) only rows that are NOT equal to the empty string,”“.</p>
+<p>Now, let’s join. We don’t care about the February or October weather, so let’s
+prioritize the rows in our catch data.</p>
+<ul>
+<li><strong><em>Pause and think. What is our shared key? What kind of join should we use?</em></strong></li>
+</ul>
+<p>joining catch data and weather data</p>
+<p>catches_jan17_full &lt;- left_join(catches_jan17,sjer_weather, by = “collectDate”)</p>
+<ul>
+<li><strong><em>Pause and check. Do the data look like what we expected? Because the catch data</em></strong>
+<strong><em>has multiple rows for each night, what is in the weather data for the</em></strong>
+<strong><em>separate rows on the same night?</em></strong></li>
+</ul>
+<p>Finally, we’ll want to convert our data to a simple count per night using
+<code>group_by()</code> and <code>summarize()</code>.</p>
+<p>weather_catch_jan17 &lt;- catches_jan17_full |&gt;
+group_by(collectDate) |&gt;
+summarize(sample_size = n(), # counts number of rows (for each date)
+low_temp = first(lowTemp), # picks the first temp value
+precip = first(precip)) # picks first precip value</p>
+<p>Take a moment to view this much smaller data frame. We now have everything
+we need to look at sample size versus temperature (or versus precipitation).</p>
+<p>ggplot(weather_catch_jan17,
+mapping = aes(x = low_temp, y = sample_size)) +
+geom_point() +
+theme_classic()</p>
+<p>Okay, we’ve managed some mark-recapture, joining, summarizing and plotting.
+Now you can try out a second estimate on your own.</p>
+</div>
+<div id="western-harvest-mouse-population-size-on-your-own-15-minutes" class="section level2 hasAnchor" number="9.3">
+<h2><span class="header-section-number">H.3</span> Western harvest mouse population size (on your own, 15 minutes)<a href="lab-6-mark-recapture.html#western-harvest-mouse-population-size-on-your-own-15-minutes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="your-data" class="section level3 hasAnchor" number="9.3.1">
+<h3><span class="header-section-number">H.3.1</span> Your data<a href="lab-6-mark-recapture.html#your-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>This code will help you load the February trapping data, and filter to
+just include the western harvest mouse, <em>Reithrodontomys megalotis</em>.</p>
+<p>sjer_feb17 &lt;- read.csv(“<a href="https://raw.githubusercontent.com/refurrow/WFC70/refs/heads/main/mam_pertrapnight_2017_02_basic.csv" class="uri">https://raw.githubusercontent.com/refurrow/WFC70/refs/heads/main/mam_pertrapnight_2017_02_basic.csv</a>”)</p>
+<p>rema_feb17 &lt;- filter(sjer_feb17, scientificName== “Reithrodontomys megalotis”) |&gt;
+select(collectDate, tagID, recapture, fate, plotID, nlcdClass)</p>
+</div>
+<div id="getting-your-mark-recapture-table" class="section level3 hasAnchor" number="9.3.2">
+<h3><span class="header-section-number">H.3.2</span> Getting your mark-recapture table<a href="lab-6-mark-recapture.html#getting-your-mark-recapture-table" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Follow the steps from our <em>P. boylii</em> estimate to create a table with
+recapture / new capture counts for each night (collectDate). (Hint: <code>table()</code>
+function.)</p>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="lab-6-mark-recapture.html#cb147-1" tabindex="-1"></a><span class="co"># enter your code and comments here</span></span></code></pre></div>
+<p>Enter your data below, and uncomment and run the lines afterwards. You have
+four nights (three resamples), so you’ll have three values each for
+M, T, and R.</p>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="lab-6-mark-recapture.html#cb148-1" tabindex="-1"></a><span class="co">#uncomment the lines below and fill in the right values for the</span></span>
+<span id="cb148-2"><a href="lab-6-mark-recapture.html#cb148-2" tabindex="-1"></a><span class="co">#M, T, and R vectors</span></span>
+<span id="cb148-3"><a href="lab-6-mark-recapture.html#cb148-3" tabindex="-1"></a></span>
+<span id="cb148-4"><a href="lab-6-mark-recapture.html#cb148-4" tabindex="-1"></a><span class="co">#rema_M &lt;- c()</span></span>
+<span id="cb148-5"><a href="lab-6-mark-recapture.html#cb148-5" tabindex="-1"></a><span class="co">#rema_T &lt;- c()</span></span>
+<span id="cb148-6"><a href="lab-6-mark-recapture.html#cb148-6" tabindex="-1"></a><span class="co">#rema_R &lt;- c()</span></span>
+<span id="cb148-7"><a href="lab-6-mark-recapture.html#cb148-7" tabindex="-1"></a></span>
+<span id="cb148-8"><a href="lab-6-mark-recapture.html#cb148-8" tabindex="-1"></a><span class="co">#sum(rema_M*rema_T)/sum(rema_R)</span></span></code></pre></div>
+<ul>
+<li><strong><em>What is your final estimate for the Feb 2017 population size?</em></strong></li>
+</ul>
+</div>
+<div id="more-joining-time-permitting" class="section level3 hasAnchor" number="9.3.3">
+<h3><span class="header-section-number">H.3.3</span> More joining (time permitting)<a href="lab-6-mark-recapture.html#more-joining-time-permitting" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Create a new data frame that includes all catches for Feb 2017,</li>
+<li>Join it with the weather data, <code>sjer_weather</code>,</li>
+<li>Create an identical summary of the data for February (the only
+difference in code will be the name of the initial data frame
+you are using),</li>
+<li>use <code>bind_rows()</code> to combine the summary from Jan and Feb,</li>
+<li>create a plot of temperature versus sample size for both month’s data.</li>
+</ul>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="lab-6-mark-recapture.html#cb149-1" tabindex="-1"></a><span class="co"># enter your code and comments here</span></span></code></pre></div>
+</div>
+</div>
+<div id="wrapping-up-5-minutes-7" class="section level2 hasAnchor" number="9.4">
+<h2><span class="header-section-number">H.4</span> Wrapping up (5 minutes)<a href="lab-6-mark-recapture.html#wrapping-up-5-minutes-7" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Knit your file to HTML, and save the original Rmd, then add them to your WFC 98
+folder on Google Drive.</p>
+</div>
+<div id="extra-material-2" class="section level2 hasAnchor" number="9.5">
+<h2><span class="header-section-number">H.5</span> Extra material<a href="lab-6-mark-recapture.html#extra-material-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Work on HW 5.</p>
+<p>Continue working on the Data Story.</p>
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="getting-started.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="checklist.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="lab-5-data-story-work-wrangling-warm-up.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="lab-7-file-management-troubleshooting-data-story.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -358,7 +513,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rahhernandez/trial/edit/main/03-tutorials.Rmd",
+"link": "https://github.com/rahhernandez/trial/edit/main/09-lab6_2024.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -366,7 +521,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/rahhernandez/trial/blob/main/03-tutorials.Rmd",
+"link": "https://github.com/rahhernandez/trial/blob/main/09-lab6_2024.Rmd",
 "text": null
 },
 "download": null,
