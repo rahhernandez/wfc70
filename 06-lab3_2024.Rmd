@@ -1,10 +1,5 @@
----
-title: 'Lab 3: visualizing data in R (part 1)'
-author: "WFC 98, Fall 2024"
-output: html_document
----
+# Lab 3: Visualizing data in R (Part 1)
 
-## Goals
 
 In this lab, we will get into one of the really fun parts of R programming --
 ***making figures!***

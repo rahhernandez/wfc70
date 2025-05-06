@@ -1,12 +1,5 @@
----
-title: 'Lab 4: visualizing data in R (part 2)'
-author: "WFC 98, Fall 2024"
-output:  html_document
-editor_options: 
-  chunk_output_type: console
----
 
-## Goals
+# Lab 4: Visualizing data in R (Part 2)
 
 In this lab, we will learn several more plotting skills.
 
