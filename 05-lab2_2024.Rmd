@@ -1,8 +1,5 @@
-# (APPENDIX) Old Labs {-}
+# Lab 2: Indicies in R, R Markdown
 
-# Lab 2
-
-## Goals
 In this lab, we will do a small amount of R programming, learn how to write 
 reproducible analyses using R Markdown, and get started on skills to read 
 primary literature. 
@@ -172,7 +169,7 @@ easy styling of an Rmd.
 2. **Create some headers using the # symbol.** Which one is the biggest? The 
 smallest?  You can create headers of six different sizes, from # to ######.
 
-# Put something here.
+  # Put something here.
 
 ### Put something else here.
 
