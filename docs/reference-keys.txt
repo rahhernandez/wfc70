@@ -1,8 +1,8 @@
 installing-r-and-r-studio
 downloading-on-mac
 downloading-on-windows
+common-r-mistakes
 lab-1
-part-0-figure-of-the-week-5-10-minutes-instructor-will-lead
 part-1-orienting-ourselves-to-rstudio-10-minutes-instructor-will-lead
 the-command-line-console-versus-a-r-script
 r-data-is-often-stored-in-vectors
@@ -12,3 +12,4 @@ class-discussion-5-minutes-instructor-will-lead
 part-4-data-frames-to-link-data-together-5-minutes-instructor-will-lead
 wrapping-up-5-minutes
 extra-material-for-interest-will-not-be-assessed-on-any-homework
+lab-2

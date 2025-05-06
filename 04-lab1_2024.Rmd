@@ -10,9 +10,6 @@ By the end of this lab, you should be able to program in R to:
 -   create an object to hold a vector of values,
 -   convert from a set of vectors to a data frame.
 
-## Part 0: Figure of the week (5-10 minutes, instructor will lead)
-
-------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
 
@@ -35,10 +32,10 @@ b = 3
 
 a^2
 
-#A^3
+#A^3 
 ```
 
-What happened when you ran that final line of code? Hint, take a look at the “Environment” pane in the upper right of RStudio. What are the names of the objects that you stored? Which lines of code created those objects in the Environment? Is `A` in the Environment?
+What happened when you ran that final line of code when you uncomment it? Hint, take a look at the “Environment” pane in the upper right of RStudio. What are the names of the objects that you stored? Which lines of code created those objects in the Environment? Is `A` in the Environment?
 
 > ***Takeaway: You can store values (or sets of values) in R by assigning them a name. But NAMES ARE CASE SENSITIVE, so `A` is not the same as `a`.*** This named information is called an ***object***, and it could be anything from a single value, a spreadsheet with many columns of measurements for many individual organisms, a list containing a wide array of information, or even a function that can be used to make complex calculations.
 
