@@ -1,0 +1,240 @@
+---
+title: "Lab 5: data story work, wrangling warm-up"
+author: "WFC 98, Fall 2024"
+output: html_document
+---
+
+
+## Goals
+
+In this lab, we will do a tiny big of wrangling, but mostly focus on getting 
+things started for the Data Story. More wrangling to come in the next two weeks.
+
+By the end of this lab, you should be able to:
+
+-   use `filter()` to select of subset of a data frame,
+-   add faceting to plots,
+-   describe the potential wrangling process for a data set for your Data Story.
+
+### Resources
+
+We will work with a new data set today based on small mammal trapping to
+assess biodiversity in different types of plots. These data are explored
+in detail in the Data Carpentry course "Data Analysis and Visualisation in R for Ecologists", [https://datacarpentry.org/R-ecology-lesson/index.html](https://datacarpentry.org/R-ecology-lesson/index.html). 
+
+
+
+## Part 0: Figure of the week (5 minutes, instructor leading)
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+
+## Part 1: New data! (5 minutes, instructor leading)
+
+This is mostly review about the data introduced at the end of Monday's lecture.
+
+### Loading data
+
+```{r}
+# loading a csv file from this URL. The header argument just tells R
+# that the first row is not data, but is instead a header
+# with column names
+mammals <- read.csv("https://raw.githubusercontent.com/refurrow/WFC70/main/portal_data_joined.csv",
+                    header = TRUE)
+
+# loading tidyverse for our plotting and data wrangling needs
+library(tidyverse)
+```
+
+### About these data
+The data are part of the Portal Project Teaching Database [https://figshare.com/articles/dataset/Portal_Project_Teaching_Database/1314459/10](https://figshare.com/articles/dataset/Portal_Project_Teaching_Database/1314459/10).
+They come from a long-term mammal and plant monitoring study in the Chihuahuan 
+Desert near Portal, Arizona.
+
+```{r}
+# getting a sense of our variables
+glimpse(mammals)
+```
+
+You'll notice that we have a lot of data. The columns tell us the day, month,
+and year that each observation was made, as well as the plot id, the genus and
+species of each observation, a `species_id` that is a shorthand version of 
+the species name, the sex, weight, and hindfoot length, and whether the 
+species is a rodent, bird, rabbit, or reptile. 
+
+Finally, `plot_type` tells us whether it was a control plot (no manipulation),
+a plot where they excluded kangaroo rats for an extended period (long-term), a
+plot with short-term exclusion of kangaroo rats, a plot where all rodents
+were excluded, or a plot where only one species was excluded
+(*Dipodomys spectabilis*).
+
+## Part 1: visualizing size relationships
+
+Your first activity is to explore size relationships on a filtered subset
+of these data, looking at just a few species. We will get you started with
+some code to filter the data.
+
+```{r}
+# selecting only genus Dipodomys, and only for the control plots
+# then removing any individuals who were not identified to species (the "sp.")
+dipodomys <- filter(mammals, genus == "Dipodomys" & plot_type == "Control") |>
+  filter(species != "sp.")
+```
+
+We will learn more about the pipe, `|>`, next week. It is basically saying 
+"Then do this", and passing your data frame on to the next line. It allows you 
+to not have to re-enter the name of the data frame at every step of tidying
+data. Here, after we filtered to only genus *Dipodomys* and only control plots,
+we then did a second filter to remove any individuals who were just labeled
+as *Dipodomys sp.* rather than the name of a specific species. (When you see
+*sp.* for a species name that means that the individual was left unidentified.)
+
+We now have a simplified data frame for only the three kangaroo rat species. 
+Here are two examples of visualizing the hindfoot and weight relationships for 
+each species.
+
+```{r}
+# scatterplot with color
+ggplot(data = dipodomys,
+       mapping = aes(x = hindfoot_length, y = weight, color = species_id)) +
+  geom_point()
+
+# faceting by species
+ggplot(data = dipodomys,
+       mapping = aes(x = hindfoot_length, y = weight)) +
+  geom_point() +
+  facet_wrap(~species)
+
+```
+
+### Your task (10 minutes)
+
+Starting from the `mammals` data frame, use `filter()` to make a new data
+frame called `sigmodon` that includes only species in the genus Sigmodon. With
+these new data, create a violin plot of hindfoot length, colored by sex, and
+faceted by species. You should find the code above to be very helpful.
+
+```{r}
+
+# write your code and comments in this chunk
+
+```
+
+
+## Part 2: a wrangling plan
+
+You proposed some potential data sets for your Data Story in your HW 3
+submission. Use the rest of today's class to explore at least one of these
+data sets more deeply.
+
+In particular, focus today on what kind of data wrangling may need to be done
+in order to get your data ready for making your Data Story plots. Here are
+a few guiding questions.
+
+* What are the columns of interest in my data? What type of data is each column
+(e.g., numeric, categorical, text)?
+
+* Is the data structured in a "long" format for use with ggplot(), where
+each row is an observation?
+
+* Do the data need cleaning? Are there rows that need to be filtered out?
+Are there columns that have a mix of numeric and text data (which will make
+R force the whole column to be character/text data)?
+
+* Do the data need any enriching/transformation? Do I want to make a new 
+column based on data in other columns? Do I need to combine two or more data
+frames (e.g., combining weather data with mammal trapping data for each night)?
+
+* Do I need to summarize the data in any way, e.g., by calculating means and
+standard errors for certain ages or by sex?
+
+* How can I validate the data to catch any errors with my coding, or errors
+with the raw data?  (Make a plan of certain plots that you can use to 
+double-check that the data generally make sense and show the expected patterns.)
+
+
+
+***
+
+Write your notes/answers here for future reference. You may end up using some 
+of this text when writing your Data Story. 
+
+***
+
+
+## Wrapping up (5 minutes)
+
+Knit your file to HTML, and save the original Rmd, then add them to your WFC 98
+folder on Google Drive.
+
+
+***
+
+## Extra material
+
+1. Work on HW 4.
+
+2. Try out the exploratory data analysis activity below.
+
+
+### Transforming the data (scary code behind the scenes)
+
+Run the code below to create a new data frame that summarizes the diversity 
+at each plot for each year.
+
+```{r}
+# creating a function to calculate Shannon's diversity index
+shannon <- function(x)
+{
+  proportions <- table(x)/length(x)
+  D <- -sum(proportions*log(proportions))
+  return(D)
+}
+
+# calculating the diversity of rodents in two ways, after filtering data
+mammals_diversity <- mammals |>
+  filter(taxa == "Rodent" & genus != "Dipodomys") |>
+  filter(genus != "Rodent" & species != "sp.") |>
+  group_by(plot_id, year) |>
+  summarize(richness = length(unique(species_id)),
+            shannon_d = shannon(species_id)) |>
+  mutate(plot_type = case_match(plot_id,
+                                c(2,4,8,11,12,14,17,22) ~ "control",
+                                c(3,15,19,21) ~ "krat long-term exclosure",
+                                c(5,7,10,16,23,24) ~ "all rodent exclosure",
+                                c(6,13,18,20) ~ "krat short-term exclosure",
+                                c(1,9) ~ "spectab exclosure"))
+```
+
+We have two different measurements of diversity. The `richness` column
+is just a count of exactly how many different rodent species were found 
+in that plot in that year.  The `shannon_d` column is a measure of 
+Shannon's diversity index. That value quantifies diversity in a way that
+includes species richness but also species evenness (whether there were
+many common species, or just a few common species and many rare species).  
+Ecologists generally consider a community to be more diverse if there are 
+many common species, rather than just a few common species and lots of rare 
+species.
+
+### Your task
+
+Using the mammals diversity data, try to identify if there are differences 
+in diversity based on plot type, if there have been changes in diversity 
+through time, or both. Try plotting the data in many ways, with different
+plot types and different combinations of which variables are shown using
+x-values, y-values, colors, facets, etc. Remember that we have two different
+measures of diversity. This kind of quick plotting in many ways is a key part 
+of exploratory data analysis.
+
+***Create an effective figure to illustrate a pattern that you have found.***
+
+```{r}
+
+# enter your code and comments here
+
+```
+
+
+
+
