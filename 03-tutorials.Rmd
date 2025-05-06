@@ -4,4 +4,4 @@ People make mistakes. It is a common process in coding that everyone, no just be
 
 # Checklist
 
-Since mistakes are regular, 
+Since mistakes are regular, here is a checklist you should run through 
