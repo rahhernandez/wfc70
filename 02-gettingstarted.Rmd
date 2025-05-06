@@ -1,4 +1,4 @@
-# Getting Started
+# Getting Started {-}
 
 ## Installing R and R Studio
 
@@ -15,4 +15,4 @@ We will need both on your computer before your first lab. Even if you are not go
 
 ## Downloading on Windows
 
-Once you have successfully downloaded both, don't be afraid to open R Studio and play around! 
+Once you have successfully downloaded both, don't be afraid to open R Studio and play around!

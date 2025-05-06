@@ -1,0 +1,234 @@
+---
+title: 'Lab 7: file management, troubleshooting, data story'
+author: "WFC 98, Fall 2024"
+output: html_document
+---
+
+## Goals
+
+In this lab, we will learn the very basics of file management and 
+how to load data into Rmd files when it is stored locally.
+
+By the end of this lab, you should be able to:
+
+-   use "Import Dataset" to load a locally stored file and then copy
+the R code into an Rmd code chunk,
+-   force a column to be character or numeric data to deal with issues with
+how data are loaded,
+-   continue exploring your data for the Data Story.
+
+### Resources
+
+Please download from Canvas the file "Lab7_data.zip", and save it to a folder 
+on the computer. 
+
+## Part 0: Figure of the week (5 minutes, instructor leading)
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+
+## Part 1: Navigating file structure (10 minutes, on your own)
+
+### Unzipping "Lab7_data.zip"
+
+A .zip file is a compressed file that can hold many individual files. It
+can be a useful way to share a set of folders with many organized files. 
+
+To decompress it and turn it back into the original folders, you need to
+"unzip" it. On a mac, just double-clicking on the folder should automatically 
+unzip it to create a folder in the same directory where the .zip file is 
+located. On a pc, right click and select "Extract All", then click the
+"Extract" button.
+
+At this point, you should now have a folder open with some very poorly named
+subfolders (a, b, c, and d). Inside each of these are more folders with
+names 1, 2, 3, and 4. And some of those folders have even more folders inside
+(i, ii, iii, iv). 
+
+The data are hidden as a csv file within folder d, then subfolder 3, then
+subfolder i. Inside of that folder you should find "dispersal_fake.csv". 
+
+### Loading the data
+
+In the upper left of RStudio, click on the File tab, then on "Import Dataset", 
+and then "From Text (base)...". This will open a window in which you need
+to navigate to the file you want to load. You will need to navigate to 
+where you saved the Lab8_data folder, to folder d, then folder 3, then
+folder i.  
+
+After you've selected the file, click "Import". It will create
+a new data frame in your Environment. ***But more importantly, if you look***
+***in the Console in the lower left, you will see the exact R code used to***
+***load the data.***
+
+There you will see that you actually just ran a `read.csv()` command, with
+a very long string (the "path") with directions to the file you wanted to open.
+The backslash at the end of each word or phrase indicates a folder. The start 
+of the path will be different for each computer, but the end of the path should
+look like "/Lab7_data/d/3/i/dispersal_fake.csv". Those are the directions to
+navigate through the Lab8_data folder to get to the actual csv file.
+
+Copy the full code from your Console into this code chunk. You need the data
+to be loaded with commands inside of the Rmd if you want to be able to
+use that data for more R code later in an Rmd document.
+
+```{r}
+
+library(tidyverse)
+
+# copy and paste the read.csv command that makes your data frame here
+
+
+
+# if you are struggling to make that code work, below is code
+# to load the data frame from online, so that you can follow
+# along with the next section. Uncomment and run it if needed.
+
+#dispersal_fake <- read.csv("https://raw.githubusercontent.com/refurrow/WFC70/main/dispersal_fake.csv")
+```
+
+When you are working with new data for the Data Story, you should create
+a folder on your computer where you save the data, and you will need to make
+sure you have code within your Rmd that loads the data. Otherwise you will
+encounter errors when you try to knit, because the data will not be loaded. 
+
+
+## Part 2: Dealing with wonky data (10 minutes, on your own)
+
+Let's glimpse our data.
+
+```{r}
+# uncomment the line below and run it
+# glimpse(dispersal_fake)
+```
+
+When you load data into R, there are a few common issues that can arise
+with how R tries to automatically identify what kind of data are in each row.
+
+#### Issue 1: text in a numerical column. 
+
+***Always double check that your columns are the data type that you expect.***
+Reminder, "num" is numeric, "int" is integer (whole numbers), and "chr" is
+character/text (string) data. Sometimes you will have a column that
+is mostly numbers, but there are a few entries with text. In our case, the 
+spreadsheet used the term "n/a" for missing data rather than "NA". By default,
+R assumes that is text. But we can't have a column with multiple data types,
+so it will default to the most flexible type. Text/character data is the 
+most flexible because it can still store numbers as strings. But you won't 
+be able to manipulate them.  You can fix it by forcing a column to be
+numeric using `as.numeric()`.
+
+```{r}
+# using mutate to fix our distance column
+# uncomment and run the lines below
+
+#dispersal_fake <- mutate(dispersal_fake, 
+#                         distance = as.numeric(distance))
+
+```
+
+When we used `as.numeric()`, it turned all the strings with numbers
+back into numbers, and any other text became NA, which is ideal for our purpose.
+So the ominous "Warning" above is just explaining that it did what we wanted --
+it introduced NAs where there were non-numbers in the column.
+
+#### Issue 2: missing data.
+
+Sometimes a column in the spreadsheet may have some blank values. By default
+for numeric data, these become NAs. You'll notice an example in the 
+`age` column, where missing data is now NA. But the blank entry in `brood` is 
+just the empty string, "".  So something to watch out for in R is that missing 
+data becomes NAs when the column is numeric, but not in columns that are 
+character/text data. See Issue 4 for a coding way to deal with that.
+
+
+#### Issue 3: numbers in a character column.
+
+You should be suspicious of a number in a column that is mostly 
+character data -- it might reflect user error. I often
+use `table()` on my character variables to double-check what all my 
+possible entries are.
+
+```{r}
+# uncommon the code below to make the table 
+
+#table(dispersal_fake$brood)
+```
+Okay, so 4.6 seems like a transcription error or something. Let's look
+at the raw data by clicking on its name in the Environment. Hmm, 4.6 is
+also the value for the `distance` column for that observation.  Perhaps
+this should just be NA, unless we can find the correct `brood` value by 
+reviewing our raw data. For making small edits to small spreadsheets, I often 
+make a copy of the raw data (called "dispersal_processed.csv", for example), 
+and then directly edit that file. If I do that, I add a text file in the same
+folder that lists all the editing steps I performed by hand, so I can remember
+exactly what I did. Often I will just replace all missing data with NA
+by hand as well.
+
+If you do edit your data, make sure you are loading the
+newer, processed csv file when you write your code for the data story. Other 
+wonky things can happen if R thinks certain columns are in Date format -- it 
+can help to force dates to be character data using `as.character()` in some
+instances.
+
+
+
+#### Issue 4: factors are easier to plot than character data
+
+Categorical data in R will usually be loaded as character data, even when
+there are only a few possible levels/values (e.g. "small", "medium" and
+"large" for our `brood` column). But there is another data type in R called
+factors that is designed to handle categorical data. Converting the relevant
+columns to factors can make some aspects of plotting simpler. We won't 
+go in depth now, but there is a nice tutorial [linked here: https://r4ds.hadley.nz/factors](https://r4ds.hadley.nz/factors).
+
+```{r}
+# example code to remake the brood column with the levels
+# small, medium, and large, in that order
+
+# uncomment the code below to try it out
+
+#dispersal_tidy <- dispersal_fake %>% 
+#  mutate(brood = factor(brood, levels = c("small", "medium","large")))
+
+```
+
+Basically, factors let you more easily specify which values are listed first,
+for controlling things like x-axis order or legend order, and make it easier
+to convert missing data to NAs. In the example above, now any values that
+were not "small", "medium", or "large" will become NA, and if you made a 
+plot with brood as the x-axis aesthetic, it would order the x-axis in the
+order your specified (here small, then medium, then large), rather
+than alphabetically.
+
+
+## Data story work (any remaining time)
+
+For the rest of lab, continue your investigation of your data.
+
+1. Make sure you really understand the columns and exactly what they are 
+telling you.
+2. Get to know the data. Try making a histogram for a column of interest to 
+get a sense of the variability. If it's just categorical, use `table()` to
+make a table with counts of each value.  Make scatterplots to explore the 
+relationship between two numerical variables, and use violin plots to see
+how the distribution of a numerical column changes based on the values in
+a different categorical column. 
+3. Let your curiosity guide you. How can the data tell you interesting things?
+Would some background reading help you come up with new questions or 
+hypotheses? Now is the time to brainstorm lots of interesting questions
+that are answerable with the data.
+
+
+As you load the data and explore, you may want to code directly in the Data Story 
+template Rmd. That way you have your work already in the appropriate place.
+
+
+
+## Wrapping up (5 minutes)
+
+Knit any files to HTML, and save the original Rmd (and your Data story template
+Rmd, if you have started working in it). Then add these files to your WFC 98
+folder on Google Drive.
+

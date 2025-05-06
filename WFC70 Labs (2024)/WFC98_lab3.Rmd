@@ -1,0 +1,381 @@
+---
+title: 'Lab 3: visualizing data in R (part 1)'
+author: "WFC 98, Fall 2024"
+output: html_document
+---
+
+## Goals
+
+In this lab, we will get into one of the really fun parts of R programming --
+***making figures!***
+
+By the end of this lab, you should be able to:
+
+-   load an R package using the `library()` function,
+-   install R packages as needed using `install.packages()`,
+-   use the `ggplot2` package within the `tidyverse` to write simple code to 
+    plot data,
+-   create boxplots, histograms, and scatterplots to compare the distributions
+    of different subgroups of data.
+
+### Resources
+
+This lab is loosely based on chapter 1 in the online textbook "R for Data
+Science" (second edition), which you can find online here:
+<https://r4ds.hadley.nz/data-visualize>
+
+## Part 0: Figure of the week (5-10 minutes, instructor leading)
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+
+## Part 1: Packages in R (covered in lecture, so only here for reference)
+
+Many functions and data in R are not instantly available. Instead, they are
+available online as "packages". Packages extend the usefulness of R with new
+functions and data (and documentation/metadata), and they are hosted online in a
+standard way for easy installation and loading.
+
+### Installing an R package
+
+*Installing an R package* is easy to do within RStudio. In the computer labs we
+have already installed most R packages that you will need for any coding in WFC
+98. However, when you are programming on your personal computer you will need to
+install any packages that need to be loaded for a particular lab or HW. ***You
+only need to install an R package once.***
+
+The code chunk below is only necessary if you are working on this lab at home,
+because these packages are already installed in the computer lab.
+
+```{r}
+# the line below is commented so it won't run.
+# if you need to install the packages, delete the hashtag then run 
+# the line below, but then turn it into a comment again
+# before knitting
+
+# install.packages(c("tidyverse", "palmerpenguins"))
+
+
+```
+
+***Delete or comment out any install.packages() commands before you knit.
+You cannot knit an Rmd that still has active install.packages() code.***
+
+### Loading an R package
+
+***On the other hand, you must have code to load any relevant R packages
+inside of your Rmd if you go on to use functions/data from those packages
+in your Rmd.***
+
+*Loading an R package* tells R/RStudio that you plan to use that package during
+your current sessions. ***You need to load an R package in every session that
+you use it.*** After it is loaded, it will stay loaded until you close
+R/RStudio.
+
+```{r}
+# loading the tidyverse package
+library(tidyverse)
+```
+
+If you run this code and get the error message that there is no package called
+'tidyverse', that means that the package is not installed, and you'll need to
+use the earlier code to install it.
+
+Assuming everything worked, in your output you'll notice a somewhat odd message.
+It says "Attaching core tidyverse packages" and then lists several cryptic
+names. Unlike most packages, `tidyverse` is a suite of multiple R packages, but
+you can load them all in one line to save time, because they are commonly used
+together.
+
+Today we are primarily using functions from the `ggplot2` package, which was
+loaded when we used the `library(tidyverse)` command in the code chunk above.
+
+### Part 1b (5 minutes, instructor leading)
+
+We also need to load the package with the penguin data.
+
+```{r}
+#loading the palmerpenguins package, which contains two data frames
+library(palmerpenguins)
+```
+
+There is one odd thing about data sets that are included in R packages. You will
+notice that nothing new has shown up in the global environment. However, the
+data frames are actually loaded (but hidden).
+
+```{r}
+penguins
+penguins_raw
+```
+
+I prefer to formally load the data into my environment, which you can do with
+the `data()` function.
+
+```{r}
+# the palmerpenguins package called their data "penguins"
+# and the command will load both data frames
+data(penguins)
+```
+
+Now we can see the data frames in our environment. Let's take a closer look.
+
+```{r}
+# the glimpse() function lets you see the variable (columns) and
+# a few observations for each variable (rows)
+glimpse(penguins)
+glimpse(penguins_raw)
+```
+
+A few questions to orient ourselves to these data.
+
+1.  Which data frame has more variables, or are they the same?
+
+2.  Which data frame has more observations, or are they the same?
+
+3.  What is different about the column/variable names in `penguins` as compared
+    to `penguins_raw`?
+
+
+## Part 2: Using ggplot() for plotting in R (15 minutes, self-led)
+
+The core function in the `ggplot2` package is called `ggplot()`. But making
+plots using `ggplot()` is like making lasagna. You have to add layers until
+you've produced the perfect result.
+
+Recall from lecture that we need the base canvas with the data (and aesthetics),
+as well as at least one additional *geometry* layer. We will see lots of types 
+of `geom` in this course. We'll briefly begin with a critical type of plot, 
+the scatterplot. That shows two-dimensional points to illustrate the 
+relationship between the x- and y-axis. It has a geometry called `geom_point()`.
+
+```{r}
+ggplot(data = penguins,
+  mapping = aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_point()
+```
+
+Hooray, we have made our first ggplot! However, today we want to practice
+making histograms and boxplots. So we'll need some slightly different aesthetics
+and geometries. We only started with scatterplots because they are so common,
+and they have a very clearly defined x- and y-axis.
+
+***Before we move on, there is one crucial thing to note: each time you add a
+new layer (e.g. a `geom`, some labels for nicer x- and y-axis titles, etc.) you
+need to have a plus symbol, +, at the end of the previous line of code.
+Otherwise R does not know to keep looking for additional layers before making
+the plot.***
+
+Let's try out a histogram. First, we might simply want to visualize the
+distribution of all of our measurements of bill length.
+
+```{r}
+ggplot(data = penguins,
+  mapping = aes(x = bill_length_mm)) +
+  geom_histogram()
+```
+
+Because histograms just count values for one variable, there is only
+one aesthetic (`x=bill_length_mm`). The geometry was for a histogram is
+`geom_histogram()`. There are a few things we might want to consider.
+
+-   This has a lot of separate bins. We might say it is a very *fine-grained*
+    histogram. We can adjust that with *arguments* inside of `geom_histogram()`.
+-   This is summarizing data from multiple species at once. That is not very
+    meaningful. We can separate these out in several different ways.
+
+To address the first issue, you may have noticed that geometries are also
+functions, so their output can be modified using arguments just like most other
+functions in R. By default this function creates 30 bins (thirty separate
+x-values/bars) for a histogram. Let's specify a smaller number.
+
+```{r}
+ggplot(data = penguins,
+  mapping = aes(x = bill_length_mm)) +
+  geom_histogram(bins = 20)
+```
+
+Alternatively, we could specify a `binwidth`, setting how wide each bin should
+be. Let's try using a `binwidth` of 2 (the units for this column are millimeters.)
+
+```{r}
+ggplot(data = penguins,
+  mapping = aes(x = bill_length_mm)) +
+  geom_histogram(binwidth = 2)
+```
+
+Now for the fun part. We can quickly add informative complexity. Let's keep 
+track of all three species in our histogram. We can add the `fill` aesthetic 
+`fill` and the very similar `color` aesthetics allow you to color code different
+data points based on another variable/column in your data. Let's try `color` 
+first and see why it is NOT ideal here.
+
+```{r}
+ggplot(data = penguins,
+  mapping = aes(x = bill_length_mm, color = species)) +
+  geom_histogram(binwidth = 2)
+```
+
+Hmmm, this is not right. We want the whole bars colored. For some geometries,
+`color` only changes the borders, not the full shapes. But color will often be
+useful, for example to change the color of points when using `geom_point()`. To
+fill in a whole shape with color, you use `fill` instead.
+
+```{r}
+ggplot(data = penguins,
+  mapping = aes(x = bill_length_mm, fill = species)) +
+  geom_histogram(binwidth = 2)
+```
+
+This is still not quite right. It is showing all the data, now color-coded, but
+it is stacking the numbers rather than showing three separate histograms with
+some overlap in the x-values. That is because `geom_histogram()` defaults to
+stacking data, even if there is a `fill` aesthetic. You can fix that by changing
+another argument called `position`.
+
+```{r}
+ggplot(data = penguins,
+  mapping = aes(x = bill_length_mm, fill = species)) +
+  geom_histogram(binwidth = 2, position = "identity", alpha = 0.7)
+```
+
+We made two changes. We made it so each species has a separate
+histogram starting from a count of 0. And we made the bars partially transparent
+with the `alpha` argument. (0 is totally transparent, 1 is totally solid
+colors.) It's a little wonky, but we can pretty much read each histogram now.
+
+Instead, let's switch to box-and-whisker plots. These use a different geometry,
+`geom_boxplot`, and they will have a continuous variable for one axis, and
+usually also a discrete variable (e.g., species) for the other axis. Let's
+stick with bill length and species and make three vertical boxplots, one for
+each species.
+
+```{r}
+ggplot(data = penguins,
+  mapping = aes(x = species, y = bill_length_mm)) +
+  geom_boxplot()
+```
+
+This is easier to look at. We can see quite clearly that Adelie Penguins have
+the lowest bill length, while the Chinstrap and Gentoo Penguin samples have
+subtantial overlap in bill length.
+
+## Part 3: Exploring (15 minutes, self-led)
+
+Use the code chunks below to try out some plotting with a new variable.
+
+1.  Create a histogram like the fancy, partially transparent one we made above,
+    but for the variable `bill_depth_mm` instead of bill length, still using the
+    `fill` aesthetic with the `species` column. Hint: copy and paste that 
+    code into the chunk below, then switch the variable name(s) as needed.
+
+```{r}
+
+# write your code in this chunk
+
+```
+
+
+2.  Now create a boxplot with `species` as the x-axis and `bill_depth_mm` as the
+    y-axis.
+
+```{r}
+
+# write your code in this chunk
+
+```
+
+3.  Compare with your results for bill length. Bill depth refers to the
+    thickness (top to bottom) of a bill, while bill length is the distance from
+    the base of the bill to the tip. Which species seems to have an overall
+    short, thick bill? Which species seems to have an overall long, skinny bill?
+    Double-check by googling the species to see some photos.
+
+*Remove this and add your text notes here.*
+
+4.  Try to fix these snippets of broken code. You will note that we have added
+    an option to these code chunks that says "eval = FALSE". That is how we say
+    that RStudio should not try to actually run (evaluate) that code when
+    knitting the Rmd file into HTML. Because the code is broken, it you tried to
+    knit when "eval = TRUE" (i.e. when RStudio will try to run that code), then
+    it will return and error and your code won't knit. Feel free to remove that
+    option or switch it to "eval = TRUE" after you have fixed the code for each
+    chunk. ***Note: if you are ever trying to knit a HW and your code is
+    returning errors, you can always set those chunks to "eval = FALSE" if you
+    want to still be able to submit your knit file.***
+
+Chunk 1 -- this plot won't run.
+
+```{r}
+# uncomment the code below and try to fix it
+
+#ggplot(data = penguins,
+#  x = species,
+#  y = body_mass_g) +
+#  geom_boxplot()
+```
+
+Chunk 2 -- a blank plot won't do.
+
+```{r}
+ggplot(data = penguins,
+  mapping = aes(x = species, y = bill_depth_mm))
+  geom_violin()
+```
+
+5.  **(Time permitting.)** The code below creates a scatterplot with bill length
+    and bill depth, while also color coding the points. Review the code, then
+    try to do the same thing for a boxplot of bill length, color-coding each box
+    for the species it represents.
+
+```{r}
+ggplot(data = penguins,
+  mapping = aes(x = bill_length_mm, 
+                y = bill_depth_mm,
+                color = species)) +
+  geom_point()
+
+```
+
+## Wrapping up (5 minutes)
+
+Knit your file to HTML, and save the original Rmd, then add them to your WFC 98
+folder on Google Drive.
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+
+## Extra material
+
+-   Start on HW 2.
+-   Look over the intro chapter on data visualization in the R for Data Science
+    textbook <https://r4ds.hadley.nz/data-visualize>. Here are a few things to
+    try out.
+    -   Add a `geom_smooth()` layer on top of `geom_point()` for one of the
+        scatterplots we made. What does it do?
+    -   Check out `geom_density()` instead of `geom_histogram()` in one of our
+        histogram-making code chunks above. What does it do? Try adding the
+        argument `adjust = 1/2` or `adjust = 2` and see how it changes the
+        shape. (You will need to remove the `bin` or `binwidth` options, because
+        those are only relevant for `geom_histogram()`).
+    -   Try out the exercises in section 2.4.3.
+-   Try to make the same scatterplot we made in our very first plot, but using
+    `penguins_raw` instead of penguins. Can R handle column names that have
+    spaces in them? (Hint: using the left quote symbol, \`, on either side of
+    the name will allow R to understand that you are trying to refer to a column
+    name.)
+-   Check out this code and plot below. It is a prettier version of our boxplot for
+    culmen length. Google some of the additional layers I added to see how to 
+    create and modify them yourself.
+    You may want to explore themes, explained more on [this website](https://ggplot2.tidyverse.org/reference/ggtheme.html). Rob often finds
+    himself using `theme_bw()` and `theme_classic()`.
+
+```{r}
+ggplot(data = penguins,
+  mapping = aes(x = species, y = bill_length_mm)) +
+  geom_boxplot() +
+  geom_jitter(width = .1) +
+  theme_classic() +
+  labs(x = "", y = "culmen length (mm)")
+```

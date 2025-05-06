@@ -1,5 +1,14 @@
-getting-started
 installing-r-and-r-studio
 downloading-on-mac
 downloading-on-windows
-section
+lab-1
+part-0-figure-of-the-week-5-10-minutes-instructor-will-lead
+part-1-orienting-ourselves-to-rstudio-10-minutes-instructor-will-lead
+the-command-line-console-versus-a-r-script
+r-data-is-often-stored-in-vectors
+part-2-trying-things-out-yourselves-10-minutes-on-your-own
+part-3-making-toast-10-minutes-total
+class-discussion-5-minutes-instructor-will-lead
+part-4-data-frames-to-link-data-together-5-minutes-instructor-will-lead
+wrapping-up-5-minutes
+extra-material-for-interest-will-not-be-assessed-on-any-homework
