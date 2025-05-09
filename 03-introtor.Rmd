@@ -1,0 +1,41 @@
+# Intro to R and R Studio
+
+## Packages
+
+While base R Studio is great, sometimes we need to perform actions R Studio can not do without some outside help. This is where packages come in. Packages allow us to do more than base R Studio can. In WFC 70, the package we use the most is **tidyverse**. Tidyverse contains lots of packages for data visualization, including **ggplot2,** which allows us to make graphs. You will get familiar with tidyverse and it's possibilities!
+
+### Installing Packages
+
+The main way to install packages is through code.
+
+```{r, warning=FALSE, message=FALSE}
+install.packages("package name")
+```
+
+To make sure R Studio is aware of the package, you need to run the library function.
+
+```{r, warning=FALSE, message=FALSE}
+# library("package name")
+```
+
+Below is a video to guide you through downloading packages!
+
+### Finding Packages
+
+**Tidyverse** and **ggplot2** may be the most used package in this class, but there are plenty of packages out there!
+
+The simple way of finding packages through Google, Github or even R community posts. There are many people who have compiled lists of useful R packages.
+
+Here some useful lists of essential R packages!
+
+-   <https://support.posit.co/hc/en-us/articles/201057987-Quick-list-of-useful-R-packages>
+
+-   <https://data-flair.training/blogs/list-of-r-packages/>
+
+-   <https://medium.com/data-science/a-comprehensive-list-of-handy-r-packages-e85dad294b3d>
+
+## Knitting
+
+The way RMarkdown (Rmd) files are saved is through a process called knitting. Knitting saves the files into an HTML, PDF or Word. In WFC 70, we mainly save our Rmd files into HTML files. Knitting, in the beginning, can be a bit difficult.
+
+Below is a video to help guide you through the knitting process! Lab will also discuss how to knit.

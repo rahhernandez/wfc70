@@ -1,0 +1,4 @@
+# Code not Working? 
+
+People make mistakes. It is a common process in coding that everyone, no just beginners experience. Here we will provide some tips if you make a mistake and provide tutorials for some potential complicated concepts.
+

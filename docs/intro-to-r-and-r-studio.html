@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title> 1 Checklist | WFC 70: Data Literacy for Wildlife Biologist</title>
-  <meta name="description" content=" 1 Checklist | WFC 70: Data Literacy for Wildlife Biologist" />
+  <title> 1 Intro to R and R Studio | WFC 70: Data Literacy for Wildlife Biologist</title>
+  <meta name="description" content=" 1 Intro to R and R Studio | WFC 70: Data Literacy for Wildlife Biologist" />
   <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
-  <meta property="og:title" content=" 1 Checklist | WFC 70: Data Literacy for Wildlife Biologist" />
+  <meta property="og:title" content=" 1 Intro to R and R Studio | WFC 70: Data Literacy for Wildlife Biologist" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content=" 1 Checklist | WFC 70: Data Literacy for Wildlife Biologist" />
+  <meta name="twitter:title" content=" 1 Intro to R and R Studio | WFC 70: Data Literacy for Wildlife Biologist" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="tutorials.html"/>
-<link rel="next" href="lab-1-r-data-and-the-rstudio-panels.html"/>
+<link rel="prev" href="getting-started.html"/>
+<link rel="next" href="code-not-working.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -143,12 +143,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome to WFC 70</a></li>
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i>Getting Started</a>
 <ul>
-<li class="chapter" data-level="0.1" data-path="getting-started.html"><a href="getting-started.html#installing-r-and-r-studio"><i class="fa fa-check"></i><b>0.1</b> Installing R and R Studio</a></li>
-<li class="chapter" data-level="0.2" data-path="getting-started.html"><a href="getting-started.html#downloading-on-mac"><i class="fa fa-check"></i><b>0.2</b> Downloading on Mac</a></li>
-<li class="chapter" data-level="0.3" data-path="getting-started.html"><a href="getting-started.html#downloading-on-windows"><i class="fa fa-check"></i><b>0.3</b> Downloading on Windows</a></li>
+<li class="chapter" data-level="0.1" data-path="getting-started.html"><a href="getting-started.html#installing-r-and-r-studio"><i class="fa fa-check"></i><b>0.1</b> Installing R and R Studio</a>
+<ul>
+<li class="chapter" data-level="0.1.1" data-path="getting-started.html"><a href="getting-started.html#downloading-on-mac"><i class="fa fa-check"></i><b>0.1.1</b> Downloading on Mac</a></li>
+<li class="chapter" data-level="0.1.2" data-path="getting-started.html"><a href="getting-started.html#downloading-on-windows"><i class="fa fa-check"></i><b>0.1.2</b> Downloading on Windows</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="tutorials.html"><a href="tutorials.html"><i class="fa fa-check"></i>Tutorials</a></li>
-<li class="chapter" data-level="1" data-path="checklist.html"><a href="checklist.html"><i class="fa fa-check"></i><b>1</b> Checklist</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro-to-r-and-r-studio.html"><a href="intro-to-r-and-r-studio.html"><i class="fa fa-check"></i><b>1</b> Intro to R and R Studio</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro-to-r-and-r-studio.html"><a href="intro-to-r-and-r-studio.html#packages"><i class="fa fa-check"></i><b>1.1</b> Packages</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="intro-to-r-and-r-studio.html"><a href="intro-to-r-and-r-studio.html#installing-packages"><i class="fa fa-check"></i><b>1.1.1</b> Installing Packages</a></li>
+<li class="chapter" data-level="1.1.2" data-path="intro-to-r-and-r-studio.html"><a href="intro-to-r-and-r-studio.html#finding-packages"><i class="fa fa-check"></i><b>1.1.2</b> Finding Packages</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="intro-to-r-and-r-studio.html"><a href="intro-to-r-and-r-studio.html#knitting"><i class="fa fa-check"></i><b>1.2</b> Knitting</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="code-not-working.html"><a href="code-not-working.html"><i class="fa fa-check"></i><b>2</b> Code not Working?</a></li>
 <li class="appendix"><span><b>Old Labs (2024)</b></span></li>
 <li class="chapter" data-level="A" data-path="lab-1-r-data-and-the-rstudio-panels.html"><a href="lab-1-r-data-and-the-rstudio-panels.html"><i class="fa fa-check"></i><b>A</b> Lab 1: R, data, and the RStudio panels</a>
 <ul>
@@ -287,30 +297,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="checklist" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number"> 1</span> Checklist<a href="checklist.html#checklist" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Since mistakes are regular, here is a checklist you should run through if your code is not working.</p>
-<ol style="list-style-type: decimal">
-<li>Check Spelling</li>
-</ol>
+<div id="intro-to-r-and-r-studio" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number"> 1</span> Intro to R and R Studio<a href="intro-to-r-and-r-studio.html#intro-to-r-and-r-studio" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="packages" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Packages<a href="intro-to-r-and-r-studio.html#packages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>While base R Studio is great, sometimes we need to perform actions R Studio can not do without some outside help. This is where packages come in. Packages allow us to do more than base R Studio can. In WFC 70, the package we use the most is <strong>tidyverse</strong>. Tidyverse contains lots of packages for data visualization, including <strong>ggplot2,</strong> which allows us to make graphs. You will get familiar with tidyverse and it’s possibilities!</p>
+<div id="installing-packages" class="section level3 hasAnchor" number="1.1.1">
+<h3><span class="header-section-number">1.1.1</span> Installing Packages<a href="intro-to-r-and-r-studio.html#installing-packages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The main way to install packages is through code.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="intro-to-r-and-r-studio.html#cb1-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;package name&quot;</span>)</span></code></pre></div>
+<p>To make sure R Studio is aware of the package, you need to run the library function.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="intro-to-r-and-r-studio.html#cb2-1" tabindex="-1"></a><span class="co"># library(&quot;package name&quot;)</span></span></code></pre></div>
+<p>Below is a video to guide you through downloading packages!</p>
+</div>
+<div id="finding-packages" class="section level3 hasAnchor" number="1.1.2">
+<h3><span class="header-section-number">1.1.2</span> Finding Packages<a href="intro-to-r-and-r-studio.html#finding-packages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Tidyverse</strong> and <strong>ggplot2</strong> may be the most used package in this class, but there are plenty of packages out there!</p>
+<p>The simple way of finding packages through Google, Github or even R community posts. There are many people who have compiled lists of useful R packages.</p>
+<p>Here some useful lists of essential R packages!</p>
 <ul>
-<li>R is case sensitive! If you do not have a letter capitalized, misspell or anything of that source, double check. “Cats” is not the same as “cats” in R. If your code is not running, it could be because you are misspelling something!</li>
+<li><p><a href="https://support.posit.co/hc/en-us/articles/201057987-Quick-list-of-useful-R-packages" class="uri">https://support.posit.co/hc/en-us/articles/201057987-Quick-list-of-useful-R-packages</a></p></li>
+<li><p><a href="https://data-flair.training/blogs/list-of-r-packages/" class="uri">https://data-flair.training/blogs/list-of-r-packages/</a></p></li>
+<li><p><a href="https://medium.com/data-science/a-comprehensive-list-of-handy-r-packages-e85dad294b3d" class="uri">https://medium.com/data-science/a-comprehensive-list-of-handy-r-packages-e85dad294b3d</a></p></li>
 </ul>
-<ol start="2" style="list-style-type: decimal">
-<li></li>
-</ol>
+</div>
+</div>
+<div id="knitting" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Knitting<a href="intro-to-r-and-r-studio.html#knitting" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The way RMarkdown (Rmd) files are saved is through a process called knitting. Knitting saves the files into an HTML, PDF or Word. In WFC 70, we mainly save our Rmd files into HTML files. Knitting, in the beginning, can be a bit difficult.</p>
+<p>Below is a video to help guide you through the knitting process! Lab will also discuss how to knit.</p>
 
 </div>
-
-
-
+</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="tutorials.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="lab-1-r-data-and-the-rstudio-panels.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="getting-started.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="code-not-working.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -341,7 +366,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rahhernandez/trial/edit/main/03-tutorials.Rmd",
+"link": "https://github.com/rahhernandez/trial/edit/main/03-introtor.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -349,7 +374,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/rahhernandez/trial/blob/main/03-tutorials.Rmd",
+"link": "https://github.com/rahhernandez/trial/blob/main/03-introtor.Rmd",
 "text": null
 },
 "download": null,

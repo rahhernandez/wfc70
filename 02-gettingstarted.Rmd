@@ -8,11 +8,13 @@ R is the language you are using to create the graphs. R Studio is where you inpu
 
 We will need both on your computer before your first lab. Even if you are not going to be bringing your personal computer to lab, having it can be helpful for homework and the Data Story.
 
-## Downloading on Mac
+### Downloading on Mac
 
 
 
 
-## Downloading on Windows
+### Downloading on Windows
+
 
 Once you have successfully downloaded both, don't be afraid to open R Studio and play around!
+

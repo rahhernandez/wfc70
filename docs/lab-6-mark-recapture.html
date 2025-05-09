@@ -23,7 +23,7 @@
 <meta name="author" content="Rob Furrow" />
 
 
-<meta name="date" content="2025-05-06" />
+<meta name="date" content="2025-05-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -143,12 +143,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome to WFC 70</a></li>
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i>Getting Started</a>
 <ul>
-<li class="chapter" data-level="0.1" data-path="getting-started.html"><a href="getting-started.html#installing-r-and-r-studio"><i class="fa fa-check"></i><b>0.1</b> Installing R and R Studio</a></li>
-<li class="chapter" data-level="0.2" data-path="getting-started.html"><a href="getting-started.html#downloading-on-mac"><i class="fa fa-check"></i><b>0.2</b> Downloading on Mac</a></li>
-<li class="chapter" data-level="0.3" data-path="getting-started.html"><a href="getting-started.html#downloading-on-windows"><i class="fa fa-check"></i><b>0.3</b> Downloading on Windows</a></li>
+<li class="chapter" data-level="0.1" data-path="getting-started.html"><a href="getting-started.html#installing-r-and-r-studio"><i class="fa fa-check"></i><b>0.1</b> Installing R and R Studio</a>
+<ul>
+<li class="chapter" data-level="0.1.1" data-path="getting-started.html"><a href="getting-started.html#downloading-on-mac"><i class="fa fa-check"></i><b>0.1.1</b> Downloading on Mac</a></li>
+<li class="chapter" data-level="0.1.2" data-path="getting-started.html"><a href="getting-started.html#downloading-on-windows"><i class="fa fa-check"></i><b>0.1.2</b> Downloading on Windows</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="tutorials.html"><a href="tutorials.html"><i class="fa fa-check"></i>Tutorials</a></li>
-<li class="chapter" data-level="1" data-path="checklist.html"><a href="checklist.html"><i class="fa fa-check"></i><b>1</b> Checklist</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro-to-r-and-r-studio.html"><a href="intro-to-r-and-r-studio.html"><i class="fa fa-check"></i><b>1</b> Intro to R and R Studio</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro-to-r-and-r-studio.html"><a href="intro-to-r-and-r-studio.html#packages"><i class="fa fa-check"></i><b>1.1</b> Packages</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="intro-to-r-and-r-studio.html"><a href="intro-to-r-and-r-studio.html#installing-packages"><i class="fa fa-check"></i><b>1.1.1</b> Installing Packages</a></li>
+<li class="chapter" data-level="1.1.2" data-path="intro-to-r-and-r-studio.html"><a href="intro-to-r-and-r-studio.html#finding-packages"><i class="fa fa-check"></i><b>1.1.2</b> Finding Packages</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="intro-to-r-and-r-studio.html"><a href="intro-to-r-and-r-studio.html#knitting"><i class="fa fa-check"></i><b>1.2</b> Knitting</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="code-not-working.html"><a href="code-not-working.html"><i class="fa fa-check"></i><b>2</b> Code not Working?</a></li>
 <li class="appendix"><span><b>Old Labs (2024)</b></span></li>
 <li class="chapter" data-level="A" data-path="lab-1-r-data-and-the-rstudio-panels.html"><a href="lab-1-r-data-and-the-rstudio-panels.html"><i class="fa fa-check"></i><b>A</b> Lab 1: R, data, and the RStudio panels</a>
 <ul>
@@ -287,7 +297,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="lab-6-mark-recapture" class="section level1 hasAnchor" number="7">
+<div id="lab-6-mark-recapture" class="section level1 hasAnchor" number="8">
 <h1><span class="header-section-number">F</span> Lab 6: Mark-recapture<a href="lab-6-mark-recapture.html#lab-6-mark-recapture" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Note: Had to remove code chunks so the coding looks slightly messy</p>
 <p>In this lab, we will use our wrangling skills to clean up a data frame
@@ -300,7 +310,7 @@ have a shared “key” column,</li>
 <li>use <code>bind_rows()</code> to combine multiple data frames with
 identical columns.</li>
 </ul>
-<div id="resources-3" class="section level3 hasAnchor" number="7.0.1">
+<div id="resources-3" class="section level3 hasAnchor" number="8.0.1">
 <h3><span class="header-section-number">F.0.1</span> Resources<a href="lab-6-mark-recapture.html#resources-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We will use the data discussed during the mark-recapture lectures. These are
 data from a LTER (Long-term Ecological Research) site called the San Joaquin
@@ -308,7 +318,7 @@ Experimental Range.<br />
 <a href="https://data.neonscience.org/data-products/DP1.10072.001">https://data.neonscience.org/data-products/DP1.10072.001</a></p>
 <hr />
 </div>
-<div id="part-1-reminder-of-lecture-data-10-minutes-instructor-leading" class="section level2 hasAnchor" number="7.1">
+<div id="part-1-reminder-of-lecture-data-10-minutes-instructor-leading" class="section level2 hasAnchor" number="8.1">
 <h2><span class="header-section-number">F.1</span> Part 1: Reminder of lecture data (10 minutes, instructor leading)<a href="lab-6-mark-recapture.html#part-1-reminder-of-lecture-data-10-minutes-instructor-leading" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This code should align with what we covered during lecture. Note, however,
 that you don’t even have to do the Schnabel calculation by hand. With the
@@ -335,17 +345,17 @@ pebo_R &lt;- c(2, 4)</p>
 Okay, in a moment we will set you loose to try things on your own, but
 first let’s do a quick <code>_join()</code>.</p>
 </div>
-<div id="adding-weather-data-joining-data-frames" class="section level2 hasAnchor" number="7.2">
+<div id="adding-weather-data-joining-data-frames" class="section level2 hasAnchor" number="8.2">
 <h2><span class="header-section-number">F.2</span> Adding weather data (joining data frames)<a href="lab-6-mark-recapture.html#adding-weather-data-joining-data-frames" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Small mammal activity at night may depend on nighttime temperature or
 precipitation, so it would be interesting to see whether our sample size
 varies depending on the weather conditions. (For example, if our mice
 are inactive in very cold weather, we will expect to catch fewer mice in
 our traps on cold nights.)</p>
-<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="lab-6-mark-recapture.html#cb112-1" tabindex="-1"></a><span class="co"># weather for the site</span></span>
-<span id="cb112-2"><a href="lab-6-mark-recapture.html#cb112-2" tabindex="-1"></a><span class="co"># the csv was having formatting issues, so we switched here to loading</span></span>
-<span id="cb112-3"><a href="lab-6-mark-recapture.html#cb112-3" tabindex="-1"></a><span class="co"># a txt file using read.delim()</span></span>
-<span id="cb112-4"><a href="lab-6-mark-recapture.html#cb112-4" tabindex="-1"></a>sjer_weather <span class="ot">&lt;-</span> <span class="fu">read.delim</span>(<span class="st">&quot;https://raw.githubusercontent.com/refurrow/WFC70/main/sjer_weather.txt&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="lab-6-mark-recapture.html#cb114-1" tabindex="-1"></a><span class="co"># weather for the site</span></span>
+<span id="cb114-2"><a href="lab-6-mark-recapture.html#cb114-2" tabindex="-1"></a><span class="co"># the csv was having formatting issues, so we switched here to loading</span></span>
+<span id="cb114-3"><a href="lab-6-mark-recapture.html#cb114-3" tabindex="-1"></a><span class="co"># a txt file using read.delim()</span></span>
+<span id="cb114-4"><a href="lab-6-mark-recapture.html#cb114-4" tabindex="-1"></a>sjer_weather <span class="ot">&lt;-</span> <span class="fu">read.delim</span>(<span class="st">&quot;https://raw.githubusercontent.com/refurrow/WFC70/main/sjer_weather.txt&quot;</span>)</span></code></pre></div>
 <p>We have many fewer rows, because for each night we just have a single
 suite of measurements (rather than separate rows for each individual
 caught in our original data). <code>lowTemp</code> is the lowest temperature that night
@@ -389,9 +399,9 @@ theme_classic()</p>
 <p>Okay, we’ve managed some mark-recapture, joining, summarizing and plotting.
 Now you can try out a second estimate on your own.</p>
 </div>
-<div id="western-harvest-mouse-population-size-on-your-own-15-minutes" class="section level2 hasAnchor" number="7.3">
+<div id="western-harvest-mouse-population-size-on-your-own-15-minutes" class="section level2 hasAnchor" number="8.3">
 <h2><span class="header-section-number">F.3</span> Western harvest mouse population size (on your own, 15 minutes)<a href="lab-6-mark-recapture.html#western-harvest-mouse-population-size-on-your-own-15-minutes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="your-data" class="section level3 hasAnchor" number="7.3.1">
+<div id="your-data" class="section level3 hasAnchor" number="8.3.1">
 <h3><span class="header-section-number">F.3.1</span> Your data<a href="lab-6-mark-recapture.html#your-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This code will help you load the February trapping data, and filter to
 just include the western harvest mouse, <em>Reithrodontomys megalotis</em>.</p>
@@ -399,28 +409,28 @@ just include the western harvest mouse, <em>Reithrodontomys megalotis</em>.</p>
 <p>rema_feb17 &lt;- filter(sjer_feb17, scientificName== “Reithrodontomys megalotis”) |&gt;
 select(collectDate, tagID, recapture, fate, plotID, nlcdClass)</p>
 </div>
-<div id="getting-your-mark-recapture-table" class="section level3 hasAnchor" number="7.3.2">
+<div id="getting-your-mark-recapture-table" class="section level3 hasAnchor" number="8.3.2">
 <h3><span class="header-section-number">F.3.2</span> Getting your mark-recapture table<a href="lab-6-mark-recapture.html#getting-your-mark-recapture-table" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Follow the steps from our <em>P. boylii</em> estimate to create a table with
 recapture / new capture counts for each night (collectDate). (Hint: <code>table()</code>
 function.)</p>
-<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="lab-6-mark-recapture.html#cb113-1" tabindex="-1"></a><span class="co"># enter your code and comments here</span></span></code></pre></div>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="lab-6-mark-recapture.html#cb115-1" tabindex="-1"></a><span class="co"># enter your code and comments here</span></span></code></pre></div>
 <p>Enter your data below, and uncomment and run the lines afterwards. You have
 four nights (three resamples), so you’ll have three values each for
 M, T, and R.</p>
-<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="lab-6-mark-recapture.html#cb114-1" tabindex="-1"></a><span class="co">#uncomment the lines below and fill in the right values for the</span></span>
-<span id="cb114-2"><a href="lab-6-mark-recapture.html#cb114-2" tabindex="-1"></a><span class="co">#M, T, and R vectors</span></span>
-<span id="cb114-3"><a href="lab-6-mark-recapture.html#cb114-3" tabindex="-1"></a></span>
-<span id="cb114-4"><a href="lab-6-mark-recapture.html#cb114-4" tabindex="-1"></a><span class="co">#rema_M &lt;- c()</span></span>
-<span id="cb114-5"><a href="lab-6-mark-recapture.html#cb114-5" tabindex="-1"></a><span class="co">#rema_T &lt;- c()</span></span>
-<span id="cb114-6"><a href="lab-6-mark-recapture.html#cb114-6" tabindex="-1"></a><span class="co">#rema_R &lt;- c()</span></span>
-<span id="cb114-7"><a href="lab-6-mark-recapture.html#cb114-7" tabindex="-1"></a></span>
-<span id="cb114-8"><a href="lab-6-mark-recapture.html#cb114-8" tabindex="-1"></a><span class="co">#sum(rema_M*rema_T)/sum(rema_R)</span></span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="lab-6-mark-recapture.html#cb116-1" tabindex="-1"></a><span class="co">#uncomment the lines below and fill in the right values for the</span></span>
+<span id="cb116-2"><a href="lab-6-mark-recapture.html#cb116-2" tabindex="-1"></a><span class="co">#M, T, and R vectors</span></span>
+<span id="cb116-3"><a href="lab-6-mark-recapture.html#cb116-3" tabindex="-1"></a></span>
+<span id="cb116-4"><a href="lab-6-mark-recapture.html#cb116-4" tabindex="-1"></a><span class="co">#rema_M &lt;- c()</span></span>
+<span id="cb116-5"><a href="lab-6-mark-recapture.html#cb116-5" tabindex="-1"></a><span class="co">#rema_T &lt;- c()</span></span>
+<span id="cb116-6"><a href="lab-6-mark-recapture.html#cb116-6" tabindex="-1"></a><span class="co">#rema_R &lt;- c()</span></span>
+<span id="cb116-7"><a href="lab-6-mark-recapture.html#cb116-7" tabindex="-1"></a></span>
+<span id="cb116-8"><a href="lab-6-mark-recapture.html#cb116-8" tabindex="-1"></a><span class="co">#sum(rema_M*rema_T)/sum(rema_R)</span></span></code></pre></div>
 <ul>
 <li><strong><em>What is your final estimate for the Feb 2017 population size?</em></strong></li>
 </ul>
 </div>
-<div id="more-joining-time-permitting" class="section level3 hasAnchor" number="7.3.3">
+<div id="more-joining-time-permitting" class="section level3 hasAnchor" number="8.3.3">
 <h3><span class="header-section-number">F.3.3</span> More joining (time permitting)<a href="lab-6-mark-recapture.html#more-joining-time-permitting" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>Create a new data frame that includes all catches for Feb 2017,</li>
@@ -431,15 +441,15 @@ you are using),</li>
 <li>use <code>bind_rows()</code> to combine the summary from Jan and Feb,</li>
 <li>create a plot of temperature versus sample size for both month’s data.</li>
 </ul>
-<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="lab-6-mark-recapture.html#cb115-1" tabindex="-1"></a><span class="co"># enter your code and comments here</span></span></code></pre></div>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="lab-6-mark-recapture.html#cb117-1" tabindex="-1"></a><span class="co"># enter your code and comments here</span></span></code></pre></div>
 </div>
 </div>
-<div id="wrapping-up-5-minutes-5" class="section level2 hasAnchor" number="7.4">
+<div id="wrapping-up-5-minutes-5" class="section level2 hasAnchor" number="8.4">
 <h2><span class="header-section-number">F.4</span> Wrapping up (5 minutes)<a href="lab-6-mark-recapture.html#wrapping-up-5-minutes-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Knit your file to HTML, and save the original Rmd, then add them to your WFC 98
 folder on Google Drive.</p>
 </div>
-<div id="extra-material-2" class="section level2 hasAnchor" number="7.5">
+<div id="extra-material-2" class="section level2 hasAnchor" number="8.5">
 <h2><span class="header-section-number">F.5</span> Extra material<a href="lab-6-mark-recapture.html#extra-material-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Work on HW 5.</p>
 <p>Continue working on the Data Story.</p>
@@ -483,7 +493,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rahhernandez/trial/edit/main/09-lab6_2024.Rmd",
+"link": "https://github.com/rahhernandez/trial/edit/main/10-lab6_2024.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -491,7 +501,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/rahhernandez/trial/blob/main/09-lab6_2024.Rmd",
+"link": "https://github.com/rahhernandez/trial/blob/main/10-lab6_2024.Rmd",
 "text": null
 },
 "download": null,
