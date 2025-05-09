@@ -1,4 +1,10 @@
-# Code not Working? 
+# Code not Working?
 
 People make mistakes. It is a common process in coding that everyone, no just beginners experience. Here we will provide some tips if you make a mistake and provide tutorials for some potential complicated concepts.
 
+## Checklist
+
+There are some common mistakes people often overlook which cause the code not to work. If your code is not working, here are some things to double check:
+
+1.  Check Spelling
+    -   
