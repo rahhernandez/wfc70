@@ -9,4 +9,18 @@ There are some common mistakes people often overlook which cause the code not to
 1.  Check Spelling
     -   Does all your spelling match? Is the data you are referencing spelled ***exactly*** the same? For example, "cats" is not the same as "Cats".
 2.  Reread Code
-    -   A common mistake is missing an aspect of the code, such as a parenthesis, comma or plus sign. Reread and check to make sure you have all aspects of of your code. 
+    -   A common mistake is missing an aspect of the code, such as a parenthesis, comma or plus sign. Reread and check to make sure you have all aspects of of your code.
+3.  Compare to Previous Code
+    -   A big aspect of coding is copying and pasting and altering to get what you need. If you altered previous code which previously worked, compare it to ensure it is the same.
+4.  Seeking for Help
+    -   If you have gone through the previous steps and the code is *still* not working, ask the instructor or TA! You can also Google your issue, as it is likely that other people have experienced the same issue and are looking for solutions.
+    - ***DO NOT RELY ON AI!*** AI will typically complicate your code and make you do more work. It is safer, and more reliable, to ask the instructor or TA!
+
+### Example: Fix the Code
+
+As a practice, see if you can identify what is wrong in this code and fix it!
+
+```{r, warning=FALSE}
+
+```
+# Importing Data

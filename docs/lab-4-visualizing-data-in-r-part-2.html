@@ -160,8 +160,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2" data-path="code-not-working.html"><a href="code-not-working.html"><i class="fa fa-check"></i><b>2</b> Code not Working?</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="code-not-working.html"><a href="code-not-working.html#checklist"><i class="fa fa-check"></i><b>2.1</b> Checklist</a></li>
+<li class="chapter" data-level="2.1" data-path="code-not-working.html"><a href="code-not-working.html#checklist"><i class="fa fa-check"></i><b>2.1</b> Checklist</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="code-not-working.html"><a href="code-not-working.html#example-fix-the-code"><i class="fa fa-check"></i><b>2.1.1</b> Example: Fix the Code</a></li>
 </ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="importing-data.html"><a href="importing-data.html"><i class="fa fa-check"></i><b>3</b> Importing Data</a></li>
 <li class="appendix"><span><b>Old Labs (2024)</b></span></li>
 <li class="chapter" data-level="A" data-path="lab-1-r-data-and-the-rstudio-panels.html"><a href="lab-1-r-data-and-the-rstudio-panels.html"><i class="fa fa-check"></i><b>A</b> Lab 1: R, data, and the RStudio panels</a>
 <ul>
@@ -300,7 +304,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="lab-4-visualizing-data-in-r-part-2" class="section level1 hasAnchor" number="6">
+<div id="lab-4-visualizing-data-in-r-part-2" class="section level1 hasAnchor" number="7">
 <h1><span class="header-section-number">D</span> Lab 4: Visualizing data in R (Part 2)<a href="lab-4-visualizing-data-in-r-part-2.html#lab-4-visualizing-data-in-r-part-2" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>In this lab, we will learn several more plotting skills.</p>
 <p>By the end of this lab, you should be able to:</p>
@@ -310,22 +314,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>add themes to make your plots more attractive,</li>
 <li>customize your x- and y-axis labels and add a plot title.</li>
 </ul>
-<div id="resources-1" class="section level3 hasAnchor" number="6.0.1">
+<div id="resources-1" class="section level3 hasAnchor" number="7.0.1">
 <h3><span class="header-section-number">D.0.1</span> Resources<a href="lab-4-visualizing-data-in-r-part-2.html#resources-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We will work with a new data set today based on lizard measurements. These data
 have been tidied up by data scientist Allison Horst.
 Much of what we explore today has been modified by a plotting tutorial she
 created, which is available online here: <a href="https://allisonhorst.github.io/rice-data-viz/">https://allisonhorst.github.io/rice-data-viz/</a>.</p>
 </div>
-<div id="part-0-figure-of-the-week-5-10-minutes-instructor-leading-2" class="section level2 hasAnchor" number="6.1">
+<div id="part-0-figure-of-the-week-5-10-minutes-instructor-leading-2" class="section level2 hasAnchor" number="7.1">
 <h2><span class="header-section-number">D.1</span> Part 0: Figure of the week (5-10 minutes, instructor leading)<a href="lab-4-visualizing-data-in-r-part-2.html#part-0-figure-of-the-week-5-10-minutes-instructor-leading-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <hr />
 <hr />
 </div>
-<div id="part-1-new-data-5-minutes-instructor-leading" class="section level2 hasAnchor" number="6.2">
+<div id="part-1-new-data-5-minutes-instructor-leading" class="section level2 hasAnchor" number="7.2">
 <h2><span class="header-section-number">D.2</span> Part 1: New data! (5 minutes, instructor leading)<a href="lab-4-visualizing-data-in-r-part-2.html#part-1-new-data-5-minutes-instructor-leading" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This is mostly review from what you learned at the end of Monday’s lecture.</p>
-<div id="loading-data" class="section level3 hasAnchor" number="6.2.1">
+<div id="loading-data" class="section level3 hasAnchor" number="7.2.1">
 <h3><span class="header-section-number">D.2.1</span> Loading data<a href="lab-4-visualizing-data-in-r-part-2.html#loading-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>You can load data into R in several ways. We started with the easiest: loading
 a R package that includes some data frames. Another pleasantly simple way
@@ -340,7 +344,7 @@ hosted online. Let’s do that now, with the help of the <code>read.csv()</code>
 <span id="cb89-7"><a href="lab-4-visualizing-data-in-r-part-2.html#cb89-7" tabindex="-1"></a><span class="co"># loading tidyverse for our plotting and data wrangling needs</span></span>
 <span id="cb89-8"><a href="lab-4-visualizing-data-in-r-part-2.html#cb89-8" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
 </div>
-<div id="about-these-data-for-reference-not-for-discussion-during-lab" class="section level3 hasAnchor" number="6.2.2">
+<div id="about-these-data-for-reference-not-for-discussion-during-lab" class="section level3 hasAnchor" number="7.2.2">
 <h3><span class="header-section-number">D.2.2</span> About these data (for reference, not for discussion during lab)<a href="lab-4-visualizing-data-in-r-part-2.html#about-these-data-for-reference-not-for-discussion-during-lab" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The full data are available <a href="https://doi.org/10.6073/pasta/4a6e258fb49c31e222ecbbcfd128967f">here</a>,
 and are from another long-term ecological research site, this time for lizards
@@ -364,7 +368,7 @@ They will not appear because this code chunk is set to <code>eval = FALSE</code>
 <span id="cb90-12"><a href="lab-4-visualizing-data-in-r-part-2.html#cb90-12" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div>
 </div>
 </div>
-<div id="independent-work-25-minutes" class="section level2 hasAnchor" number="6.3">
+<div id="independent-work-25-minutes" class="section level2 hasAnchor" number="7.3">
 <h2><span class="header-section-number">D.3</span> Independent work (25 minutes)<a href="lab-4-visualizing-data-in-r-part-2.html#independent-work-25-minutes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Let’s begin with a new geometry called <code>geom_jitter()</code>. When do we need it?
 When we have lots of points that have the exact same value. In that case,
@@ -375,18 +379,18 @@ points that are on top of each other more clearly.</p>
 <div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="lab-4-visualizing-data-in-r-part-2.html#cb91-1" tabindex="-1"></a><span class="co"># many points have the exact same weight, making this look sparse</span></span>
 <span id="cb91-2"><a href="lab-4-visualizing-data-in-r-part-2.html#cb91-2" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> lizards, <span class="fu">aes</span>(<span class="at">y =</span> common_name, <span class="at">x =</span> weight)) <span class="sc">+</span></span>
 <span id="cb91-3"><a href="lab-4-visualizing-data-in-r-part-2.html#cb91-3" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
 <div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="lab-4-visualizing-data-in-r-part-2.html#cb92-1" tabindex="-1"></a><span class="co"># the jitter will reveal just how many measurements we have</span></span>
 <span id="cb92-2"><a href="lab-4-visualizing-data-in-r-part-2.html#cb92-2" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> lizards, <span class="fu">aes</span>(<span class="at">y =</span> common_name, <span class="at">x =</span> weight)) <span class="sc">+</span></span>
 <span id="cb92-3"><a href="lab-4-visualizing-data-in-r-part-2.html#cb92-3" tabindex="-1"></a>  <span class="fu">geom_jitter</span>()</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-37-2.png" width="672" /></p>
-<div id="task-1-working-with-geom_jitter" class="section level3 hasAnchor" number="6.3.1">
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-38-2.png" width="672" /></p>
+<div id="task-1-working-with-geom_jitter" class="section level3 hasAnchor" number="7.3.1">
 <h3><span class="header-section-number">D.3.1</span> Task 1: working with <code>geom_jitter()</code><a href="lab-4-visualizing-data-in-r-part-2.html#task-1-working-with-geom_jitter" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Make the same two plots for snout-vent length (<code>sv_length</code>) rather than
 weight. Hint: copy and paste, then change the column/variable inside of <code>aes()</code>.</p>
 <div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="lab-4-visualizing-data-in-r-part-2.html#cb93-1" tabindex="-1"></a><span class="co"># write your code and comments in this chunk</span></span></code></pre></div>
 </div>
-<div id="making-consistent-changes-to-data-attributes" class="section level3 hasAnchor" number="6.3.2">
+<div id="making-consistent-changes-to-data-attributes" class="section level3 hasAnchor" number="7.3.2">
 <h3><span class="header-section-number">D.3.2</span> Making consistent changes to data attributes<a href="lab-4-visualizing-data-in-r-part-2.html#making-consistent-changes-to-data-attributes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We use <code>aes()</code> when we want to use a variable/column from our data and
 represent it with a visual attribute (e.g. x- or y-value, color, size).
@@ -396,16 +400,16 @@ or red shapes, or larger lines. Here is an example.</p>
 <span id="cb94-2"><a href="lab-4-visualizing-data-in-r-part-2.html#cb94-2" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">color =</span> <span class="st">&quot;blue&quot;</span>,</span>
 <span id="cb94-3"><a href="lab-4-visualizing-data-in-r-part-2.html#cb94-3" tabindex="-1"></a>              <span class="at">fill =</span> <span class="st">&quot;light green&quot;</span>,</span>
 <span id="cb94-4"><a href="lab-4-visualizing-data-in-r-part-2.html#cb94-4" tabindex="-1"></a>              <span class="at">linetype =</span> <span class="st">&quot;dotted&quot;</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-40-1.png" width="672" /></p>
 </div>
-<div id="task-2-changing-attributes-throughout-a-plot" class="section level3 hasAnchor" number="6.3.3">
+<div id="task-2-changing-attributes-throughout-a-plot" class="section level3 hasAnchor" number="7.3.3">
 <h3><span class="header-section-number">D.3.3</span> Task 2: changing attributes throughout a plot<a href="lab-4-visualizing-data-in-r-part-2.html#task-2-changing-attributes-throughout-a-plot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Using the same aesthetics, create a violin plot. Make the interior of each violin
 colored “light blue” with a “blue” border. Use the argument <code>width = 0.8</code> to
 make the violins a bit skinnier (80% of their usual thickness).</p>
 <div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="lab-4-visualizing-data-in-r-part-2.html#cb95-1" tabindex="-1"></a><span class="co"># write your code in this chunk</span></span></code></pre></div>
 </div>
-<div id="adding-a-theme" class="section level3 hasAnchor" number="6.3.4">
+<div id="adding-a-theme" class="section level3 hasAnchor" number="7.3.4">
 <h3><span class="header-section-number">D.3.4</span> Adding a theme<a href="lab-4-visualizing-data-in-r-part-2.html#adding-a-theme" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In lecture we have briefly noted that adding a theme layer provides a quick
 way to make the plot more visually pleasing. Here we can demonstrate a
@@ -414,10 +418,10 @@ not-super-attractive theme, and then you can explore.</p>
 <span id="cb96-2"><a href="lab-4-visualizing-data-in-r-part-2.html#cb96-2" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> lizards, <span class="fu">aes</span>(<span class="at">y =</span> common_name, <span class="at">x =</span> sv_length)) <span class="sc">+</span></span>
 <span id="cb96-3"><a href="lab-4-visualizing-data-in-r-part-2.html#cb96-3" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">fill =</span> <span class="st">&quot;light blue&quot;</span>) <span class="sc">+</span></span>
 <span id="cb96-4"><a href="lab-4-visualizing-data-in-r-part-2.html#cb96-4" tabindex="-1"></a>  <span class="fu">theme_dark</span>()</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-41-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-42-1.png" width="672" /></p>
 <p>Check out the other themes here: <a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">https://ggplot2.tidyverse.org/reference/ggtheme.html</a>.</p>
 </div>
-<div id="task-3-themes" class="section level3 hasAnchor" number="6.3.5">
+<div id="task-3-themes" class="section level3 hasAnchor" number="7.3.5">
 <h3><span class="header-section-number">D.3.5</span> Task 3: themes<a href="lab-4-visualizing-data-in-r-part-2.html#task-3-themes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Create a scatterplot with snout-vent length on the x-axis and weight on the
 y-axis. <em>Add a theme layer using one of the themes from the website above.</em>
@@ -425,7 +429,7 @@ Try a few themes until you find one you like, and don’t just use
 <code>theme_dark()</code> again.</p>
 <div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="lab-4-visualizing-data-in-r-part-2.html#cb97-1" tabindex="-1"></a><span class="co"># write your code in this chunk</span></span></code></pre></div>
 </div>
-<div id="customizing-labels" class="section level3 hasAnchor" number="6.3.6">
+<div id="customizing-labels" class="section level3 hasAnchor" number="7.3.6">
 <h3><span class="header-section-number">D.3.6</span> Customizing labels<a href="lab-4-visualizing-data-in-r-part-2.html#customizing-labels" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>As we have seen in lecture, adding a <code>labs()</code> layer is a simple way to make x- and y-axis
 labels that are clearer to your reader.</p>
@@ -436,14 +440,14 @@ labels that are clearer to your reader.</p>
 <span id="cb98-5"><a href="lab-4-visualizing-data-in-r-part-2.html#cb98-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;snout-vent length (mm)&quot;</span>, </span>
 <span id="cb98-6"><a href="lab-4-visualizing-data-in-r-part-2.html#cb98-6" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;&quot;</span>,</span>
 <span id="cb98-7"><a href="lab-4-visualizing-data-in-r-part-2.html#cb98-7" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Length distributions for New Mexico lizards&quot;</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-43-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-44-1.png" width="672" /></p>
 <p>The <code>sv_length</code> variable was unclear, so I make the new x-axis label state
 the full name (and units, which are listed in section 2.2 of Allison Horst’s tutorial).
 I also elected make the y-axis label blank, because common name is self-explanatory.
 To do so, I just make the y-axis label be a set of empty quotes ““.
 Finally, I added a title.</p>
 </div>
-<div id="interlude-finding-data-for-the-data-story-assignment" class="section level3 hasAnchor" number="6.3.7">
+<div id="interlude-finding-data-for-the-data-story-assignment" class="section level3 hasAnchor" number="7.3.7">
 <h3><span class="header-section-number">D.3.7</span> Interlude: finding data for the Data Story assignment<a href="lab-4-visualizing-data-in-r-part-2.html#interlude-finding-data-for-the-data-story-assignment" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>One particularly useful source for ecological data is data dryad.
 <a href="https://datadryad.org/" class="uri">https://datadryad.org/</a></p>
@@ -462,7 +466,7 @@ paper can help you make sense of the data.</p>
 understand is way more valuable than finding a confusing data set on a
 cool topic.</strong> So just explore for now.</p>
 </div>
-<div id="task-4-nice-labels-time-permitting" class="section level3 hasAnchor" number="6.3.8">
+<div id="task-4-nice-labels-time-permitting" class="section level3 hasAnchor" number="7.3.8">
 <h3><span class="header-section-number">D.3.8</span> Task 4: Nice labels (time permitting)<a href="lab-4-visualizing-data-in-r-part-2.html#task-4-nice-labels-time-permitting" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To prep for this next task, I will preview a data-tidying skill we will learn next week.</p>
 <div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="lab-4-visualizing-data-in-r-part-2.html#cb99-1" tabindex="-1"></a><span class="co"># creating a data frame with only side-blotched lizards</span></span>
@@ -476,14 +480,14 @@ on the x-axis label and title, but make sure they are descriptive.</p>
 <div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="lab-4-visualizing-data-in-r-part-2.html#cb100-1" tabindex="-1"></a><span class="co"># write your code in this chunk</span></span></code></pre></div>
 </div>
 </div>
-<div id="wrapping-up-5-minutes-3" class="section level2 hasAnchor" number="6.4">
+<div id="wrapping-up-5-minutes-3" class="section level2 hasAnchor" number="7.4">
 <h2><span class="header-section-number">D.4</span> Wrapping up (5 minutes)<a href="lab-4-visualizing-data-in-r-part-2.html#wrapping-up-5-minutes-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Knit your file to HTML, and save the original Rmd, then add them to your WFC 98
 folder on Google Drive.</p>
 <hr />
 <hr />
 </div>
-<div id="extra-material-for-interest-will-not-be-assessed-on-any-homework-1" class="section level2 hasAnchor" number="6.5">
+<div id="extra-material-for-interest-will-not-be-assessed-on-any-homework-1" class="section level2 hasAnchor" number="7.5">
 <h2><span class="header-section-number">D.5</span> Extra material for interest (will not be assessed on any homework)<a href="lab-4-visualizing-data-in-r-part-2.html#extra-material-for-interest-will-not-be-assessed-on-any-homework-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Work on HW 3.</p>
 <p>Look over the next section of the tutorial, which covers some additional skills for plot customization: <a href="https://allisonhorst.github.io/rice-data-viz/#5_Advanced_ggplot2_customization">https://allisonhorst.github.io/rice-data-viz/#5_Advanced_ggplot2_customization</a></p>

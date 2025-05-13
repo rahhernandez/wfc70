@@ -160,8 +160,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2" data-path="code-not-working.html"><a href="code-not-working.html"><i class="fa fa-check"></i><b>2</b> Code not Working?</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="code-not-working.html"><a href="code-not-working.html#checklist"><i class="fa fa-check"></i><b>2.1</b> Checklist</a></li>
+<li class="chapter" data-level="2.1" data-path="code-not-working.html"><a href="code-not-working.html#checklist"><i class="fa fa-check"></i><b>2.1</b> Checklist</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="code-not-working.html"><a href="code-not-working.html#example-fix-the-code"><i class="fa fa-check"></i><b>2.1.1</b> Example: Fix the Code</a></li>
 </ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="importing-data.html"><a href="importing-data.html"><i class="fa fa-check"></i><b>3</b> Importing Data</a></li>
 <li class="appendix"><span><b>Old Labs (2024)</b></span></li>
 <li class="chapter" data-level="A" data-path="lab-1-r-data-and-the-rstudio-panels.html"><a href="lab-1-r-data-and-the-rstudio-panels.html"><i class="fa fa-check"></i><b>A</b> Lab 1: R, data, and the RStudio panels</a>
 <ul>
@@ -300,7 +304,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="lab-5-data-story-work-wrangling-warm-up" class="section level1 hasAnchor" number="7">
+<div id="lab-5-data-story-work-wrangling-warm-up" class="section level1 hasAnchor" number="8">
 <h1><span class="header-section-number">E</span> Lab 5: Data Story Work, Wrangling Warm-up<a href="lab-5-data-story-work-wrangling-warm-up.html#lab-5-data-story-work-wrangling-warm-up" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>In this lab, we will do a tiny big of wrangling, but mostly focus on getting
 things started for the Data Story. More wrangling to come in the next two weeks.</p>
@@ -310,21 +314,21 @@ things started for the Data Story. More wrangling to come in the next two weeks.
 <li>add faceting to plots,</li>
 <li>describe the potential wrangling process for a data set for your Data Story.</li>
 </ul>
-<div id="resources-2" class="section level3 hasAnchor" number="7.0.1">
+<div id="resources-2" class="section level3 hasAnchor" number="8.0.1">
 <h3><span class="header-section-number">E.0.1</span> Resources<a href="lab-5-data-story-work-wrangling-warm-up.html#resources-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We will work with a new data set today based on small mammal trapping to
 assess biodiversity in different types of plots. These data are explored
 in detail in the Data Carpentry course “Data Analysis and Visualisation in R for Ecologists”, <a href="https://datacarpentry.org/R-ecology-lesson/index.html">https://datacarpentry.org/R-ecology-lesson/index.html</a>.</p>
 </div>
-<div id="part-0-figure-of-the-week-5-minutes-instructor-leading" class="section level2 hasAnchor" number="7.1">
+<div id="part-0-figure-of-the-week-5-minutes-instructor-leading" class="section level2 hasAnchor" number="8.1">
 <h2><span class="header-section-number">E.1</span> Part 0: Figure of the week (5 minutes, instructor leading)<a href="lab-5-data-story-work-wrangling-warm-up.html#part-0-figure-of-the-week-5-minutes-instructor-leading" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <hr />
 <hr />
 </div>
-<div id="part-1-new-data-5-minutes-instructor-leading-1" class="section level2 hasAnchor" number="7.2">
+<div id="part-1-new-data-5-minutes-instructor-leading-1" class="section level2 hasAnchor" number="8.2">
 <h2><span class="header-section-number">E.2</span> Part 1: New data! (5 minutes, instructor leading)<a href="lab-5-data-story-work-wrangling-warm-up.html#part-1-new-data-5-minutes-instructor-leading-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This is mostly review about the data introduced at the end of Monday’s lecture.</p>
-<div id="loading-data-1" class="section level3 hasAnchor" number="7.2.1">
+<div id="loading-data-1" class="section level3 hasAnchor" number="8.2.1">
 <h3><span class="header-section-number">E.2.1</span> Loading data<a href="lab-5-data-story-work-wrangling-warm-up.html#loading-data-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="lab-5-data-story-work-wrangling-warm-up.html#cb102-1" tabindex="-1"></a><span class="co"># loading a csv file from this URL. The header argument just tells R</span></span>
 <span id="cb102-2"><a href="lab-5-data-story-work-wrangling-warm-up.html#cb102-2" tabindex="-1"></a><span class="co"># that the first row is not data, but is instead a header</span></span>
@@ -335,7 +339,7 @@ in detail in the Data Carpentry course “Data Analysis and Visualisation in R f
 <span id="cb102-7"><a href="lab-5-data-story-work-wrangling-warm-up.html#cb102-7" tabindex="-1"></a><span class="co"># loading tidyverse for our plotting and data wrangling needs</span></span>
 <span id="cb102-8"><a href="lab-5-data-story-work-wrangling-warm-up.html#cb102-8" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
 </div>
-<div id="about-these-data" class="section level3 hasAnchor" number="7.2.2">
+<div id="about-these-data" class="section level3 hasAnchor" number="8.2.2">
 <h3><span class="header-section-number">E.2.2</span> About these data<a href="lab-5-data-story-work-wrangling-warm-up.html#about-these-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The data are part of the Portal Project Teaching Database <a href="https://figshare.com/articles/dataset/Portal_Project_Teaching_Database/1314459/10">https://figshare.com/articles/dataset/Portal_Project_Teaching_Database/1314459/10</a>.
 They come from a long-term mammal and plant monitoring study in the Chihuahuan
@@ -369,7 +373,7 @@ were excluded, or a plot where only one species was excluded
 (<em>Dipodomys spectabilis</em>).</p>
 </div>
 </div>
-<div id="part-1-visualizing-size-relationships" class="section level2 hasAnchor" number="7.3">
+<div id="part-1-visualizing-size-relationships" class="section level2 hasAnchor" number="8.3">
 <h2><span class="header-section-number">E.3</span> Part 1: visualizing size relationships<a href="lab-5-data-story-work-wrangling-warm-up.html#part-1-visualizing-size-relationships" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Your first activity is to explore size relationships on a filtered subset
 of these data, looking at just a few species. We will get you started with
@@ -395,7 +399,7 @@ each species.</p>
 <pre><code>## Warning: Removed 832 rows containing missing values
 ## or values outside the scale range
 ## (`geom_point()`).</code></pre>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-50-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-51-1.png" width="672" /></p>
 <div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="lab-5-data-story-work-wrangling-warm-up.html#cb108-1" tabindex="-1"></a><span class="co"># faceting by species</span></span>
 <span id="cb108-2"><a href="lab-5-data-story-work-wrangling-warm-up.html#cb108-2" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dipodomys,</span>
 <span id="cb108-3"><a href="lab-5-data-story-work-wrangling-warm-up.html#cb108-3" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> hindfoot_length, <span class="at">y =</span> weight)) <span class="sc">+</span></span>
@@ -404,8 +408,8 @@ each species.</p>
 <pre><code>## Warning: Removed 832 rows containing missing values
 ## or values outside the scale range
 ## (`geom_point()`).</code></pre>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-50-2.png" width="672" /></p>
-<div id="your-task-10-minutes" class="section level3 hasAnchor" number="7.3.1">
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-51-2.png" width="672" /></p>
+<div id="your-task-10-minutes" class="section level3 hasAnchor" number="8.3.1">
 <h3><span class="header-section-number">E.3.1</span> Your task (10 minutes)<a href="lab-5-data-story-work-wrangling-warm-up.html#your-task-10-minutes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Starting from the <code>mammals</code> data frame, use <code>filter()</code> to make a new data
 frame called <code>sigmodon</code> that includes only species in the genus Sigmodon. With
@@ -414,7 +418,7 @@ faceted by species. You should find the code above to be very helpful.</p>
 <div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="lab-5-data-story-work-wrangling-warm-up.html#cb110-1" tabindex="-1"></a><span class="co"># write your code and comments in this chunk</span></span></code></pre></div>
 </div>
 </div>
-<div id="part-2-a-wrangling-plan" class="section level2 hasAnchor" number="7.4">
+<div id="part-2-a-wrangling-plan" class="section level2 hasAnchor" number="8.4">
 <h2><span class="header-section-number">E.4</span> Part 2: a wrangling plan<a href="lab-5-data-story-work-wrangling-warm-up.html#part-2-a-wrangling-plan" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>You proposed some potential data sets for your Data Story in your HW 3
 submission. Use the rest of today’s class to explore at least one of these
@@ -444,19 +448,19 @@ double-check that the data generally make sense and show the expected patterns.)
 of this text when writing your Data Story.</p>
 <hr />
 </div>
-<div id="wrapping-up-5-minutes-4" class="section level2 hasAnchor" number="7.5">
+<div id="wrapping-up-5-minutes-4" class="section level2 hasAnchor" number="8.5">
 <h2><span class="header-section-number">E.5</span> Wrapping up (5 minutes)<a href="lab-5-data-story-work-wrangling-warm-up.html#wrapping-up-5-minutes-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Knit your file to HTML, and save the original Rmd, then add them to your WFC 98
 folder on Google Drive.</p>
 <hr />
 </div>
-<div id="extra-material-1" class="section level2 hasAnchor" number="7.6">
+<div id="extra-material-1" class="section level2 hasAnchor" number="8.6">
 <h2><span class="header-section-number">E.6</span> Extra material<a href="lab-5-data-story-work-wrangling-warm-up.html#extra-material-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li><p>Work on HW 4.</p></li>
 <li><p>Try out the exploratory data analysis activity below.</p></li>
 </ol>
-<div id="transforming-the-data-scary-code-behind-the-scenes" class="section level3 hasAnchor" number="7.6.1">
+<div id="transforming-the-data-scary-code-behind-the-scenes" class="section level3 hasAnchor" number="8.6.1">
 <h3><span class="header-section-number">E.6.1</span> Transforming the data (scary code behind the scenes)<a href="lab-5-data-story-work-wrangling-warm-up.html#transforming-the-data-scary-code-behind-the-scenes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Run the code below to create a new data frame that summarizes the diversity
 at each plot for each year.</p>
@@ -494,7 +498,7 @@ Ecologists generally consider a community to be more diverse if there are
 many common species, rather than just a few common species and lots of rare
 species.</p>
 </div>
-<div id="your-task" class="section level3 hasAnchor" number="7.6.2">
+<div id="your-task" class="section level3 hasAnchor" number="8.6.2">
 <h3><span class="header-section-number">E.6.2</span> Your task<a href="lab-5-data-story-work-wrangling-warm-up.html#your-task" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Using the mammals diversity data, try to identify if there are differences
 in diversity based on plot type, if there have been changes in diversity

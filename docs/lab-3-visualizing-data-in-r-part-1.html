@@ -160,8 +160,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2" data-path="code-not-working.html"><a href="code-not-working.html"><i class="fa fa-check"></i><b>2</b> Code not Working?</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="code-not-working.html"><a href="code-not-working.html#checklist"><i class="fa fa-check"></i><b>2.1</b> Checklist</a></li>
+<li class="chapter" data-level="2.1" data-path="code-not-working.html"><a href="code-not-working.html#checklist"><i class="fa fa-check"></i><b>2.1</b> Checklist</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="code-not-working.html"><a href="code-not-working.html#example-fix-the-code"><i class="fa fa-check"></i><b>2.1.1</b> Example: Fix the Code</a></li>
 </ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="importing-data.html"><a href="importing-data.html"><i class="fa fa-check"></i><b>3</b> Importing Data</a></li>
 <li class="appendix"><span><b>Old Labs (2024)</b></span></li>
 <li class="chapter" data-level="A" data-path="lab-1-r-data-and-the-rstudio-panels.html"><a href="lab-1-r-data-and-the-rstudio-panels.html"><i class="fa fa-check"></i><b>A</b> Lab 1: R, data, and the RStudio panels</a>
 <ul>
@@ -300,7 +304,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="lab-3-visualizing-data-in-r-part-1" class="section level1 hasAnchor" number="5">
+<div id="lab-3-visualizing-data-in-r-part-1" class="section level1 hasAnchor" number="6">
 <h1><span class="header-section-number">C</span> Lab 3: Visualizing data in R (Part 1)<a href="lab-3-visualizing-data-in-r-part-1.html#lab-3-visualizing-data-in-r-part-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>In this lab, we will get into one of the really fun parts of R programming –
 <strong><em>making figures!</em></strong></p>
@@ -313,24 +317,24 @@ plot data,</li>
 <li>create boxplots, histograms, and scatterplots to compare the distributions
 of different subgroups of data.</li>
 </ul>
-<div id="resources" class="section level3 hasAnchor" number="5.0.1">
+<div id="resources" class="section level3 hasAnchor" number="6.0.1">
 <h3><span class="header-section-number">C.0.1</span> Resources<a href="lab-3-visualizing-data-in-r-part-1.html#resources" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This lab is loosely based on chapter 1 in the online textbook “R for Data
 Science” (second edition), which you can find online here:
 <a href="https://r4ds.hadley.nz/data-visualize" class="uri">https://r4ds.hadley.nz/data-visualize</a></p>
 </div>
-<div id="part-0-figure-of-the-week-5-10-minutes-instructor-leading-1" class="section level2 hasAnchor" number="5.1">
+<div id="part-0-figure-of-the-week-5-10-minutes-instructor-leading-1" class="section level2 hasAnchor" number="6.1">
 <h2><span class="header-section-number">C.1</span> Part 0: Figure of the week (5-10 minutes, instructor leading)<a href="lab-3-visualizing-data-in-r-part-1.html#part-0-figure-of-the-week-5-10-minutes-instructor-leading-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <hr />
 <hr />
 </div>
-<div id="part-1-packages-in-r-covered-in-lecture-so-only-here-for-reference" class="section level2 hasAnchor" number="5.2">
+<div id="part-1-packages-in-r-covered-in-lecture-so-only-here-for-reference" class="section level2 hasAnchor" number="6.2">
 <h2><span class="header-section-number">C.2</span> Part 1: Packages in R (covered in lecture, so only here for reference)<a href="lab-3-visualizing-data-in-r-part-1.html#part-1-packages-in-r-covered-in-lecture-so-only-here-for-reference" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Many functions and data in R are not instantly available. Instead, they are
 available online as “packages”. Packages extend the usefulness of R with new
 functions and data (and documentation/metadata), and they are hosted online in a
 standard way for easy installation and loading.</p>
-<div id="installing-an-r-package" class="section level3 hasAnchor" number="5.2.1">
+<div id="installing-an-r-package" class="section level3 hasAnchor" number="6.2.1">
 <h3><span class="header-section-number">C.2.1</span> Installing an R package<a href="lab-3-visualizing-data-in-r-part-1.html#installing-an-r-package" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><em>Installing an R package</em> is easy to do within RStudio. In the computer labs we
 have already installed most R packages that you will need for any coding in WFC
@@ -348,7 +352,7 @@ because these packages are already installed in the computer lab.</p>
 <p><strong><em>Delete or comment out any install.packages() commands before you knit.
 You cannot knit an Rmd that still has active install.packages() code.</em></strong></p>
 </div>
-<div id="loading-an-r-package" class="section level3 hasAnchor" number="5.2.2">
+<div id="loading-an-r-package" class="section level3 hasAnchor" number="6.2.2">
 <h3><span class="header-section-number">C.2.2</span> Loading an R package<a href="lab-3-visualizing-data-in-r-part-1.html#loading-an-r-package" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong><em>On the other hand, you must have code to load any relevant R packages
 inside of your Rmd if you go on to use functions/data from those packages
@@ -390,7 +394,7 @@ together.</p>
 <p>Today we are primarily using functions from the <code>ggplot2</code> package, which was
 loaded when we used the <code>library(tidyverse)</code> command in the code chunk above.</p>
 </div>
-<div id="part-1b-5-minutes-instructor-leading" class="section level3 hasAnchor" number="5.2.3">
+<div id="part-1b-5-minutes-instructor-leading" class="section level3 hasAnchor" number="6.2.3">
 <h3><span class="header-section-number">C.2.3</span> Part 1b (5 minutes, instructor leading)<a href="lab-3-visualizing-data-in-r-part-1.html#part-1b-5-minutes-instructor-leading" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We also need to load the package with the penguin data.</p>
 <div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb50-1" tabindex="-1"></a><span class="co">#loading the palmerpenguins package, which contains two data frames</span></span>
@@ -482,7 +486,7 @@ to <code>penguins_raw</code>?</p></li>
 </ol>
 </div>
 </div>
-<div id="part-2-using-ggplot-for-plotting-in-r-15-minutes-self-led" class="section level2 hasAnchor" number="5.3">
+<div id="part-2-using-ggplot-for-plotting-in-r-15-minutes-self-led" class="section level2 hasAnchor" number="6.3">
 <h2><span class="header-section-number">C.3</span> Part 2: Using ggplot() for plotting in R (15 minutes, self-led)<a href="lab-3-visualizing-data-in-r-part-1.html#part-2-using-ggplot-for-plotting-in-r-15-minutes-self-led" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The core function in the <code>ggplot2</code> package is called <code>ggplot()</code>. But making
 plots using <code>ggplot()</code> is like making lasagna. You have to add layers until
@@ -498,7 +502,7 @@ relationship between the x- and y-axis. It has a geometry called <code>geom_poin
 <pre><code>## Warning: Removed 2 rows containing missing values or
 ## values outside the scale range
 ## (`geom_point()`).</code></pre>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
 <p>Hooray, we have made our first ggplot! However, today we want to practice
 making histograms and boxplots. So we’ll need some slightly different aesthetics
 and geometries. We only started with scatterplots because they are so common,
@@ -517,7 +521,7 @@ distribution of all of our measurements of bill length.</p>
 ## value with `binwidth`.</code></pre>
 <pre><code>## Warning: Removed 2 rows containing non-finite
 ## outside the scale range (`stat_bin()`).</code></pre>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
 <p>Because histograms just count values for one variable, there is only
 one aesthetic (<code>x=bill_length_mm</code>). The geometry was for a histogram is
 <code>geom_histogram()</code>. There are a few things we might want to consider.</p>
@@ -536,7 +540,7 @@ x-values/bars) for a histogram. Let’s specify a smaller number.</p>
 <span id="cb66-3"><a href="lab-3-visualizing-data-in-r-part-1.html#cb66-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">20</span>)</span></code></pre></div>
 <pre><code>## Warning: Removed 2 rows containing non-finite
 ## outside the scale range (`stat_bin()`).</code></pre>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
 <p>Alternatively, we could specify a <code>binwidth</code>, setting how wide each bin should
 be. Let’s try using a <code>binwidth</code> of 2 (the units for this column are millimeters.)</p>
 <div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb68-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
@@ -544,7 +548,7 @@ be. Let’s try using a <code>binwidth</code> of 2 (the units for this column ar
 <span id="cb68-3"><a href="lab-3-visualizing-data-in-r-part-1.html#cb68-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## Warning: Removed 2 rows containing non-finite
 ## outside the scale range (`stat_bin()`).</code></pre>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
 <p>Now for the fun part. We can quickly add informative complexity. Let’s keep
 track of all three species in our histogram. We can add the <code>fill</code> aesthetic
 <code>fill</code> and the very similar <code>color</code> aesthetics allow you to color code different
@@ -555,7 +559,7 @@ first and see why it is NOT ideal here.</p>
 <span id="cb70-3"><a href="lab-3-visualizing-data-in-r-part-1.html#cb70-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## Warning: Removed 2 rows containing non-finite
 ## outside the scale range (`stat_bin()`).</code></pre>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
 <p>Hmmm, this is not right. We want the whole bars colored. For some geometries,
 <code>color</code> only changes the borders, not the full shapes. But color will often be
 useful, for example to change the color of points when using <code>geom_point()</code>. To
@@ -565,7 +569,7 @@ fill in a whole shape with color, you use <code>fill</code> instead.</p>
 <span id="cb72-3"><a href="lab-3-visualizing-data-in-r-part-1.html#cb72-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## Warning: Removed 2 rows containing non-finite
 ## outside the scale range (`stat_bin()`).</code></pre>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
 <p>This is still not quite right. It is showing all the data, now color-coded, but
 it is stacking the numbers rather than showing three separate histograms with
 some overlap in the x-values. That is because <code>geom_histogram()</code> defaults to
@@ -576,7 +580,7 @@ another argument called <code>position</code>.</p>
 <span id="cb74-3"><a href="lab-3-visualizing-data-in-r-part-1.html#cb74-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">2</span>, <span class="at">position =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>)</span></code></pre></div>
 <pre><code>## Warning: Removed 2 rows containing non-finite
 ## outside the scale range (`stat_bin()`).</code></pre>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
 <p>We made two changes. We made it so each species has a separate
 histogram starting from a count of 0. And we made the bars partially transparent
 with the <code>alpha</code> argument. (0 is totally transparent, 1 is totally solid
@@ -591,12 +595,12 @@ each species.</p>
 <span id="cb76-3"><a href="lab-3-visualizing-data-in-r-part-1.html#cb76-3" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
 <pre><code>## Warning: Removed 2 rows containing non-finite
 ## outside the scale range (`stat_boxplot()`).</code></pre>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
 <p>This is easier to look at. We can see quite clearly that Adelie Penguins have
 the lowest bill length, while the Chinstrap and Gentoo Penguin samples have
 subtantial overlap in bill length.</p>
 </div>
-<div id="part-3-exploring-15-minutes-self-led" class="section level2 hasAnchor" number="5.4">
+<div id="part-3-exploring-15-minutes-self-led" class="section level2 hasAnchor" number="6.4">
 <h2><span class="header-section-number">C.4</span> Part 3: Exploring (15 minutes, self-led)<a href="lab-3-visualizing-data-in-r-part-1.html#part-3-exploring-15-minutes-self-led" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Use the code chunks below to try out some plotting with a new variable.</p>
 <ol style="list-style-type: decimal">
@@ -641,7 +645,7 @@ want to still be able to submit your knit file.</em></strong></li>
 <p>Chunk 2 – a blank plot won’t do.</p>
 <div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb81-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
 <span id="cb81-2"><a href="lab-3-visualizing-data-in-r-part-1.html#cb81-2" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> bill_depth_mm))</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
 <div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb82-1" tabindex="-1"></a>  <span class="fu">geom_violin</span>()</span></code></pre></div>
 <pre><code>## geom_violin: draw_quantiles = NULL, na.rm = FALSE, orientation = NA
 ## stat_ydensity: trim = TRUE, scale = area, na.rm = FALSE, orientation = NA, bounds = c(-Inf, Inf)
@@ -660,16 +664,16 @@ for the species it represents.</li>
 <pre><code>## Warning: Removed 2 rows containing missing values or
 ## values outside the scale range
 ## (`geom_point()`).</code></pre>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
 </div>
-<div id="wrapping-up-5-minutes-2" class="section level2 hasAnchor" number="5.5">
+<div id="wrapping-up-5-minutes-2" class="section level2 hasAnchor" number="6.5">
 <h2><span class="header-section-number">C.5</span> Wrapping up (5 minutes)<a href="lab-3-visualizing-data-in-r-part-1.html#wrapping-up-5-minutes-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Knit your file to HTML, and save the original Rmd, then add them to your WFC 98
 folder on Google Drive.</p>
 <hr />
 <hr />
 </div>
-<div id="extra-material" class="section level2 hasAnchor" number="5.6">
+<div id="extra-material" class="section level2 hasAnchor" number="6.6">
 <h2><span class="header-section-number">C.6</span> Extra material<a href="lab-3-visualizing-data-in-r-part-1.html#extra-material" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>Start on HW 2.</li>
@@ -708,7 +712,7 @@ himself using <code>theme_bw()</code> and <code>theme_classic()</code>.</li>
 <pre><code>## Warning: Removed 2 rows containing missing values or
 ## values outside the scale range
 ## (`geom_point()`).</code></pre>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
 
 </div>
 </div>

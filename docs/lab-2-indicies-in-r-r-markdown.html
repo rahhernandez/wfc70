@@ -160,8 +160,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2" data-path="code-not-working.html"><a href="code-not-working.html"><i class="fa fa-check"></i><b>2</b> Code not Working?</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="code-not-working.html"><a href="code-not-working.html#checklist"><i class="fa fa-check"></i><b>2.1</b> Checklist</a></li>
+<li class="chapter" data-level="2.1" data-path="code-not-working.html"><a href="code-not-working.html#checklist"><i class="fa fa-check"></i><b>2.1</b> Checklist</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="code-not-working.html"><a href="code-not-working.html#example-fix-the-code"><i class="fa fa-check"></i><b>2.1.1</b> Example: Fix the Code</a></li>
 </ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="importing-data.html"><a href="importing-data.html"><i class="fa fa-check"></i><b>3</b> Importing Data</a></li>
 <li class="appendix"><span><b>Old Labs (2024)</b></span></li>
 <li class="chapter" data-level="A" data-path="lab-1-r-data-and-the-rstudio-panels.html"><a href="lab-1-r-data-and-the-rstudio-panels.html"><i class="fa fa-check"></i><b>A</b> Lab 1: R, data, and the RStudio panels</a>
 <ul>
@@ -300,7 +304,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="lab-2-indicies-in-r-r-markdown" class="section level1 hasAnchor" number="4">
+<div id="lab-2-indicies-in-r-r-markdown" class="section level1 hasAnchor" number="5">
 <h1><span class="header-section-number">B</span> Lab 2: Indicies in R, R Markdown<a href="lab-2-indicies-in-r-r-markdown.html#lab-2-indicies-in-r-r-markdown" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>In this lab, we will do a small amount of R programming, learn how to write
 reproducible analyses using R Markdown, and get started on skills to read
@@ -313,14 +317,14 @@ data,</li>
 style,</li>
 <li>knit an R Markdown file.</li>
 </ul>
-<div id="part-0-figure-of-the-week-5-10-minutes-instructor-leading" class="section level2 hasAnchor" number="4.1">
+<div id="part-0-figure-of-the-week-5-10-minutes-instructor-leading" class="section level2 hasAnchor" number="5.1">
 <h2><span class="header-section-number">B.1</span> Part 0: Figure of the week (5-10 minutes, instructor leading)<a href="lab-2-indicies-in-r-r-markdown.html#part-0-figure-of-the-week-5-10-minutes-instructor-leading" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <hr />
 <hr />
 </div>
-<div id="part-1-r-vs.-rstudio-.r-vs.-.rmd-files-5-minutes-instructor-leading" class="section level2 hasAnchor" number="4.2">
+<div id="part-1-r-vs.-rstudio-.r-vs.-.rmd-files-5-minutes-instructor-leading" class="section level2 hasAnchor" number="5.2">
 <h2><span class="header-section-number">B.2</span> Part 1: R vs. RStudio, .R vs. .Rmd files (5 minutes, instructor leading)<a href="lab-2-indicies-in-r-r-markdown.html#part-1-r-vs.-rstudio-.r-vs.-.rmd-files-5-minutes-instructor-leading" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="r-vs.-rstudio" class="section level3 hasAnchor" number="4.2.1">
+<div id="r-vs.-rstudio" class="section level3 hasAnchor" number="5.2.1">
 <h3><span class="header-section-number">B.2.1</span> R vs. RStudio<a href="lab-2-indicies-in-r-r-markdown.html#r-vs.-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This short section has some clarifications about the programs we are use.
 You are using the programming language R. That is the primary skill you are
@@ -334,7 +338,7 @@ your programming sessions by opening RStudio, not just the R program.</em></stro
 default R program is not a very user friendly environment for coding and does
 not work well with R Markdown (.Rmd) files.</p>
 </div>
-<div id="r-scripts-.r-files-vs.-r-markdown-files-.rmd" class="section level3 hasAnchor" number="4.2.2">
+<div id="r-scripts-.r-files-vs.-r-markdown-files-.rmd" class="section level3 hasAnchor" number="5.2.2">
 <h3><span class="header-section-number">B.2.2</span> R scripts (.R files) vs. R Markdown files (.Rmd)<a href="lab-2-indicies-in-r-r-markdown.html#r-scripts-.r-files-vs.-r-markdown-files-.rmd" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>When people are performing substantial amounts of R programming, they tend to
 write their code in scripts. These are files that end in “.R”, and they are
@@ -349,7 +353,7 @@ is that you are writing text. However, you can also add code chunks with R code,
 and have that code run to generate interesting plots or other outputs.</p>
 </div>
 </div>
-<div id="part-2-indices-and-column-names-5-minutes-instructor-will-lead" class="section level2 hasAnchor" number="4.3">
+<div id="part-2-indices-and-column-names-5-minutes-instructor-will-lead" class="section level2 hasAnchor" number="5.3">
 <h2><span class="header-section-number">B.3</span> Part 2: Indices and column names (5 minutes, instructor will lead)<a href="lab-2-indicies-in-r-r-markdown.html#part-2-indices-and-column-names-5-minutes-instructor-will-lead" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Let’s pull up last week’s data very quickly.</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="lab-2-indicies-in-r-r-markdown.html#cb22-1" tabindex="-1"></a>idaho_wolves <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1545</span>, <span class="dv">1556</span>, <span class="dv">1543</span>, <span class="dv">1337</span>)</span>
@@ -390,7 +394,7 @@ from the 1st row and second column. We won’t use this approach much – there
 are more sophisticated tools for selecting parts of our data for tidying or
 plotting.</p>
 </div>
-<div id="part-3-index-work-on-your-own-10-minutes-on-your-own" class="section level2 hasAnchor" number="4.4">
+<div id="part-3-index-work-on-your-own-10-minutes-on-your-own" class="section level2 hasAnchor" number="5.4">
 <h2><span class="header-section-number">B.4</span> Part 3: Index work on your own (10 minutes, on your own)<a href="lab-2-indicies-in-r-r-markdown.html#part-3-index-work-on-your-own-10-minutes-on-your-own" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Here are some new data.</p>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="lab-2-indicies-in-r-r-markdown.html#cb35-1" tabindex="-1"></a><span class="co">#creating a data frame for montana populations through time</span></span>
@@ -412,7 +416,7 @@ column, and a state column that just says “idaho” in every entry.</p></li>
 </ol>
 <div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="lab-2-indicies-in-r-r-markdown.html#cb36-1" tabindex="-1"></a><span class="co"># all code goes in here</span></span></code></pre></div>
 </div>
-<div id="part-4-messing-around-with-r-markdown-15-minutes-on-your-own" class="section level2 hasAnchor" number="4.5">
+<div id="part-4-messing-around-with-r-markdown-15-minutes-on-your-own" class="section level2 hasAnchor" number="5.5">
 <h2><span class="header-section-number">B.5</span> Part 4: Messing around with R Markdown (15 minutes, on your own)<a href="lab-2-indicies-in-r-r-markdown.html#part-4-messing-around-with-r-markdown-15-minutes-on-your-own" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In RStudio, if you click on the Help tab at the top, you will see a selection
 labeled “Cheat Sheets”. Select “R Markdown Cheat Sheet”, which will download
@@ -439,9 +443,9 @@ easy styling of an Rmd.</p>
 smallest? You can create headers of six different sizes, from # to ######.</li>
 </ol>
 <p># Put something here.</p>
-<div id="put-something-else-here." class="section level3 hasAnchor" number="4.5.1">
+<div id="put-something-else-here." class="section level3 hasAnchor" number="5.5.1">
 <h3><span class="header-section-number">B.5.1</span> Put something else here.<a href="lab-2-indicies-in-r-r-markdown.html#put-something-else-here." class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="and-some-more." class="section level5 hasAnchor" number="4.5.1.0.1">
+<div id="and-some-more." class="section level5 hasAnchor" number="5.5.1.0.1">
 <h5><span class="header-section-number">B.5.1.0.1</span> And some more.<a href="lab-2-indicies-in-r-r-markdown.html#and-some-more." class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <ol start="3" style="list-style-type: decimal">
 <li><strong>Style your text.</strong></li>
@@ -459,14 +463,14 @@ data. <strong>Use these numbers to create a table with two columns</strong> (fir
 </div>
 </div>
 </div>
-<div id="wrapping-up-5-minutes-1" class="section level2 hasAnchor" number="4.6">
+<div id="wrapping-up-5-minutes-1" class="section level2 hasAnchor" number="5.6">
 <h2><span class="header-section-number">B.6</span> Wrapping up (5 minutes)<a href="lab-2-indicies-in-r-r-markdown.html#wrapping-up-5-minutes-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Knit your file to HTML, and save the original Rmd, then add them to your WFC 98
 folder on Google Drive.</p>
 <hr />
 <hr />
 </div>
-<div id="extra-material-for-interest" class="section level2 hasAnchor" number="4.7">
+<div id="extra-material-for-interest" class="section level2 hasAnchor" number="5.7">
 <h2><span class="header-section-number">B.7</span> Extra material for interest<a href="lab-2-indicies-in-r-r-markdown.html#extra-material-for-interest" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><p>Browse <a href="https://rmarkdown.rstudio.com/articles_intro.html">this article on R Markdown</a>.
