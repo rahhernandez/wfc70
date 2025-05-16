@@ -23,7 +23,7 @@
 <meta name="author" content="Rob Furrow" />
 
 
-<meta name="date" content="2025-05-13" />
+<meta name="date" content="2025-05-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -343,12 +343,12 @@ install any packages that need to be loaded for a particular lab or HW. <strong>
 only need to install an R package once.</em></strong></p>
 <p>The code chunk below is only necessary if you are working on this lab at home,
 because these packages are already installed in the computer lab.</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb37-1" tabindex="-1"></a><span class="co"># the line below is commented so it won&#39;t run.</span></span>
-<span id="cb37-2"><a href="lab-3-visualizing-data-in-r-part-1.html#cb37-2" tabindex="-1"></a><span class="co"># if you need to install the packages, delete the hashtag then run </span></span>
-<span id="cb37-3"><a href="lab-3-visualizing-data-in-r-part-1.html#cb37-3" tabindex="-1"></a><span class="co"># the line below, but then turn it into a comment again</span></span>
-<span id="cb37-4"><a href="lab-3-visualizing-data-in-r-part-1.html#cb37-4" tabindex="-1"></a><span class="co"># before knitting</span></span>
-<span id="cb37-5"><a href="lab-3-visualizing-data-in-r-part-1.html#cb37-5" tabindex="-1"></a></span>
-<span id="cb37-6"><a href="lab-3-visualizing-data-in-r-part-1.html#cb37-6" tabindex="-1"></a><span class="co"># install.packages(c(&quot;tidyverse&quot;, &quot;palmerpenguins&quot;))</span></span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb42-1" tabindex="-1"></a><span class="co"># the line below is commented so it won&#39;t run.</span></span>
+<span id="cb42-2"><a href="lab-3-visualizing-data-in-r-part-1.html#cb42-2" tabindex="-1"></a><span class="co"># if you need to install the packages, delete the hashtag then run </span></span>
+<span id="cb42-3"><a href="lab-3-visualizing-data-in-r-part-1.html#cb42-3" tabindex="-1"></a><span class="co"># the line below, but then turn it into a comment again</span></span>
+<span id="cb42-4"><a href="lab-3-visualizing-data-in-r-part-1.html#cb42-4" tabindex="-1"></a><span class="co"># before knitting</span></span>
+<span id="cb42-5"><a href="lab-3-visualizing-data-in-r-part-1.html#cb42-5" tabindex="-1"></a></span>
+<span id="cb42-6"><a href="lab-3-visualizing-data-in-r-part-1.html#cb42-6" tabindex="-1"></a><span class="co"># install.packages(c(&quot;tidyverse&quot;, &quot;palmerpenguins&quot;))</span></span></code></pre></div>
 <p><strong><em>Delete or comment out any install.packages() commands before you knit.
 You cannot knit an Rmd that still has active install.packages() code.</em></strong></p>
 </div>
@@ -361,8 +361,8 @@ in your Rmd.</em></strong></p>
 your current sessions. <strong><em>You need to load an R package in every session that
 you use it.</em></strong> After it is loaded, it will stay loaded until you close
 R/RStudio.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb38-1" tabindex="-1"></a><span class="co"># loading the tidyverse package</span></span>
-<span id="cb38-2"><a href="lab-3-visualizing-data-in-r-part-1.html#cb38-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb43-1" tabindex="-1"></a><span class="co"># loading the tidyverse package</span></span>
+<span id="cb43-2"><a href="lab-3-visualizing-data-in-r-part-1.html#cb43-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
 <pre><code>## Warning: package &#39;tidyverse&#39; was built under R version 4.4.3</code></pre>
 <pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 4.4.2</code></pre>
 <pre><code>## Warning: package &#39;tibble&#39; was built under R version 4.4.2</code></pre>
@@ -397,13 +397,12 @@ loaded when we used the <code>library(tidyverse)</code> command in the code chun
 <div id="part-1b-5-minutes-instructor-leading" class="section level3 hasAnchor" number="6.2.3">
 <h3><span class="header-section-number">C.2.3</span> Part 1b (5 minutes, instructor leading)<a href="lab-3-visualizing-data-in-r-part-1.html#part-1b-5-minutes-instructor-leading" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We also need to load the package with the penguin data.</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb50-1" tabindex="-1"></a><span class="co">#loading the palmerpenguins package, which contains two data frames</span></span>
-<span id="cb50-2"><a href="lab-3-visualizing-data-in-r-part-1.html#cb50-2" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span></code></pre></div>
-<pre><code>## Warning: package &#39;palmerpenguins&#39; was built under R version 4.4.3</code></pre>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb55-1" tabindex="-1"></a><span class="co">#loading the palmerpenguins package, which contains two data frames</span></span>
+<span id="cb55-2"><a href="lab-3-visualizing-data-in-r-part-1.html#cb55-2" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span></code></pre></div>
 <p>There is one odd thing about data sets that are included in R packages. You will
 notice that nothing new has shown up in the global environment. However, the
 data frames are actually loaded (but hidden).</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb52-1" tabindex="-1"></a>penguins</span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb56-1" tabindex="-1"></a>penguins</span></code></pre></div>
 <pre><code>## # A tibble: 344 × 8
 ##    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
 ##    &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
@@ -419,7 +418,7 @@ data frames are actually loaded (but hidden).</p>
 ## 10 Adelie  Torgersen           42            20.2               190        4250
 ## # ℹ 334 more rows
 ## # ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb54-1" tabindex="-1"></a>penguins_raw</span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb58-1" tabindex="-1"></a>penguins_raw</span></code></pre></div>
 <pre><code>## # A tibble: 344 × 17
 ##    studyName `Sample Number` Species         Region Island Stage `Individual ID`
 ##    &lt;chr&gt;               &lt;dbl&gt; &lt;chr&gt;           &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;          
@@ -440,13 +439,13 @@ data frames are actually loaded (but hidden).</p>
 ## #   `Delta 15 N (o/oo)` &lt;dbl&gt;, `Delta 13 C (o/oo)` &lt;dbl&gt;, Comments &lt;chr&gt;</code></pre>
 <p>I prefer to formally load the data into my environment, which you can do with
 the <code>data()</code> function.</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb56-1" tabindex="-1"></a><span class="co"># the palmerpenguins package called their data &quot;penguins&quot;</span></span>
-<span id="cb56-2"><a href="lab-3-visualizing-data-in-r-part-1.html#cb56-2" tabindex="-1"></a><span class="co"># and the command will load both data frames</span></span>
-<span id="cb56-3"><a href="lab-3-visualizing-data-in-r-part-1.html#cb56-3" tabindex="-1"></a><span class="fu">data</span>(penguins)</span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb60-1" tabindex="-1"></a><span class="co"># the palmerpenguins package called their data &quot;penguins&quot;</span></span>
+<span id="cb60-2"><a href="lab-3-visualizing-data-in-r-part-1.html#cb60-2" tabindex="-1"></a><span class="co"># and the command will load both data frames</span></span>
+<span id="cb60-3"><a href="lab-3-visualizing-data-in-r-part-1.html#cb60-3" tabindex="-1"></a><span class="fu">data</span>(penguins)</span></code></pre></div>
 <p>Now we can see the data frames in our environment. Let’s take a closer look.</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb57-1" tabindex="-1"></a><span class="co"># the glimpse() function lets you see the variable (columns) and</span></span>
-<span id="cb57-2"><a href="lab-3-visualizing-data-in-r-part-1.html#cb57-2" tabindex="-1"></a><span class="co"># a few observations for each variable (rows)</span></span>
-<span id="cb57-3"><a href="lab-3-visualizing-data-in-r-part-1.html#cb57-3" tabindex="-1"></a><span class="fu">glimpse</span>(penguins)</span></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb61-1" tabindex="-1"></a><span class="co"># the glimpse() function lets you see the variable (columns) and</span></span>
+<span id="cb61-2"><a href="lab-3-visualizing-data-in-r-part-1.html#cb61-2" tabindex="-1"></a><span class="co"># a few observations for each variable (rows)</span></span>
+<span id="cb61-3"><a href="lab-3-visualizing-data-in-r-part-1.html#cb61-3" tabindex="-1"></a><span class="fu">glimpse</span>(penguins)</span></code></pre></div>
 <pre><code>## Rows: 344
 ## Columns: 8
 ## $ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adel…
@@ -457,7 +456,7 @@ the <code>data()</code> function.</p>
 ## $ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, …
 ## $ sex               &lt;fct&gt; male, female, female, NA, female, male, female, male…
 ## $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…</code></pre>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb59-1" tabindex="-1"></a><span class="fu">glimpse</span>(penguins_raw)</span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb63-1" tabindex="-1"></a><span class="fu">glimpse</span>(penguins_raw)</span></code></pre></div>
 <pre><code>## Rows: 344
 ## Columns: 17
 ## $ studyName             &lt;chr&gt; &quot;PAL0708&quot;, &quot;PAL0708&quot;, &quot;PAL0708&quot;, &quot;PAL0708&quot;, &quot;PAL…
@@ -496,9 +495,9 @@ as well as at least one additional <em>geometry</em> layer. We will see lots of 
 of <code>geom</code> in this course. We’ll briefly begin with a critical type of plot,
 the scatterplot. That shows two-dimensional points to illustrate the
 relationship between the x- and y-axis. It has a geometry called <code>geom_point()</code>.</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb61-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb61-2"><a href="lab-3-visualizing-data-in-r-part-1.html#cb61-2" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
-<span id="cb61-3"><a href="lab-3-visualizing-data-in-r-part-1.html#cb61-3" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb65-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb65-2"><a href="lab-3-visualizing-data-in-r-part-1.html#cb65-2" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
+<span id="cb65-3"><a href="lab-3-visualizing-data-in-r-part-1.html#cb65-3" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
 <pre><code>## Warning: Removed 2 rows containing missing values or
 ## values outside the scale range
 ## (`geom_point()`).</code></pre>
@@ -514,9 +513,9 @@ Otherwise R does not know to keep looking for additional layers before making
 the plot.</em></strong></p>
 <p>Let’s try out a histogram. First, we might simply want to visualize the
 distribution of all of our measurements of bill length.</p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb63-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb63-2"><a href="lab-3-visualizing-data-in-r-part-1.html#cb63-2" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm)) <span class="sc">+</span></span>
-<span id="cb63-3"><a href="lab-3-visualizing-data-in-r-part-1.html#cb63-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb67-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb67-2"><a href="lab-3-visualizing-data-in-r-part-1.html#cb67-2" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm)) <span class="sc">+</span></span>
+<span id="cb67-3"><a href="lab-3-visualizing-data-in-r-part-1.html#cb67-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better
 ## value with `binwidth`.</code></pre>
 <pre><code>## Warning: Removed 2 rows containing non-finite
@@ -535,17 +534,17 @@ meaningful. We can separate these out in several different ways.</li>
 functions, so their output can be modified using arguments just like most other
 functions in R. By default this function creates 30 bins (thirty separate
 x-values/bars) for a histogram. Let’s specify a smaller number.</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb66-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb66-2"><a href="lab-3-visualizing-data-in-r-part-1.html#cb66-2" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm)) <span class="sc">+</span></span>
-<span id="cb66-3"><a href="lab-3-visualizing-data-in-r-part-1.html#cb66-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">20</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb70-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb70-2"><a href="lab-3-visualizing-data-in-r-part-1.html#cb70-2" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm)) <span class="sc">+</span></span>
+<span id="cb70-3"><a href="lab-3-visualizing-data-in-r-part-1.html#cb70-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">20</span>)</span></code></pre></div>
 <pre><code>## Warning: Removed 2 rows containing non-finite
 ## outside the scale range (`stat_bin()`).</code></pre>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
 <p>Alternatively, we could specify a <code>binwidth</code>, setting how wide each bin should
 be. Let’s try using a <code>binwidth</code> of 2 (the units for this column are millimeters.)</p>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb68-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb68-2"><a href="lab-3-visualizing-data-in-r-part-1.html#cb68-2" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm)) <span class="sc">+</span></span>
-<span id="cb68-3"><a href="lab-3-visualizing-data-in-r-part-1.html#cb68-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb72-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb72-2"><a href="lab-3-visualizing-data-in-r-part-1.html#cb72-2" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm)) <span class="sc">+</span></span>
+<span id="cb72-3"><a href="lab-3-visualizing-data-in-r-part-1.html#cb72-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## Warning: Removed 2 rows containing non-finite
 ## outside the scale range (`stat_bin()`).</code></pre>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
@@ -554,9 +553,9 @@ track of all three species in our histogram. We can add the <code>fill</code> ae
 <code>fill</code> and the very similar <code>color</code> aesthetics allow you to color code different
 data points based on another variable/column in your data. Let’s try <code>color</code>
 first and see why it is NOT ideal here.</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb70-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb70-2"><a href="lab-3-visualizing-data-in-r-part-1.html#cb70-2" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">color =</span> species)) <span class="sc">+</span></span>
-<span id="cb70-3"><a href="lab-3-visualizing-data-in-r-part-1.html#cb70-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb74-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb74-2"><a href="lab-3-visualizing-data-in-r-part-1.html#cb74-2" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb74-3"><a href="lab-3-visualizing-data-in-r-part-1.html#cb74-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## Warning: Removed 2 rows containing non-finite
 ## outside the scale range (`stat_bin()`).</code></pre>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
@@ -564,9 +563,9 @@ first and see why it is NOT ideal here.</p>
 <code>color</code> only changes the borders, not the full shapes. But color will often be
 useful, for example to change the color of points when using <code>geom_point()</code>. To
 fill in a whole shape with color, you use <code>fill</code> instead.</p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb72-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb72-2"><a href="lab-3-visualizing-data-in-r-part-1.html#cb72-2" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
-<span id="cb72-3"><a href="lab-3-visualizing-data-in-r-part-1.html#cb72-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb76-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb76-2"><a href="lab-3-visualizing-data-in-r-part-1.html#cb76-2" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
+<span id="cb76-3"><a href="lab-3-visualizing-data-in-r-part-1.html#cb76-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## Warning: Removed 2 rows containing non-finite
 ## outside the scale range (`stat_bin()`).</code></pre>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
@@ -575,9 +574,9 @@ it is stacking the numbers rather than showing three separate histograms with
 some overlap in the x-values. That is because <code>geom_histogram()</code> defaults to
 stacking data, even if there is a <code>fill</code> aesthetic. You can fix that by changing
 another argument called <code>position</code>.</p>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb74-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb74-2"><a href="lab-3-visualizing-data-in-r-part-1.html#cb74-2" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
-<span id="cb74-3"><a href="lab-3-visualizing-data-in-r-part-1.html#cb74-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">2</span>, <span class="at">position =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb78-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb78-2"><a href="lab-3-visualizing-data-in-r-part-1.html#cb78-2" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">fill =</span> species)) <span class="sc">+</span></span>
+<span id="cb78-3"><a href="lab-3-visualizing-data-in-r-part-1.html#cb78-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">2</span>, <span class="at">position =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>)</span></code></pre></div>
 <pre><code>## Warning: Removed 2 rows containing non-finite
 ## outside the scale range (`stat_bin()`).</code></pre>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
@@ -590,9 +589,9 @@ colors.) It’s a little wonky, but we can pretty much read each histogram now.<
 usually also a discrete variable (e.g., species) for the other axis. Let’s
 stick with bill length and species and make three vertical boxplots, one for
 each species.</p>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb76-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb76-2"><a href="lab-3-visualizing-data-in-r-part-1.html#cb76-2" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> bill_length_mm)) <span class="sc">+</span></span>
-<span id="cb76-3"><a href="lab-3-visualizing-data-in-r-part-1.html#cb76-3" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb80-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb80-2"><a href="lab-3-visualizing-data-in-r-part-1.html#cb80-2" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> bill_length_mm)) <span class="sc">+</span></span>
+<span id="cb80-3"><a href="lab-3-visualizing-data-in-r-part-1.html#cb80-3" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
 <pre><code>## Warning: Removed 2 rows containing non-finite
 ## outside the scale range (`stat_boxplot()`).</code></pre>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
@@ -609,12 +608,12 @@ but for the variable <code>bill_depth_mm</code> instead of bill length, still us
 <code>fill</code> aesthetic with the <code>species</code> column. Hint: copy and paste that
 code into the chunk below, then switch the variable name(s) as needed.</li>
 </ol>
-<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb78-1" tabindex="-1"></a><span class="co"># write your code in this chunk</span></span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb82-1" tabindex="-1"></a><span class="co"># write your code in this chunk</span></span></code></pre></div>
 <ol start="2" style="list-style-type: decimal">
 <li>Now create a boxplot with <code>species</code> as the x-axis and <code>bill_depth_mm</code> as the
 y-axis.</li>
 </ol>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb79-1" tabindex="-1"></a><span class="co"># write your code in this chunk</span></span></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb83-1" tabindex="-1"></a><span class="co"># write your code in this chunk</span></span></code></pre></div>
 <ol start="3" style="list-style-type: decimal">
 <li>Compare with your results for bill length. Bill depth refers to the
 thickness (top to bottom) of a bill, while bill length is the distance from
@@ -636,17 +635,17 @@ returning errors, you can always set those chunks to “eval = FALSE” if you
 want to still be able to submit your knit file.</em></strong></li>
 </ol>
 <p>Chunk 1 – this plot won’t run.</p>
-<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb80-1" tabindex="-1"></a><span class="co"># uncomment the code below and try to fix it</span></span>
-<span id="cb80-2"><a href="lab-3-visualizing-data-in-r-part-1.html#cb80-2" tabindex="-1"></a></span>
-<span id="cb80-3"><a href="lab-3-visualizing-data-in-r-part-1.html#cb80-3" tabindex="-1"></a><span class="co">#ggplot(data = penguins,</span></span>
-<span id="cb80-4"><a href="lab-3-visualizing-data-in-r-part-1.html#cb80-4" tabindex="-1"></a><span class="co">#  x = species,</span></span>
-<span id="cb80-5"><a href="lab-3-visualizing-data-in-r-part-1.html#cb80-5" tabindex="-1"></a><span class="co">#  y = body_mass_g) +</span></span>
-<span id="cb80-6"><a href="lab-3-visualizing-data-in-r-part-1.html#cb80-6" tabindex="-1"></a><span class="co">#  geom_boxplot()</span></span></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb84-1" tabindex="-1"></a><span class="co"># uncomment the code below and try to fix it</span></span>
+<span id="cb84-2"><a href="lab-3-visualizing-data-in-r-part-1.html#cb84-2" tabindex="-1"></a></span>
+<span id="cb84-3"><a href="lab-3-visualizing-data-in-r-part-1.html#cb84-3" tabindex="-1"></a><span class="co">#ggplot(data = penguins,</span></span>
+<span id="cb84-4"><a href="lab-3-visualizing-data-in-r-part-1.html#cb84-4" tabindex="-1"></a><span class="co">#  x = species,</span></span>
+<span id="cb84-5"><a href="lab-3-visualizing-data-in-r-part-1.html#cb84-5" tabindex="-1"></a><span class="co">#  y = body_mass_g) +</span></span>
+<span id="cb84-6"><a href="lab-3-visualizing-data-in-r-part-1.html#cb84-6" tabindex="-1"></a><span class="co">#  geom_boxplot()</span></span></code></pre></div>
 <p>Chunk 2 – a blank plot won’t do.</p>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb81-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb81-2"><a href="lab-3-visualizing-data-in-r-part-1.html#cb81-2" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> bill_depth_mm))</span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb85-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb85-2"><a href="lab-3-visualizing-data-in-r-part-1.html#cb85-2" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> bill_depth_mm))</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
-<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb82-1" tabindex="-1"></a>  <span class="fu">geom_violin</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb86-1" tabindex="-1"></a>  <span class="fu">geom_violin</span>()</span></code></pre></div>
 <pre><code>## geom_violin: draw_quantiles = NULL, na.rm = FALSE, orientation = NA
 ## stat_ydensity: trim = TRUE, scale = area, na.rm = FALSE, orientation = NA, bounds = c(-Inf, Inf)
 ## position_dodge</code></pre>
@@ -656,11 +655,11 @@ and bill depth, while also color coding the points. Review the code, then
 try to do the same thing for a boxplot of bill length, color-coding each box
 for the species it represents.</li>
 </ol>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb84-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb84-2"><a href="lab-3-visualizing-data-in-r-part-1.html#cb84-2" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
-<span id="cb84-3"><a href="lab-3-visualizing-data-in-r-part-1.html#cb84-3" tabindex="-1"></a>                <span class="at">y =</span> bill_depth_mm,</span>
-<span id="cb84-4"><a href="lab-3-visualizing-data-in-r-part-1.html#cb84-4" tabindex="-1"></a>                <span class="at">color =</span> species)) <span class="sc">+</span></span>
-<span id="cb84-5"><a href="lab-3-visualizing-data-in-r-part-1.html#cb84-5" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb88-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb88-2"><a href="lab-3-visualizing-data-in-r-part-1.html#cb88-2" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb88-3"><a href="lab-3-visualizing-data-in-r-part-1.html#cb88-3" tabindex="-1"></a>                <span class="at">y =</span> bill_depth_mm,</span>
+<span id="cb88-4"><a href="lab-3-visualizing-data-in-r-part-1.html#cb88-4" tabindex="-1"></a>                <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb88-5"><a href="lab-3-visualizing-data-in-r-part-1.html#cb88-5" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
 <pre><code>## Warning: Removed 2 rows containing missing values or
 ## values outside the scale range
 ## (`geom_point()`).</code></pre>
@@ -701,12 +700,12 @@ create and modify them yourself.
 You may want to explore themes, explained more on <a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">this website</a>. Rob often finds
 himself using <code>theme_bw()</code> and <code>theme_classic()</code>.</li>
 </ul>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb86-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
-<span id="cb86-2"><a href="lab-3-visualizing-data-in-r-part-1.html#cb86-2" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> bill_length_mm)) <span class="sc">+</span></span>
-<span id="cb86-3"><a href="lab-3-visualizing-data-in-r-part-1.html#cb86-3" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb86-4"><a href="lab-3-visualizing-data-in-r-part-1.html#cb86-4" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> .<span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb86-5"><a href="lab-3-visualizing-data-in-r-part-1.html#cb86-5" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
-<span id="cb86-6"><a href="lab-3-visualizing-data-in-r-part-1.html#cb86-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="at">y =</span> <span class="st">&quot;culmen length (mm)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb90-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb90-2"><a href="lab-3-visualizing-data-in-r-part-1.html#cb90-2" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> bill_length_mm)) <span class="sc">+</span></span>
+<span id="cb90-3"><a href="lab-3-visualizing-data-in-r-part-1.html#cb90-3" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb90-4"><a href="lab-3-visualizing-data-in-r-part-1.html#cb90-4" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> .<span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb90-5"><a href="lab-3-visualizing-data-in-r-part-1.html#cb90-5" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb90-6"><a href="lab-3-visualizing-data-in-r-part-1.html#cb90-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="at">y =</span> <span class="st">&quot;culmen length (mm)&quot;</span>)</span></code></pre></div>
 <pre><code>## Warning: Removed 2 rows containing non-finite
 ## outside the scale range (`stat_boxplot()`).</code></pre>
 <pre><code>## Warning: Removed 2 rows containing missing values or

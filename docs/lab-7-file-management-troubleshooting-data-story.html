@@ -23,7 +23,7 @@
 <meta name="author" content="Rob Furrow" />
 
 
-<meta name="date" content="2025-05-13" />
+<meta name="date" content="2025-05-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -360,17 +360,17 @@ navigate through the Lab8_data folder to get to the actual csv file.</p>
 <p>Copy the full code from your Console into this code chunk. You need the data
 to be loaded with commands inside of the Rmd if you want to be able to
 use that data for more R code later in an Rmd document.</p>
-<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="lab-7-file-management-troubleshooting-data-story.html#cb118-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb118-2"><a href="lab-7-file-management-troubleshooting-data-story.html#cb118-2" tabindex="-1"></a></span>
-<span id="cb118-3"><a href="lab-7-file-management-troubleshooting-data-story.html#cb118-3" tabindex="-1"></a><span class="co"># copy and paste the read.csv command that makes your data frame here</span></span>
-<span id="cb118-4"><a href="lab-7-file-management-troubleshooting-data-story.html#cb118-4" tabindex="-1"></a></span>
-<span id="cb118-5"><a href="lab-7-file-management-troubleshooting-data-story.html#cb118-5" tabindex="-1"></a></span>
-<span id="cb118-6"><a href="lab-7-file-management-troubleshooting-data-story.html#cb118-6" tabindex="-1"></a></span>
-<span id="cb118-7"><a href="lab-7-file-management-troubleshooting-data-story.html#cb118-7" tabindex="-1"></a><span class="co"># if you are struggling to make that code work, below is code</span></span>
-<span id="cb118-8"><a href="lab-7-file-management-troubleshooting-data-story.html#cb118-8" tabindex="-1"></a><span class="co"># to load the data frame from online, so that you can follow</span></span>
-<span id="cb118-9"><a href="lab-7-file-management-troubleshooting-data-story.html#cb118-9" tabindex="-1"></a><span class="co"># along with the next section. Uncomment and run it if needed.</span></span>
-<span id="cb118-10"><a href="lab-7-file-management-troubleshooting-data-story.html#cb118-10" tabindex="-1"></a></span>
-<span id="cb118-11"><a href="lab-7-file-management-troubleshooting-data-story.html#cb118-11" tabindex="-1"></a><span class="co">#dispersal_fake &lt;- read.csv(&quot;https://raw.githubusercontent.com/refurrow/WFC70/main/dispersal_fake.csv&quot;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="lab-7-file-management-troubleshooting-data-story.html#cb122-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb122-2"><a href="lab-7-file-management-troubleshooting-data-story.html#cb122-2" tabindex="-1"></a></span>
+<span id="cb122-3"><a href="lab-7-file-management-troubleshooting-data-story.html#cb122-3" tabindex="-1"></a><span class="co"># copy and paste the read.csv command that makes your data frame here</span></span>
+<span id="cb122-4"><a href="lab-7-file-management-troubleshooting-data-story.html#cb122-4" tabindex="-1"></a></span>
+<span id="cb122-5"><a href="lab-7-file-management-troubleshooting-data-story.html#cb122-5" tabindex="-1"></a></span>
+<span id="cb122-6"><a href="lab-7-file-management-troubleshooting-data-story.html#cb122-6" tabindex="-1"></a></span>
+<span id="cb122-7"><a href="lab-7-file-management-troubleshooting-data-story.html#cb122-7" tabindex="-1"></a><span class="co"># if you are struggling to make that code work, below is code</span></span>
+<span id="cb122-8"><a href="lab-7-file-management-troubleshooting-data-story.html#cb122-8" tabindex="-1"></a><span class="co"># to load the data frame from online, so that you can follow</span></span>
+<span id="cb122-9"><a href="lab-7-file-management-troubleshooting-data-story.html#cb122-9" tabindex="-1"></a><span class="co"># along with the next section. Uncomment and run it if needed.</span></span>
+<span id="cb122-10"><a href="lab-7-file-management-troubleshooting-data-story.html#cb122-10" tabindex="-1"></a></span>
+<span id="cb122-11"><a href="lab-7-file-management-troubleshooting-data-story.html#cb122-11" tabindex="-1"></a><span class="co">#dispersal_fake &lt;- read.csv(&quot;https://raw.githubusercontent.com/refurrow/WFC70/main/dispersal_fake.csv&quot;)</span></span></code></pre></div>
 <p>When you are working with new data for the Data Story, you should create
 a folder on your computer where you save the data, and you will need to make
 sure you have code within your Rmd that loads the data. Otherwise you will
@@ -380,8 +380,8 @@ encounter errors when you try to knit, because the data will not be loaded.</p>
 <div id="part-2-dealing-with-wonky-data-10-minutes-on-your-own" class="section level2 hasAnchor" number="10.2">
 <h2><span class="header-section-number">G.2</span> Part 2: Dealing with wonky data (10 minutes, on your own)<a href="lab-7-file-management-troubleshooting-data-story.html#part-2-dealing-with-wonky-data-10-minutes-on-your-own" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Let’s glimpse our data.</p>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="lab-7-file-management-troubleshooting-data-story.html#cb119-1" tabindex="-1"></a><span class="co"># uncomment the line below and run it</span></span>
-<span id="cb119-2"><a href="lab-7-file-management-troubleshooting-data-story.html#cb119-2" tabindex="-1"></a><span class="co"># glimpse(dispersal_fake)</span></span></code></pre></div>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="lab-7-file-management-troubleshooting-data-story.html#cb123-1" tabindex="-1"></a><span class="co"># uncomment the line below and run it</span></span>
+<span id="cb123-2"><a href="lab-7-file-management-troubleshooting-data-story.html#cb123-2" tabindex="-1"></a><span class="co"># glimpse(dispersal_fake)</span></span></code></pre></div>
 <p>When you load data into R, there are a few common issues that can arise
 with how R tries to automatically identify what kind of data are in each row.</p>
 <div id="issue-1-text-in-a-numerical-column." class="section level4 hasAnchor" number="10.2.0.1">
@@ -396,11 +396,11 @@ so it will default to the most flexible type. Text/character data is the
 most flexible because it can still store numbers as strings. But you won’t
 be able to manipulate them. You can fix it by forcing a column to be
 numeric using <code>as.numeric()</code>.</p>
-<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="lab-7-file-management-troubleshooting-data-story.html#cb120-1" tabindex="-1"></a><span class="co"># using mutate to fix our distance column</span></span>
-<span id="cb120-2"><a href="lab-7-file-management-troubleshooting-data-story.html#cb120-2" tabindex="-1"></a><span class="co"># uncomment and run the lines below</span></span>
-<span id="cb120-3"><a href="lab-7-file-management-troubleshooting-data-story.html#cb120-3" tabindex="-1"></a></span>
-<span id="cb120-4"><a href="lab-7-file-management-troubleshooting-data-story.html#cb120-4" tabindex="-1"></a><span class="co">#dispersal_fake &lt;- mutate(dispersal_fake, </span></span>
-<span id="cb120-5"><a href="lab-7-file-management-troubleshooting-data-story.html#cb120-5" tabindex="-1"></a><span class="co">#                         distance = as.numeric(distance))</span></span></code></pre></div>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="lab-7-file-management-troubleshooting-data-story.html#cb124-1" tabindex="-1"></a><span class="co"># using mutate to fix our distance column</span></span>
+<span id="cb124-2"><a href="lab-7-file-management-troubleshooting-data-story.html#cb124-2" tabindex="-1"></a><span class="co"># uncomment and run the lines below</span></span>
+<span id="cb124-3"><a href="lab-7-file-management-troubleshooting-data-story.html#cb124-3" tabindex="-1"></a></span>
+<span id="cb124-4"><a href="lab-7-file-management-troubleshooting-data-story.html#cb124-4" tabindex="-1"></a><span class="co">#dispersal_fake &lt;- mutate(dispersal_fake, </span></span>
+<span id="cb124-5"><a href="lab-7-file-management-troubleshooting-data-story.html#cb124-5" tabindex="-1"></a><span class="co">#                         distance = as.numeric(distance))</span></span></code></pre></div>
 <p>When we used <code>as.numeric()</code>, it turned all the strings with numbers
 back into numbers, and any other text became NA, which is ideal for our purpose.
 So the ominous “Warning” above is just explaining that it did what we wanted –
@@ -421,9 +421,9 @@ character/text data. See Issue 4 for a coding way to deal with that.</p>
 character data – it might reflect user error. I often
 use <code>table()</code> on my character variables to double-check what all my
 possible entries are.</p>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="lab-7-file-management-troubleshooting-data-story.html#cb121-1" tabindex="-1"></a><span class="co"># uncommon the code below to make the table </span></span>
-<span id="cb121-2"><a href="lab-7-file-management-troubleshooting-data-story.html#cb121-2" tabindex="-1"></a></span>
-<span id="cb121-3"><a href="lab-7-file-management-troubleshooting-data-story.html#cb121-3" tabindex="-1"></a><span class="co">#table(dispersal_fake$brood)</span></span></code></pre></div>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="lab-7-file-management-troubleshooting-data-story.html#cb125-1" tabindex="-1"></a><span class="co"># uncommon the code below to make the table </span></span>
+<span id="cb125-2"><a href="lab-7-file-management-troubleshooting-data-story.html#cb125-2" tabindex="-1"></a></span>
+<span id="cb125-3"><a href="lab-7-file-management-troubleshooting-data-story.html#cb125-3" tabindex="-1"></a><span class="co">#table(dispersal_fake$brood)</span></span></code></pre></div>
 <p>Okay, so 4.6 seems like a transcription error or something. Let’s look
 at the raw data by clicking on its name in the Environment. Hmm, 4.6 is
 also the value for the <code>distance</code> column for that observation. Perhaps
@@ -448,13 +448,13 @@ there are only a few possible levels/values (e.g. “small”, “medium” and
 factors that is designed to handle categorical data. Converting the relevant
 columns to factors can make some aspects of plotting simpler. We won’t
 go in depth now, but there is a nice tutorial <a href="https://r4ds.hadley.nz/factors">linked here: https://r4ds.hadley.nz/factors</a>.</p>
-<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="lab-7-file-management-troubleshooting-data-story.html#cb122-1" tabindex="-1"></a><span class="co"># example code to remake the brood column with the levels</span></span>
-<span id="cb122-2"><a href="lab-7-file-management-troubleshooting-data-story.html#cb122-2" tabindex="-1"></a><span class="co"># small, medium, and large, in that order</span></span>
-<span id="cb122-3"><a href="lab-7-file-management-troubleshooting-data-story.html#cb122-3" tabindex="-1"></a></span>
-<span id="cb122-4"><a href="lab-7-file-management-troubleshooting-data-story.html#cb122-4" tabindex="-1"></a><span class="co"># uncomment the code below to try it out</span></span>
-<span id="cb122-5"><a href="lab-7-file-management-troubleshooting-data-story.html#cb122-5" tabindex="-1"></a></span>
-<span id="cb122-6"><a href="lab-7-file-management-troubleshooting-data-story.html#cb122-6" tabindex="-1"></a><span class="co">#dispersal_tidy &lt;- dispersal_fake %&gt;% </span></span>
-<span id="cb122-7"><a href="lab-7-file-management-troubleshooting-data-story.html#cb122-7" tabindex="-1"></a><span class="co">#  mutate(brood = factor(brood, levels = c(&quot;small&quot;, &quot;medium&quot;,&quot;large&quot;)))</span></span></code></pre></div>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="lab-7-file-management-troubleshooting-data-story.html#cb126-1" tabindex="-1"></a><span class="co"># example code to remake the brood column with the levels</span></span>
+<span id="cb126-2"><a href="lab-7-file-management-troubleshooting-data-story.html#cb126-2" tabindex="-1"></a><span class="co"># small, medium, and large, in that order</span></span>
+<span id="cb126-3"><a href="lab-7-file-management-troubleshooting-data-story.html#cb126-3" tabindex="-1"></a></span>
+<span id="cb126-4"><a href="lab-7-file-management-troubleshooting-data-story.html#cb126-4" tabindex="-1"></a><span class="co"># uncomment the code below to try it out</span></span>
+<span id="cb126-5"><a href="lab-7-file-management-troubleshooting-data-story.html#cb126-5" tabindex="-1"></a></span>
+<span id="cb126-6"><a href="lab-7-file-management-troubleshooting-data-story.html#cb126-6" tabindex="-1"></a><span class="co">#dispersal_tidy &lt;- dispersal_fake %&gt;% </span></span>
+<span id="cb126-7"><a href="lab-7-file-management-troubleshooting-data-story.html#cb126-7" tabindex="-1"></a><span class="co">#  mutate(brood = factor(brood, levels = c(&quot;small&quot;, &quot;medium&quot;,&quot;large&quot;)))</span></span></code></pre></div>
 <p>Basically, factors let you more easily specify which values are listed first,
 for controlling things like x-axis order or legend order, and make it easier
 to convert missing data to NAs. In the example above, now any values that

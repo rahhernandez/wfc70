@@ -23,7 +23,7 @@
 <meta name="author" content="Rob Furrow" />
 
 
-<meta name="date" content="2025-05-13" />
+<meta name="date" content="2025-05-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -359,10 +359,10 @@ precipitation, so it would be interesting to see whether our sample size
 varies depending on the weather conditions. (For example, if our mice
 are inactive in very cold weather, we will expect to catch fewer mice in
 our traps on cold nights.)</p>
-<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="lab-6-mark-recapture.html#cb114-1" tabindex="-1"></a><span class="co"># weather for the site</span></span>
-<span id="cb114-2"><a href="lab-6-mark-recapture.html#cb114-2" tabindex="-1"></a><span class="co"># the csv was having formatting issues, so we switched here to loading</span></span>
-<span id="cb114-3"><a href="lab-6-mark-recapture.html#cb114-3" tabindex="-1"></a><span class="co"># a txt file using read.delim()</span></span>
-<span id="cb114-4"><a href="lab-6-mark-recapture.html#cb114-4" tabindex="-1"></a>sjer_weather <span class="ot">&lt;-</span> <span class="fu">read.delim</span>(<span class="st">&quot;https://raw.githubusercontent.com/refurrow/WFC70/main/sjer_weather.txt&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="lab-6-mark-recapture.html#cb118-1" tabindex="-1"></a><span class="co"># weather for the site</span></span>
+<span id="cb118-2"><a href="lab-6-mark-recapture.html#cb118-2" tabindex="-1"></a><span class="co"># the csv was having formatting issues, so we switched here to loading</span></span>
+<span id="cb118-3"><a href="lab-6-mark-recapture.html#cb118-3" tabindex="-1"></a><span class="co"># a txt file using read.delim()</span></span>
+<span id="cb118-4"><a href="lab-6-mark-recapture.html#cb118-4" tabindex="-1"></a>sjer_weather <span class="ot">&lt;-</span> <span class="fu">read.delim</span>(<span class="st">&quot;https://raw.githubusercontent.com/refurrow/WFC70/main/sjer_weather.txt&quot;</span>)</span></code></pre></div>
 <p>We have many fewer rows, because for each night we just have a single
 suite of measurements (rather than separate rows for each individual
 caught in our original data). <code>lowTemp</code> is the lowest temperature that night
@@ -421,18 +421,18 @@ select(collectDate, tagID, recapture, fate, plotID, nlcdClass)</p>
 <p>Follow the steps from our <em>P. boylii</em> estimate to create a table with
 recapture / new capture counts for each night (collectDate). (Hint: <code>table()</code>
 function.)</p>
-<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="lab-6-mark-recapture.html#cb115-1" tabindex="-1"></a><span class="co"># enter your code and comments here</span></span></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="lab-6-mark-recapture.html#cb119-1" tabindex="-1"></a><span class="co"># enter your code and comments here</span></span></code></pre></div>
 <p>Enter your data below, and uncomment and run the lines afterwards. You have
 four nights (three resamples), so you’ll have three values each for
 M, T, and R.</p>
-<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="lab-6-mark-recapture.html#cb116-1" tabindex="-1"></a><span class="co">#uncomment the lines below and fill in the right values for the</span></span>
-<span id="cb116-2"><a href="lab-6-mark-recapture.html#cb116-2" tabindex="-1"></a><span class="co">#M, T, and R vectors</span></span>
-<span id="cb116-3"><a href="lab-6-mark-recapture.html#cb116-3" tabindex="-1"></a></span>
-<span id="cb116-4"><a href="lab-6-mark-recapture.html#cb116-4" tabindex="-1"></a><span class="co">#rema_M &lt;- c()</span></span>
-<span id="cb116-5"><a href="lab-6-mark-recapture.html#cb116-5" tabindex="-1"></a><span class="co">#rema_T &lt;- c()</span></span>
-<span id="cb116-6"><a href="lab-6-mark-recapture.html#cb116-6" tabindex="-1"></a><span class="co">#rema_R &lt;- c()</span></span>
-<span id="cb116-7"><a href="lab-6-mark-recapture.html#cb116-7" tabindex="-1"></a></span>
-<span id="cb116-8"><a href="lab-6-mark-recapture.html#cb116-8" tabindex="-1"></a><span class="co">#sum(rema_M*rema_T)/sum(rema_R)</span></span></code></pre></div>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="lab-6-mark-recapture.html#cb120-1" tabindex="-1"></a><span class="co">#uncomment the lines below and fill in the right values for the</span></span>
+<span id="cb120-2"><a href="lab-6-mark-recapture.html#cb120-2" tabindex="-1"></a><span class="co">#M, T, and R vectors</span></span>
+<span id="cb120-3"><a href="lab-6-mark-recapture.html#cb120-3" tabindex="-1"></a></span>
+<span id="cb120-4"><a href="lab-6-mark-recapture.html#cb120-4" tabindex="-1"></a><span class="co">#rema_M &lt;- c()</span></span>
+<span id="cb120-5"><a href="lab-6-mark-recapture.html#cb120-5" tabindex="-1"></a><span class="co">#rema_T &lt;- c()</span></span>
+<span id="cb120-6"><a href="lab-6-mark-recapture.html#cb120-6" tabindex="-1"></a><span class="co">#rema_R &lt;- c()</span></span>
+<span id="cb120-7"><a href="lab-6-mark-recapture.html#cb120-7" tabindex="-1"></a></span>
+<span id="cb120-8"><a href="lab-6-mark-recapture.html#cb120-8" tabindex="-1"></a><span class="co">#sum(rema_M*rema_T)/sum(rema_R)</span></span></code></pre></div>
 <ul>
 <li><strong><em>What is your final estimate for the Feb 2017 population size?</em></strong></li>
 </ul>
@@ -448,7 +448,7 @@ you are using),</li>
 <li>use <code>bind_rows()</code> to combine the summary from Jan and Feb,</li>
 <li>create a plot of temperature versus sample size for both month’s data.</li>
 </ul>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="lab-6-mark-recapture.html#cb117-1" tabindex="-1"></a><span class="co"># enter your code and comments here</span></span></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="lab-6-mark-recapture.html#cb121-1" tabindex="-1"></a><span class="co"># enter your code and comments here</span></span></code></pre></div>
 </div>
 </div>
 <div id="wrapping-up-5-minutes-5" class="section level2 hasAnchor" number="9.4">
