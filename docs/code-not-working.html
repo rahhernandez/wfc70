@@ -331,16 +331,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol>
 <div id="example-fix-the-code" class="section level3 hasAnchor" number="2.1.1">
 <h3><span class="header-section-number">2.1.1</span> Example: Fix the Code<a href="code-not-working.html#example-fix-the-code" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>As a practice, see if you can identify what is wrong in this code and fix it!</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="code-not-working.html#cb3-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;palmerpenguins&quot;</span>)</span></code></pre></div>
-<pre><code>## Installing package into &#39;C:/Users/bookw/AppData/Local/R/win-library/4.4&#39;
-## (as &#39;lib&#39; is unspecified)</code></pre>
-<pre><code>## package &#39;palmerpenguins&#39; successfully unpacked and MD5 sums checked
-## 
-## The downloaded binary packages are in
-##  C:\Users\bookw\AppData\Local\Temp\RtmpgbrK7F\downloaded_packages</code></pre>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="code-not-working.html#cb6-1" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb6-2"><a href="code-not-working.html#cb6-2" tabindex="-1"></a>penguins_raw</span></code></pre></div>
+<p>As a practice, see if you can identify what is wrong in this code and fix it!We will be using the Palmer penguins package.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="code-not-working.html#cb3-1" tabindex="-1"></a>penguins_raw</span></code></pre></div>
 <pre><code>## # A tibble: 344 × 17
 ##    studyName `Sample Number` Species         Region Island Stage `Individual ID`
 ##    &lt;chr&gt;               &lt;dbl&gt; &lt;chr&gt;           &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;          
@@ -359,6 +351,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## #   `Culmen Length (mm)` &lt;dbl&gt;, `Culmen Depth (mm)` &lt;dbl&gt;,
 ## #   `Flipper Length (mm)` &lt;dbl&gt;, `Body Mass (g)` &lt;dbl&gt;, Sex &lt;chr&gt;,
 ## #   `Delta 15 N (o/oo)` &lt;dbl&gt;, `Delta 13 C (o/oo)` &lt;dbl&gt;, Comments &lt;chr&gt;</code></pre>
+<p>penguins_torgersen &lt;- filter(Penguins_raw, island == “Torgersen”)</p>
 </div>
 </div>
 </div>
