@@ -40,6 +40,5 @@ The way RMarkdown (Rmd) files are saved is through a process called knitting. Kn
 
 Below is a video to help guide you through the knitting process! Lab will also discuss how to knit. 
 
-hello
 
 

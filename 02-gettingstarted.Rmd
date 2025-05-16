@@ -10,6 +10,10 @@ We will need both on your computer before your first lab. Even if you are not go
 
 ### Downloading on Mac
 
+<video width="320" height="240" controls loop="" muted = " " autoplay>
+  <source src="https://github.com/rahhernandez/wfc70/raw/refs/heads/main/Installing%20RStudio%20Draft.mov">
+</video>
+
 
 
 
