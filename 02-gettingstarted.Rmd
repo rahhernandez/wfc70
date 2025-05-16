@@ -13,8 +13,11 @@ We will need both on your computer before your first lab. Even if you are not go
 <video width="320" height="240" controls loop="" muted = " " autoplay>
   <source src="https://github.com/rahhernandez/wfc70/raw/refs/heads/main/Installing%20RStudio%20Draft.mov">
 </video>
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 9c484e65743c64dec017adcdcd8e9b0922e42e2e
 
 
 ### Downloading on Windows
