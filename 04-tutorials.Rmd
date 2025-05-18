@@ -26,10 +26,30 @@ library(palmerpenguins)
 ```
  
 ```{r}
-penguins_raw
+penguins_raw 
 ```
 
  penguins_torgersen <- filter(Penguins_raw, island == "Torgersen")
 
 
 # Importing Data
+
+You will be working with a lot of data in this class (as expected). While lab may describe and guide how to download and import data, things get a bit more difficult when you look for data for your data project.
+
+
+## Finding Data
+
+As discussed in lecture, there are many places online to find data. The ones recommended in lecture include:
+
+- Dryad
+- University of Minnesota
+- 
+
+Once you find your data, how do you determine if it is good or not? Below is a small checklist to go through to make sure you are not biting off more than you can chew.
+
+1.
+2.
+3.
+
+## Fixing Dates 
+

@@ -9,7 +9,7 @@ While base R Studio is great, sometimes we need to perform actions R Studio can 
 The main way to install packages is through code.
 
 ```{r, warning=FALSE, message=FALSE}
-install.packages("package name")
+# install.packages("package name")
 ```
 
 To make sure R Studio is aware of the package, you need to run the library function.
