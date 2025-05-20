@@ -23,7 +23,7 @@
 <meta name="author" content="Rob Furrow" />
 
 
-<meta name="date" content="2025-05-17" />
+<meta name="date" content="2025-05-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -170,6 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.1" data-path="importing-data.html"><a href="importing-data.html#finding-data"><i class="fa fa-check"></i><b>3.1</b> Finding Data</a></li>
 <li class="chapter" data-level="3.2" data-path="importing-data.html"><a href="importing-data.html#fixing-dates"><i class="fa fa-check"></i><b>3.2</b> Fixing Dates</a></li>
 </ul></li>
+<li class="chapter" data-level="4" data-path="data-wrangling.html"><a href="data-wrangling.html"><i class="fa fa-check"></i><b>4</b> Data Wrangling</a></li>
 <li class="appendix"><span><b>Old Labs (2024)</b></span></li>
 <li class="chapter" data-level="A" data-path="lab-1-r-data-and-the-rstudio-panels.html"><a href="lab-1-r-data-and-the-rstudio-panels.html"><i class="fa fa-check"></i><b>A</b> Lab 1: R, data, and the RStudio panels</a>
 <ul>
@@ -308,7 +309,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="lab-3-visualizing-data-in-r-part-1" class="section level1 hasAnchor" number="6">
+<div id="lab-3-visualizing-data-in-r-part-1" class="section level1 hasAnchor" number="7">
 <h1><span class="header-section-number">C</span> Lab 3: Visualizing data in R (Part 1)<a href="lab-3-visualizing-data-in-r-part-1.html#lab-3-visualizing-data-in-r-part-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>In this lab, we will get into one of the really fun parts of R programming –
 <strong><em>making figures!</em></strong></p>
@@ -321,24 +322,24 @@ plot data,</li>
 <li>create boxplots, histograms, and scatterplots to compare the distributions
 of different subgroups of data.</li>
 </ul>
-<div id="resources" class="section level3 hasAnchor" number="6.0.1">
+<div id="resources" class="section level3 hasAnchor" number="7.0.1">
 <h3><span class="header-section-number">C.0.1</span> Resources<a href="lab-3-visualizing-data-in-r-part-1.html#resources" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This lab is loosely based on chapter 1 in the online textbook “R for Data
 Science” (second edition), which you can find online here:
 <a href="https://r4ds.hadley.nz/data-visualize" class="uri">https://r4ds.hadley.nz/data-visualize</a></p>
 </div>
-<div id="part-0-figure-of-the-week-5-10-minutes-instructor-leading-1" class="section level2 hasAnchor" number="6.1">
+<div id="part-0-figure-of-the-week-5-10-minutes-instructor-leading-1" class="section level2 hasAnchor" number="7.1">
 <h2><span class="header-section-number">C.1</span> Part 0: Figure of the week (5-10 minutes, instructor leading)<a href="lab-3-visualizing-data-in-r-part-1.html#part-0-figure-of-the-week-5-10-minutes-instructor-leading-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <hr />
 <hr />
 </div>
-<div id="part-1-packages-in-r-covered-in-lecture-so-only-here-for-reference" class="section level2 hasAnchor" number="6.2">
+<div id="part-1-packages-in-r-covered-in-lecture-so-only-here-for-reference" class="section level2 hasAnchor" number="7.2">
 <h2><span class="header-section-number">C.2</span> Part 1: Packages in R (covered in lecture, so only here for reference)<a href="lab-3-visualizing-data-in-r-part-1.html#part-1-packages-in-r-covered-in-lecture-so-only-here-for-reference" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Many functions and data in R are not instantly available. Instead, they are
 available online as “packages”. Packages extend the usefulness of R with new
 functions and data (and documentation/metadata), and they are hosted online in a
 standard way for easy installation and loading.</p>
-<div id="installing-an-r-package" class="section level3 hasAnchor" number="6.2.1">
+<div id="installing-an-r-package" class="section level3 hasAnchor" number="7.2.1">
 <h3><span class="header-section-number">C.2.1</span> Installing an R package<a href="lab-3-visualizing-data-in-r-part-1.html#installing-an-r-package" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><em>Installing an R package</em> is easy to do within RStudio. In the computer labs we
 have already installed most R packages that you will need for any coding in WFC
@@ -356,7 +357,7 @@ because these packages are already installed in the computer lab.</p>
 <p><strong><em>Delete or comment out any install.packages() commands before you knit.
 You cannot knit an Rmd that still has active install.packages() code.</em></strong></p>
 </div>
-<div id="loading-an-r-package" class="section level3 hasAnchor" number="6.2.2">
+<div id="loading-an-r-package" class="section level3 hasAnchor" number="7.2.2">
 <h3><span class="header-section-number">C.2.2</span> Loading an R package<a href="lab-3-visualizing-data-in-r-part-1.html#loading-an-r-package" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong><em>On the other hand, you must have code to load any relevant R packages
 inside of your Rmd if you go on to use functions/data from those packages
@@ -398,7 +399,7 @@ together.</p>
 <p>Today we are primarily using functions from the <code>ggplot2</code> package, which was
 loaded when we used the <code>library(tidyverse)</code> command in the code chunk above.</p>
 </div>
-<div id="part-1b-5-minutes-instructor-leading" class="section level3 hasAnchor" number="6.2.3">
+<div id="part-1b-5-minutes-instructor-leading" class="section level3 hasAnchor" number="7.2.3">
 <h3><span class="header-section-number">C.2.3</span> Part 1b (5 minutes, instructor leading)<a href="lab-3-visualizing-data-in-r-part-1.html#part-1b-5-minutes-instructor-leading" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We also need to load the package with the penguin data.</p>
 <div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="lab-3-visualizing-data-in-r-part-1.html#cb52-1" tabindex="-1"></a><span class="co">#loading the palmerpenguins package, which contains two data frames</span></span>
@@ -489,7 +490,7 @@ to <code>penguins_raw</code>?</p></li>
 </ol>
 </div>
 </div>
-<div id="part-2-using-ggplot-for-plotting-in-r-15-minutes-self-led" class="section level2 hasAnchor" number="6.3">
+<div id="part-2-using-ggplot-for-plotting-in-r-15-minutes-self-led" class="section level2 hasAnchor" number="7.3">
 <h2><span class="header-section-number">C.3</span> Part 2: Using ggplot() for plotting in R (15 minutes, self-led)<a href="lab-3-visualizing-data-in-r-part-1.html#part-2-using-ggplot-for-plotting-in-r-15-minutes-self-led" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The core function in the <code>ggplot2</code> package is called <code>ggplot()</code>. But making
 plots using <code>ggplot()</code> is like making lasagna. You have to add layers until
@@ -603,7 +604,7 @@ each species.</p>
 the lowest bill length, while the Chinstrap and Gentoo Penguin samples have
 subtantial overlap in bill length.</p>
 </div>
-<div id="part-3-exploring-15-minutes-self-led" class="section level2 hasAnchor" number="6.4">
+<div id="part-3-exploring-15-minutes-self-led" class="section level2 hasAnchor" number="7.4">
 <h2><span class="header-section-number">C.4</span> Part 3: Exploring (15 minutes, self-led)<a href="lab-3-visualizing-data-in-r-part-1.html#part-3-exploring-15-minutes-self-led" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Use the code chunks below to try out some plotting with a new variable.</p>
 <ol style="list-style-type: decimal">
@@ -669,14 +670,14 @@ for the species it represents.</li>
 ## (`geom_point()`).</code></pre>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
 </div>
-<div id="wrapping-up-5-minutes-2" class="section level2 hasAnchor" number="6.5">
+<div id="wrapping-up-5-minutes-2" class="section level2 hasAnchor" number="7.5">
 <h2><span class="header-section-number">C.5</span> Wrapping up (5 minutes)<a href="lab-3-visualizing-data-in-r-part-1.html#wrapping-up-5-minutes-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Knit your file to HTML, and save the original Rmd, then add them to your WFC 98
 folder on Google Drive.</p>
 <hr />
 <hr />
 </div>
-<div id="extra-material" class="section level2 hasAnchor" number="6.6">
+<div id="extra-material" class="section level2 hasAnchor" number="7.6">
 <h2><span class="header-section-number">C.6</span> Extra material<a href="lab-3-visualizing-data-in-r-part-1.html#extra-material" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>Start on HW 2.</li>
@@ -756,7 +757,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rahhernandez/trial/edit/main/07-lab3_2024.Rmd",
+"link": "https://github.com/rahhernandez/trial/edit/main/08-lab3_2024.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -764,7 +765,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/rahhernandez/trial/blob/main/07-lab3_2024.Rmd",
+"link": "https://github.com/rahhernandez/trial/blob/main/08-lab3_2024.Rmd",
 "text": null
 },
 "download": null,

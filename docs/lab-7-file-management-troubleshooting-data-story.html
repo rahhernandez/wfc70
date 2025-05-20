@@ -23,7 +23,7 @@
 <meta name="author" content="Rob Furrow" />
 
 
-<meta name="date" content="2025-05-17" />
+<meta name="date" content="2025-05-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -170,6 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.1" data-path="importing-data.html"><a href="importing-data.html#finding-data"><i class="fa fa-check"></i><b>3.1</b> Finding Data</a></li>
 <li class="chapter" data-level="3.2" data-path="importing-data.html"><a href="importing-data.html#fixing-dates"><i class="fa fa-check"></i><b>3.2</b> Fixing Dates</a></li>
 </ul></li>
+<li class="chapter" data-level="4" data-path="data-wrangling.html"><a href="data-wrangling.html"><i class="fa fa-check"></i><b>4</b> Data Wrangling</a></li>
 <li class="appendix"><span><b>Old Labs (2024)</b></span></li>
 <li class="chapter" data-level="A" data-path="lab-1-r-data-and-the-rstudio-panels.html"><a href="lab-1-r-data-and-the-rstudio-panels.html"><i class="fa fa-check"></i><b>A</b> Lab 1: R, data, and the RStudio panels</a>
 <ul>
@@ -308,7 +309,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="lab-7-file-management-troubleshooting-data-story" class="section level1 hasAnchor" number="10">
+<div id="lab-7-file-management-troubleshooting-data-story" class="section level1 hasAnchor" number="11">
 <h1><span class="header-section-number">G</span> Lab 7: File Management, Troubleshooting, Data Story<a href="lab-7-file-management-troubleshooting-data-story.html#lab-7-file-management-troubleshooting-data-story" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>In this lab, we will learn the very basics of file management and
 how to load data into Rmd files when it is stored locally.</p>
@@ -320,15 +321,15 @@ the R code into an Rmd code chunk,</li>
 how data are loaded,</li>
 <li>continue exploring your data for the Data Story.</li>
 </ul>
-<div id="resources-4" class="section level3 hasAnchor" number="10.0.1">
+<div id="resources-4" class="section level3 hasAnchor" number="11.0.1">
 <h3><span class="header-section-number">G.0.1</span> Resources<a href="lab-7-file-management-troubleshooting-data-story.html#resources-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Please download from Canvas the file “Lab7_data.zip”, and save it to a folder
 on the computer.</p>
 <hr />
 </div>
-<div id="part-1-navigating-file-structure-10-minutes-on-your-own" class="section level2 hasAnchor" number="10.1">
+<div id="part-1-navigating-file-structure-10-minutes-on-your-own" class="section level2 hasAnchor" number="11.1">
 <h2><span class="header-section-number">G.1</span> Part 1: Navigating file structure (10 minutes, on your own)<a href="lab-7-file-management-troubleshooting-data-story.html#part-1-navigating-file-structure-10-minutes-on-your-own" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="unzipping-lab7_data.zip" class="section level3 hasAnchor" number="10.1.1">
+<div id="unzipping-lab7_data.zip" class="section level3 hasAnchor" number="11.1.1">
 <h3><span class="header-section-number">G.1.1</span> Unzipping “Lab7_data.zip”<a href="lab-7-file-management-troubleshooting-data-story.html#unzipping-lab7_data.zip" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A .zip file is a compressed file that can hold many individual files. It
 can be a useful way to share a set of folders with many organized files.</p>
@@ -344,7 +345,7 @@ names 1, 2, 3, and 4. And some of those folders have even more folders inside
 <p>The data are hidden as a csv file within folder d, then subfolder 3, then
 subfolder i. Inside of that folder you should find “dispersal_fake.csv”.</p>
 </div>
-<div id="loading-the-data" class="section level3 hasAnchor" number="10.1.2">
+<div id="loading-the-data" class="section level3 hasAnchor" number="11.1.2">
 <h3><span class="header-section-number">G.1.2</span> Loading the data<a href="lab-7-file-management-troubleshooting-data-story.html#loading-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In the upper left of RStudio, click on the File tab, then on “Import Dataset”,
 and then “From Text (base)…”. This will open a window in which you need
@@ -381,14 +382,14 @@ sure you have code within your Rmd that loads the data. Otherwise you will
 encounter errors when you try to knit, because the data will not be loaded.</p>
 </div>
 </div>
-<div id="part-2-dealing-with-wonky-data-10-minutes-on-your-own" class="section level2 hasAnchor" number="10.2">
+<div id="part-2-dealing-with-wonky-data-10-minutes-on-your-own" class="section level2 hasAnchor" number="11.2">
 <h2><span class="header-section-number">G.2</span> Part 2: Dealing with wonky data (10 minutes, on your own)<a href="lab-7-file-management-troubleshooting-data-story.html#part-2-dealing-with-wonky-data-10-minutes-on-your-own" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Let’s glimpse our data.</p>
 <div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="lab-7-file-management-troubleshooting-data-story.html#cb120-1" tabindex="-1"></a><span class="co"># uncomment the line below and run it</span></span>
 <span id="cb120-2"><a href="lab-7-file-management-troubleshooting-data-story.html#cb120-2" tabindex="-1"></a><span class="co"># glimpse(dispersal_fake)</span></span></code></pre></div>
 <p>When you load data into R, there are a few common issues that can arise
 with how R tries to automatically identify what kind of data are in each row.</p>
-<div id="issue-1-text-in-a-numerical-column." class="section level4 hasAnchor" number="10.2.0.1">
+<div id="issue-1-text-in-a-numerical-column." class="section level4 hasAnchor" number="11.2.0.1">
 <h4><span class="header-section-number">G.2.0.1</span> Issue 1: text in a numerical column.<a href="lab-7-file-management-troubleshooting-data-story.html#issue-1-text-in-a-numerical-column." class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p><strong><em>Always double check that your columns are the data type that you expect.</em></strong>
 Reminder, “num” is numeric, “int” is integer (whole numbers), and “chr” is
@@ -410,7 +411,7 @@ back into numbers, and any other text became NA, which is ideal for our purpose.
 So the ominous “Warning” above is just explaining that it did what we wanted –
 it introduced NAs where there were non-numbers in the column.</p>
 </div>
-<div id="issue-2-missing-data." class="section level4 hasAnchor" number="10.2.0.2">
+<div id="issue-2-missing-data." class="section level4 hasAnchor" number="11.2.0.2">
 <h4><span class="header-section-number">G.2.0.2</span> Issue 2: missing data.<a href="lab-7-file-management-troubleshooting-data-story.html#issue-2-missing-data." class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Sometimes a column in the spreadsheet may have some blank values. By default
 for numeric data, these become NAs. You’ll notice an example in the
@@ -419,7 +420,7 @@ just the empty string, ““. So something to watch out for in R is that missin
 data becomes NAs when the column is numeric, but not in columns that are
 character/text data. See Issue 4 for a coding way to deal with that.</p>
 </div>
-<div id="issue-3-numbers-in-a-character-column." class="section level4 hasAnchor" number="10.2.0.3">
+<div id="issue-3-numbers-in-a-character-column." class="section level4 hasAnchor" number="11.2.0.3">
 <h4><span class="header-section-number">G.2.0.3</span> Issue 3: numbers in a character column.<a href="lab-7-file-management-troubleshooting-data-story.html#issue-3-numbers-in-a-character-column." class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>You should be suspicious of a number in a column that is mostly
 character data – it might reflect user error. I often
@@ -444,7 +445,7 @@ wonky things can happen if R thinks certain columns are in Date format – it
 can help to force dates to be character data using <code>as.character()</code> in some
 instances.</p>
 </div>
-<div id="issue-4-factors-are-easier-to-plot-than-character-data" class="section level4 hasAnchor" number="10.2.0.4">
+<div id="issue-4-factors-are-easier-to-plot-than-character-data" class="section level4 hasAnchor" number="11.2.0.4">
 <h4><span class="header-section-number">G.2.0.4</span> Issue 4: factors are easier to plot than character data<a href="lab-7-file-management-troubleshooting-data-story.html#issue-4-factors-are-easier-to-plot-than-character-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Categorical data in R will usually be loaded as character data, even when
 there are only a few possible levels/values (e.g. “small”, “medium” and
@@ -468,7 +469,7 @@ order your specified (here small, then medium, then large), rather
 than alphabetically.</p>
 </div>
 </div>
-<div id="data-story-work-any-remaining-time" class="section level2 hasAnchor" number="10.3">
+<div id="data-story-work-any-remaining-time" class="section level2 hasAnchor" number="11.3">
 <h2><span class="header-section-number">G.3</span> Data story work (any remaining time)<a href="lab-7-file-management-troubleshooting-data-story.html#data-story-work-any-remaining-time" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>For the rest of lab, continue your investigation of your data.</p>
 <ol style="list-style-type: decimal">
@@ -488,7 +489,7 @@ that are answerable with the data.</li>
 <p>As you load the data and explore, you may want to code directly in the Data Story
 template Rmd. That way you have your work already in the appropriate place.</p>
 </div>
-<div id="wrapping-up-5-minutes-6" class="section level2 hasAnchor" number="10.4">
+<div id="wrapping-up-5-minutes-6" class="section level2 hasAnchor" number="11.4">
 <h2><span class="header-section-number">G.4</span> Wrapping up (5 minutes)<a href="lab-7-file-management-troubleshooting-data-story.html#wrapping-up-5-minutes-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Knit any files to HTML, and save the original Rmd (and your Data story template
 Rmd, if you have started working in it). Then add these files to your WFC 98
@@ -533,7 +534,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rahhernandez/trial/edit/main/11-lab7_2024.Rmd",
+"link": "https://github.com/rahhernandez/trial/edit/main/12-lab7_2024.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -541,7 +542,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/rahhernandez/trial/blob/main/11-lab7_2024.Rmd",
+"link": "https://github.com/rahhernandez/trial/blob/main/12-lab7_2024.Rmd",
 "text": null
 },
 "download": null,

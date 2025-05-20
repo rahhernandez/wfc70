@@ -23,7 +23,7 @@
 <meta name="author" content="Rob Furrow" />
 
 
-<meta name="date" content="2025-05-17" />
+<meta name="date" content="2025-05-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -170,6 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.1" data-path="importing-data.html"><a href="importing-data.html#finding-data"><i class="fa fa-check"></i><b>3.1</b> Finding Data</a></li>
 <li class="chapter" data-level="3.2" data-path="importing-data.html"><a href="importing-data.html#fixing-dates"><i class="fa fa-check"></i><b>3.2</b> Fixing Dates</a></li>
 </ul></li>
+<li class="chapter" data-level="4" data-path="data-wrangling.html"><a href="data-wrangling.html"><i class="fa fa-check"></i><b>4</b> Data Wrangling</a></li>
 <li class="appendix"><span><b>Old Labs (2024)</b></span></li>
 <li class="chapter" data-level="A" data-path="lab-1-r-data-and-the-rstudio-panels.html"><a href="lab-1-r-data-and-the-rstudio-panels.html"><i class="fa fa-check"></i><b>A</b> Lab 1: R, data, and the RStudio panels</a>
 <ul>
@@ -308,7 +309,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="lab-6-mark-recapture" class="section level1 hasAnchor" number="9">
+<div id="lab-6-mark-recapture" class="section level1 hasAnchor" number="10">
 <h1><span class="header-section-number">F</span> Lab 6: Mark-recapture<a href="lab-6-mark-recapture.html#lab-6-mark-recapture" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Note: Had to remove code chunks so the coding looks slightly messy</p>
 <p>In this lab, we will use our wrangling skills to clean up a data frame
@@ -321,7 +322,7 @@ have a shared “key” column,</li>
 <li>use <code>bind_rows()</code> to combine multiple data frames with
 identical columns.</li>
 </ul>
-<div id="resources-3" class="section level3 hasAnchor" number="9.0.1">
+<div id="resources-3" class="section level3 hasAnchor" number="10.0.1">
 <h3><span class="header-section-number">F.0.1</span> Resources<a href="lab-6-mark-recapture.html#resources-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We will use the data discussed during the mark-recapture lectures. These are
 data from a LTER (Long-term Ecological Research) site called the San Joaquin
@@ -329,7 +330,7 @@ Experimental Range.<br />
 <a href="https://data.neonscience.org/data-products/DP1.10072.001">https://data.neonscience.org/data-products/DP1.10072.001</a></p>
 <hr />
 </div>
-<div id="part-1-reminder-of-lecture-data-10-minutes-instructor-leading" class="section level2 hasAnchor" number="9.1">
+<div id="part-1-reminder-of-lecture-data-10-minutes-instructor-leading" class="section level2 hasAnchor" number="10.1">
 <h2><span class="header-section-number">F.1</span> Part 1: Reminder of lecture data (10 minutes, instructor leading)<a href="lab-6-mark-recapture.html#part-1-reminder-of-lecture-data-10-minutes-instructor-leading" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This code should align with what we covered during lecture. Note, however,
 that you don’t even have to do the Schnabel calculation by hand. With the
@@ -356,7 +357,7 @@ pebo_R &lt;- c(2, 4)</p>
 Okay, in a moment we will set you loose to try things on your own, but
 first let’s do a quick <code>_join()</code>.</p>
 </div>
-<div id="adding-weather-data-joining-data-frames" class="section level2 hasAnchor" number="9.2">
+<div id="adding-weather-data-joining-data-frames" class="section level2 hasAnchor" number="10.2">
 <h2><span class="header-section-number">F.2</span> Adding weather data (joining data frames)<a href="lab-6-mark-recapture.html#adding-weather-data-joining-data-frames" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Small mammal activity at night may depend on nighttime temperature or
 precipitation, so it would be interesting to see whether our sample size
@@ -410,9 +411,9 @@ theme_classic()</p>
 <p>Okay, we’ve managed some mark-recapture, joining, summarizing and plotting.
 Now you can try out a second estimate on your own.</p>
 </div>
-<div id="western-harvest-mouse-population-size-on-your-own-15-minutes" class="section level2 hasAnchor" number="9.3">
+<div id="western-harvest-mouse-population-size-on-your-own-15-minutes" class="section level2 hasAnchor" number="10.3">
 <h2><span class="header-section-number">F.3</span> Western harvest mouse population size (on your own, 15 minutes)<a href="lab-6-mark-recapture.html#western-harvest-mouse-population-size-on-your-own-15-minutes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="your-data" class="section level3 hasAnchor" number="9.3.1">
+<div id="your-data" class="section level3 hasAnchor" number="10.3.1">
 <h3><span class="header-section-number">F.3.1</span> Your data<a href="lab-6-mark-recapture.html#your-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This code will help you load the February trapping data, and filter to
 just include the western harvest mouse, <em>Reithrodontomys megalotis</em>.</p>
@@ -420,7 +421,7 @@ just include the western harvest mouse, <em>Reithrodontomys megalotis</em>.</p>
 <p>rema_feb17 &lt;- filter(sjer_feb17, scientificName== “Reithrodontomys megalotis”) |&gt;
 select(collectDate, tagID, recapture, fate, plotID, nlcdClass)</p>
 </div>
-<div id="getting-your-mark-recapture-table" class="section level3 hasAnchor" number="9.3.2">
+<div id="getting-your-mark-recapture-table" class="section level3 hasAnchor" number="10.3.2">
 <h3><span class="header-section-number">F.3.2</span> Getting your mark-recapture table<a href="lab-6-mark-recapture.html#getting-your-mark-recapture-table" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Follow the steps from our <em>P. boylii</em> estimate to create a table with
 recapture / new capture counts for each night (collectDate). (Hint: <code>table()</code>
@@ -441,7 +442,7 @@ M, T, and R.</p>
 <li><strong><em>What is your final estimate for the Feb 2017 population size?</em></strong></li>
 </ul>
 </div>
-<div id="more-joining-time-permitting" class="section level3 hasAnchor" number="9.3.3">
+<div id="more-joining-time-permitting" class="section level3 hasAnchor" number="10.3.3">
 <h3><span class="header-section-number">F.3.3</span> More joining (time permitting)<a href="lab-6-mark-recapture.html#more-joining-time-permitting" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>Create a new data frame that includes all catches for Feb 2017,</li>
@@ -455,12 +456,12 @@ you are using),</li>
 <div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="lab-6-mark-recapture.html#cb118-1" tabindex="-1"></a><span class="co"># enter your code and comments here</span></span></code></pre></div>
 </div>
 </div>
-<div id="wrapping-up-5-minutes-5" class="section level2 hasAnchor" number="9.4">
+<div id="wrapping-up-5-minutes-5" class="section level2 hasAnchor" number="10.4">
 <h2><span class="header-section-number">F.4</span> Wrapping up (5 minutes)<a href="lab-6-mark-recapture.html#wrapping-up-5-minutes-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Knit your file to HTML, and save the original Rmd, then add them to your WFC 98
 folder on Google Drive.</p>
 </div>
-<div id="extra-material-2" class="section level2 hasAnchor" number="9.5">
+<div id="extra-material-2" class="section level2 hasAnchor" number="10.5">
 <h2><span class="header-section-number">F.5</span> Extra material<a href="lab-6-mark-recapture.html#extra-material-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Work on HW 5.</p>
 <p>Continue working on the Data Story.</p>
@@ -504,7 +505,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rahhernandez/trial/edit/main/10-lab6_2024.Rmd",
+"link": "https://github.com/rahhernandez/trial/edit/main/11-lab6_2024.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -512,7 +513,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/rahhernandez/trial/blob/main/10-lab6_2024.Rmd",
+"link": "https://github.com/rahhernandez/trial/blob/main/11-lab6_2024.Rmd",
 "text": null
 },
 "download": null,
