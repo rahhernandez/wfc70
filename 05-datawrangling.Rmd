@@ -1,1 +1,20 @@
 # Data Wrangling
+
+Data wrangling is an important factor in WFC 70. It will be a major aspect in aiding in your Data Story, and in any future class in which you will need to utilize data. However, it can be a bit confusing as to how to tie everything together. This module is meant to aid you through knowing how to apply certain data wrangling features. 
+
+
+## Review
+
+First, we will go over a quick overview of the tools in Tidyverse which allow you to data wrangle. The main ones utilized in this class are:
+
+- filter
+- joins
+
+### Filter 
+
+Filter, as the name suggests, selects only the rows which meets the conditions you want. In lab, you used this to select specific animal species and plot type. 
+
+### Joins
+
+Joins combines two data sets into a singular data set through a common factor. There are four joins: left_join, right_join, full_join, and inner_join.
+
