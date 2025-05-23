@@ -8,14 +8,24 @@ While base R Studio is great, sometimes we need to perform actions R Studio can 
 
 The main way to install packages is through code.
 
-```{r, warning=FALSE, message=FALSE}
-# install.packages("package name")
+```{r, warning=FALSE, message=FALSE, eval=FALSE}
+install.packages("package name")
 ```
 
 To make sure R Studio is aware of the package, you need to run the library function.
 
-```{r, warning=FALSE, message=FALSE}
-# library("package name")
+```{r, warning=FALSE, message=FALSE, eval=FALSE}
+library("package name")
+```
+
+
+#### Downloading Tidyverse
+For exmaple to download *Tidyverse*, the main package utilized in WFC70, you will write:
+
+```{r, warning=FALSE}
+install.packages("tidyverse")
+
+library(tidyverse)
 ```
 
 Below is a video to guide you through downloading packages!
@@ -33,6 +43,8 @@ Here some useful lists of essential R packages!
 -   <https://data-flair.training/blogs/list-of-r-packages/>
 
 -   <https://medium.com/data-science/a-comprehensive-list-of-handy-r-packages-e85dad294b3d>
+
+
 
 ## Knitting
 

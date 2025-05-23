@@ -1,9 +1,10 @@
 installing-r-and-r-studio
-downloading-on-mac
-downloading-on-windows
+getting-started-with-labs
+working-from-home
 intro-to-r-and-r-studio
 packages
 installing-packages
+downloading-tidyverse
 finding-packages
 knitting
 code-not-working
@@ -11,11 +12,11 @@ checklist
 example-fix-the-code
 importing-data
 finding-data
-fixing-dates
 data-wrangling
 review
 filter
 joins
+section
 lab-1-r-data-and-the-rstudio-panels
 part-1-orienting-ourselves-to-rstudio-10-minutes-instructor-will-lead
 the-command-line-console-versus-a-r-script
@@ -83,9 +84,6 @@ lab-6-mark-recapture
 resources-3
 part-1-reminder-of-lecture-data-10-minutes-instructor-leading
 adding-weather-data-joining-data-frames
-western-harvest-mouse-population-size-on-your-own-15-minutes
-your-data
-getting-your-mark-recapture-table
 more-joining-time-permitting
 wrapping-up-5-minutes-5
 extra-material-2

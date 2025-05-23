@@ -13,8 +13,8 @@ There are some common mistakes people often overlook which cause the code not to
 3.  Compare to Previous Code
     -   A big aspect of coding is copying and pasting and altering to get what you need. If you altered previous code which previously worked, compare it to ensure it is the same.
 4.  Seeking for Help
-    -   If you have gone through the previous steps and the code is *still* not working, ask the instructor or TA! You can also Google your issue, as it is likely that other people have experienced the same issue and are looking for solutions.
     - ***DO NOT RELY ON AI!*** AI will typically complicate your code and make you do more work. It is safer, and more reliable, to ask the instructor or TA!
+    -   If you have gone through the previous steps and the code is *still* not working, ask the instructor or TA! You can also Google your issue, as it is likely that other people have experienced the same issue and are looking for solutions.
 
 ### Example: Fix the Code
 
@@ -29,7 +29,9 @@ library(palmerpenguins)
 penguins_raw 
 ```
 
- penguins_torgersen <- filter(Penguins_raw, island == "Torgersen")
+```{r, eval=FALSE}
+penguins_torgersen <- filter(Penguins_raw, island == "Torgersen")
+```
 
 
 # Importing Data
@@ -51,7 +53,6 @@ Once you find your data, how do you determine if it is good or not? Below is a s
 2.
 3.
 
-## Fixing Dates
 
 
 

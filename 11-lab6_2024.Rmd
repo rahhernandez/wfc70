@@ -30,35 +30,41 @@ that you don't even have to do the Schnabel calculation by hand. With the
 right vectors for M, T, and R, that final line does the multiplying, adding,
 and dividing, and should yield exactly what we found during lecture.
 
- loading tidyverse for our plotting and data wrangling needs
- 
-library(tidyverse)
+```{r}
+# loading tidyverse for our plotting and data wrangling needs
 
- loading data
- 
+library(tidyverse)
+```
+
+```{r, eval=FALSE}
+#loading data
+
 sjer_jan17 <- read.csv("https://raw.githubusercontent.com/refurrow/WFC70/main/mam_pertrapnight_2017_01_basic.csv")
 
- wrangling for a simpler data set with just one species
+```
+
+```{r, eval=FALSE}
+ #wrangling for a simpler data set with just one species
  
 pebo_jan17 <- sjer_jan17 |>  #start with the full data, THEN
   filter(scientificName == "Peromyscus boylii") |> #filter for P. boylii, THEN
   select(collectDate, tagID, recapture, fate, plotID, nlcdClass) # selecting only these columns
 
- creating a table from the date column and the recapture column
+# creating a table from the date column and the recapture column
  
 pebo_table <- table(pebo_jan17$collectDate,pebo_jan17$recapture)
 pebo_table
 
- entering our mark-recapture data
+ #entering our mark-recapture data
  
 pebo_M <- c(4, 14)
 pebo_T <- c(12, 6)
 pebo_R <- c(2, 4)
 
- adding up sum of M*T values, then dividing by sum of R values
+ #adding up sum of M*T values, then dividing by sum of R values
  
 sum(pebo_M*pebo_T)/sum(pebo_R)
-
+```
 
 You estimate 22 individuals in this population, using the Schnabel estimator.
 Okay, in a moment we will set you loose to try things on your own, but
@@ -73,7 +79,7 @@ are inactive in very cold weather, we will expect to catch fewer mice in
 our traps on cold nights.)
 
 
-```{r}
+```{r, eval=FALSE}
 
 # weather for the site
 # the csv was having formatting issues, so we switched here to loading
@@ -95,17 +101,17 @@ string, "", when the trap was empty and always has a value when an individual
 was caught, so we can filter by removing all the empty rows. The exclamation 
 point, !, means NOT, so we will filter the rows that are NOT equal to "".
 
-
- getting all catches (not just P. boylii)
+getting all catches (not just P. boylii)
  
 catches_jan17 <- sjer_jan17 |>
   filter(recapture != "")  only rows that are NOT equal to the empty string, "".
 
+```
 
 Now, let's join. We don't care about the February or October weather, so let's 
 prioritize the rows in our catch data. 
 
-* ***Pause and think. What is our shared key? What kind of join should we use?***
+***Pause and think. What is our shared key? What kind of join should we use?***
 
 
 joining catch data and weather data
@@ -113,8 +119,7 @@ joining catch data and weather data
 catches_jan17_full <- left_join(catches_jan17,sjer_weather, by = "collectDate")
 
 
-
-* ***Pause and check. Do the data look like what we expected? Because the catch data***
+***Pause and check. Do the data look like what we expected? Because the catch data***
 ***has multiple rows for each night, what is in the weather data for the***
 ***separate rows on the same night?***
 
