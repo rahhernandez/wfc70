@@ -23,7 +23,7 @@
 <meta name="author" content="Rob Furrow" />
 
 
-<meta name="date" content="2025-05-23" />
+<meta name="date" content="2025-05-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -145,7 +145,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="0.1" data-path="getting-started.html"><a href="getting-started.html#installing-r-and-r-studio"><i class="fa fa-check"></i><b>0.1</b> Installing R and R Studio</a></li>
 <li class="chapter" data-level="0.2" data-path="getting-started.html"><a href="getting-started.html#getting-started-with-labs"><i class="fa fa-check"></i><b>0.2</b> Getting Started With Labs</a></li>
-<li class="chapter" data-level="0.3" data-path="getting-started.html"><a href="getting-started.html#working-from-home"><i class="fa fa-check"></i><b>0.3</b> Working From Home</a></li>
+<li class="chapter" data-level="0.3" data-path="getting-started.html"><a href="getting-started.html#working-from-homex"><i class="fa fa-check"></i><b>0.3</b> Working From Homex</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="intro-to-r-and-r-studio.html"><a href="intro-to-r-and-r-studio.html"><i class="fa fa-check"></i><b>1</b> Intro to R and R Studio</a>
 <ul>
@@ -173,8 +173,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="4.1.1" data-path="data-wrangling.html"><a href="data-wrangling.html#filter"><i class="fa fa-check"></i><b>4.1.1</b> Filter</a></li>
 <li class="chapter" data-level="4.1.2" data-path="data-wrangling.html"><a href="data-wrangling.html#joins"><i class="fa fa-check"></i><b>4.1.2</b> Joins</a></li>
+<li class="chapter" data-level="4.1.3" data-path="data-wrangling.html"><a href="data-wrangling.html#select"><i class="fa fa-check"></i><b>4.1.3</b> Select</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="data-wrangling.html"><a href="data-wrangling.html#section"><i class="fa fa-check"></i><b>4.2</b> </a></li>
+<li class="chapter" data-level="4.2" data-path="data-wrangling.html"><a href="data-wrangling.html#tying-everything-together"><i class="fa fa-check"></i><b>4.2</b> Tying Everything Together</a></li>
 </ul></li>
 <li class="appendix"><span><b>Old Labs (2024)</b></span></li>
 <li class="chapter" data-level="A" data-path="lab-1-r-data-and-the-rstudio-panels.html"><a href="lab-1-r-data-and-the-rstudio-panels.html"><i class="fa fa-check"></i><b>A</b> Lab 1: R, data, and the RStudio panels</a>
@@ -321,19 +322,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>filter</li>
 <li>joins</li>
-<li>pivot</li>
+<li>select</li>
 </ul>
 <div id="filter" class="section level3 hasAnchor" number="4.1.1">
 <h3><span class="header-section-number">4.1.1</span> Filter<a href="data-wrangling.html#filter" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Filter, as the name suggests, selects only the rows which meets the conditions you want. In lab, you used this to select specific animal species and plot type.</p>
+<p>Filter, as the name suggests, selects only the rows which meets the conditions you want. This is helpful if you want to select only a particular species in a big data set.</p>
 </div>
 <div id="joins" class="section level3 hasAnchor" number="4.1.2">
 <h3><span class="header-section-number">4.1.2</span> Joins<a href="data-wrangling.html#joins" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Joins combines two data sets into a singular data set through a common factor. There are four joins: left_join, right_join, full_join, and inner_join.</p>
+<p>Joins combines two data sets into a singular data set through a common factor. For example, in Lab 6, we utilized left_join, and it is it the most commonly used join command.</p>
+<ul>
+<li>left_join → keeps all observations in x</li>
+<li>right_join → keeps all observations in y</li>
+<li>full_join → keeps all observations in x and y</li>
+</ul>
+<p>This is an article which goes deeper into joins if you are interested in playing around! The best way to learn is to also play around with your code and inputting the different joins to see what changes.</p>
+<p><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="uri">https://dplyr.tidyverse.org/reference/mutate-joins.html</a></p>
+</div>
+<div id="select" class="section level3 hasAnchor" number="4.1.3">
+<h3><span class="header-section-number">4.1.3</span> Select<a href="data-wrangling.html#select" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>As the name suggests, select will only the columns of the data set you want to focus on. This is helpful in a large data set to only select certain columns such as weight, sex, length, etc.</p>
+<p>Now that we have done a quick review of some of the essential codes needed for Data Wrangling, we now question how to tie them together for the Data Story.</p>
 </div>
 </div>
-<div id="section" class="section level2" number="4.2">
-<h2><span class="header-section-number">4.2</span> </h2>
+<div id="tying-everything-together" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Tying Everything Together<a href="data-wrangling.html#tying-everything-together" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 
 </div>
 </div>

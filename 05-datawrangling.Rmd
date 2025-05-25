@@ -10,14 +10,31 @@ First, we will go over a quick overview of the tools in Tidyverse which allow yo
 
 - filter
 - joins
-- pivot
+- select 
 
 ### Filter 
 
-Filter, as the name suggests, selects only the rows which meets the conditions you want. In lab, you used this to select specific animal species and plot type. 
+Filter, as the name suggests, selects only the rows which meets the conditions you want. This is helpful if you want to select only a particular species in a big data set.
 
 ### Joins
 
-Joins combines two data sets into a singular data set through a common factor. There are four joins: left_join, right_join, full_join, and inner_join.
+Joins combines two data sets into a singular data set through a common factor. For example, in Lab 6, we utilized left_join, and it is it the most commonly used join command.
 
-## 
+- left_join → keeps all observations in x 
+- right_join → keeps all observations in y 
+- full_join → keeps all observations in x and y 
+
+This is an article which goes deeper into joins if you are interested in playing around! The best way to learn is to also play around with your code and inputting the different joins to see what changes.
+
+https://dplyr.tidyverse.org/reference/mutate-joins.html 
+
+### Select
+
+As the name suggests, select will only the columns of the data set you want to focus on. This is helpful in a large data set to only select certain columns such as weight, sex, length, etc.
+
+Now that we have done a quick review of some of the essential codes needed for Data Wrangling, we now question how to tie them together for the Data Story.
+
+## Tying Everything Together
+
+
+

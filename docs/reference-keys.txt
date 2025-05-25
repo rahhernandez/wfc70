@@ -1,6 +1,6 @@
 installing-r-and-r-studio
 getting-started-with-labs
-working-from-home
+working-from-homex
 intro-to-r-and-r-studio
 packages
 installing-packages
@@ -16,7 +16,8 @@ data-wrangling
 review
 filter
 joins
-section
+select
+tying-everything-together
 lab-1-r-data-and-the-rstudio-panels
 part-1-orienting-ourselves-to-rstudio-10-minutes-instructor-will-lead
 the-command-line-console-versus-a-r-script
