@@ -9,7 +9,27 @@ R is the language you are using to create the graphs. R Studio is where you inpu
 We will need both on your computer before your first lab. Even if you are not going to be bringing your personal computer to lab, having it can be helpful for homework and the Data Story.
 
 <video width="420" height="340" controls loop="" muted = " " autoplay>
+  <source src="# Getting Started {-}
+
+## Installing R and R Studio
+
+A program you will hopefully become familiar with is R and R Studio. Lecture and lab discusses the differences between these two.
+
+R is the language you are using to create the graphs. R Studio is where you input the code. One way to think about it is that R Studio is the kitchen and R represents all your ingredients.
+
+We will need both on your computer before your first lab. Even if you are not going to be bringing your personal computer to lab, having it can be helpful for homework and the Data Story.
+
+<video width="420" height="340" controls loop="" muted = " " autoplay>
   <source src="https://github.com/rahhernandez/wfc70/raw/refs/heads/main/Installing%20RStudio%20Draft.mov">
+</video>
+
+Once you have successfully downloaded both, don't be afraid to open R Studio and play around!
+
+## Getting Started With Labs 
+
+
+## Working From Home
+">
 </video>
 
 Once you have successfully downloaded both, don't be afraid to open R Studio and play around!
