@@ -14,8 +14,9 @@ We will need both on your computer before your first lab. Even if you are not go
 
 Once you have successfully downloaded both, don't be afraid to open R Studio and play around!
 
-## Getting Started With Labs 
+## Getting Started With Labs
+
+## Working From Home
 
 
-## Working From Homex
 
