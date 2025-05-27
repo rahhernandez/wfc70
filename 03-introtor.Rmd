@@ -20,7 +20,7 @@ library("package name")
 
 
 #### Downloading Tidyverse
-For exmaple to download *Tidyverse*, the main package utilized in WFC70, you will write:
+For example to download *Tidyverse*, the main package utilized in WFC70, you will write:
 
 ```{r, warning=FALSE}
 install.packages("tidyverse")

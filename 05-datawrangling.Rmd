@@ -1,40 +1,98 @@
 # Data Wrangling
-#going from raw data to neat data (lab data being so neat and going to raw data)
 
-Data wrangling is an important factor in WFC 70. It will be a major aspect in aiding in your Data Story, and in any future class in which you will need to utilize data. However, it can be a bit confusing as to how to tie everything together. This module is meant to aid you through knowing how to apply certain data wrangling features. 
-
+Data wrangling is an important factor in WFC 70. It will be a major aspect in aiding in your Data Story, and in any future class in which you will need to utilize data. However, it can be a bit confusing as to how to tie everything together. This module is meant to aid you through knowing how to apply certain data wrangling features.
 
 ## Review
 
 First, we will go over a quick overview of the tools in Tidyverse which allow you to data wrangle. The main ones utilized in this class are:
 
-- filter
-- joins
-- select 
+-   filter
+-   joins
+-   select
+-   mutate
+-   pivot
 
-### Filter 
+### Filter
 
-Filter, as the name suggests, selects only the rows which meets the conditions you want. This is helpful if you want to select only a particular species in a big data set.
+Filter, as the name suggests, selects only the *rows* which meets the conditions you want. This is helpful if you want to select only a particular species in a big data set.
 
 ### Joins
 
 Joins combines two data sets into a singular data set through a common factor. For example, in Lab 6, we utilized left_join, and it is it the most commonly used join command.
 
-- left_join → keeps all observations in x 
-- right_join → keeps all observations in y 
-- full_join → keeps all observations in x and y 
+-   left_join → keeps all observations in x
+-   right_join → keeps all observations in y
+-   full_join → keeps all observations in x and y
 
 This is an article which goes deeper into joins if you are interested in playing around! The best way to learn is to also play around with your code and inputting the different joins to see what changes.
 
-https://dplyr.tidyverse.org/reference/mutate-joins.html 
+- <https://dplyr.tidyverse.org/reference/mutate-joins.html>
 
 ### Select
 
-As the name suggests, select will only the columns of the data set you want to focus on. This is helpful in a large data set to only select certain columns such as weight, sex, length, etc.
+As the name suggests, select will only the *columns* of the data set you want to focus on. This is helpful in a large data set to only select certain columns such as weight, sex, length, etc.
 
 Now that we have done a quick review of some of the essential codes needed for Data Wrangling, we now question how to tie them together for the Data Story.
 
+### Mutate
+
+Mutating allows you to form new columns. This can be done with any functions as long as it is the same length of all the other column. A single value will make that value be the same for the entire column length.
+
+### Pivot
+
+Pivot allows you to change the data from wide data (horizontal typically) to long data (vertical typically) and vice versa. This is helpful when you have data in which perhaps the columns are multiple weeks (Week 1, Week 2, etc.) with two taxa. It is difficult to plot data of multiple weeks–*unless you want to compare certain weeks*–so by combining all the columns of Weeks into "Weeks" so that the Week 1, Week 2, etc., become values rather than columns.
+
+-   pivot_longer
+-   pivot_wider
+
 ## Tying Everything Together
 
+All these factors are simple on their own, especially in lab with simple, clean examples and what you want is known. These factors get a bit more complicated when you have to find and select the factors you want yourself. Data Wrangling may be the thing you find the most difficult when working with your own data.
 
+### Checklist
 
+It is important to go through a checklist to plan out your data wrangling plan. This checklist is for when you *find* your data.
+
+***Note: It is easier to find data and then pose a question than to pose a question and then find data.***
+
+1. **What factors do you want to compare?** Do not be scared about how big or messy looking your data may look like. Read the READ ME file and see what the data is about.
+
+2. **Select the factors** This project is only as complicated as you make it. You do not need to compare a bunch of factors. If you found a data set of a survey of a ton of birds, which specific species do you want to focus on?
+
+3. **How do you get the factors?** After you decide which rows and columns, which one of the data wrangling tools will you use? Think generally. The most common ones you would use would be select and filter. Utilize the other tools if they are necessary.
+
+4. **Get those factors** Once you have considered the big picture, it is time to think of the more specifics. You should look back at previous labs and lectures for examples of codes you can utilize. Remember, a lot of coding is copying and paste.
+
+### Example
+
+Let us look at the penguin data once more.
+
+```{r, warning=FALSE}
+#installing the packages and running it
+
+install.packages("palmerpenguins")
+library(palmerpenguins)
+```
+
+Let us look at the raw data set.
+
+```{r}
+penguins_raw
+```
+
+Let me say that I want to make a data set of Gentoo penguins and am only concern with the columns of sex and flipper length. Which code would I use?
+
+```{r, eval=FALSE}
+gentoo <- filter(penguins_raw, species=="gentoo penguin (Pygoscelis papua)") |>
+  select(Sex, flipper_length (mm))
+```
+
+```{r, eval=FALSE}
+gentoo <- filter(penguins_raw, species="Gentoo penguin (Pygoscelis papua)") |>
+  select(penguins_raw Sex, Flipper Length (mm))
+``` 
+
+```{r, eval=FALSE}
+gentoo <- filter(penguins_raw, species=="Gentoo penguin (Pygoscelis papua)") |>
+  select(Sex, Flipper Length (mm))
+```

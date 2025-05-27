@@ -1,0 +1,33 @@
+# Data Visualization  
+
+A major part of Data Literacy is visualization. The main form which this is done is through the making of graphs. There are many graphs that are possible based on the comparison you wish to make. 
+
+The main point of this section is to help guide you for which plots you can make.
+
+## Types of Graphs
+
+Here is a small little review of some of the graphs talked about in WFC 70 and when they may be useful.
+
+### Histogram
+
+A histogram is useful when comparing one categorical factor with values. For histograms, you can play with bin width and alpha (transparency).
+
+### Violin Plot
+
+### Box Plot
+
+### Scatter Plot
+
+A scatter plot plots each value as an individual point. It is useful when you have two numerical values as your x-value and y-value. It is also possible to plot multiple categorical values and have them represented through color. 
+
+## Extra Resources 
+
+Here are some extra resources for different graphs you can make and some introductory materials!
+
+https://ggplot2.tidyverse.org/articles/ggplot2.html ← Introductory to ggplot2
+
+https://r-graph-gallery.com/ ← Collection of R studio examples! A good resource because the graphs are sorted by what type of graphs that are
+
+https://r-graph-gallery.com/ggplot2-package.html ← ggplot! Shows the different possibilities with ggplot, including annotation, labels, and titles
+
+http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html ← 50 Different ggplots! Fun to see the extent of ggplot

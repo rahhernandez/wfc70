@@ -18,9 +18,9 @@ There are some common mistakes people often overlook which cause the code not to
 
 ### Example: Fix the Code
 
-As a practice, see if you can identify what is wrong in this code and fix it!We will be using the Palmer penguins package.
+As a practice, see if you can identify what is wrong in this code and fix it! We will be using the Palmer penguins package.
 
-```{r, warning=FALSE,message=FALSE, echo=FALSE, results=FALSE}
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
 install.packages("palmerpenguins")
 library(palmerpenguins)
 ```

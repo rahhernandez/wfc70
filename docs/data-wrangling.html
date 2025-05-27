@@ -23,7 +23,7 @@
 <meta name="author" content="Rob Furrow" />
 
 
-<meta name="date" content="2025-05-25" />
+<meta name="date" content="2025-05-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="importing-data.html"/>
-<link rel="next" href="lab-1-r-data-and-the-rstudio-panels.html"/>
+<link rel="next" href="data-visualization.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -174,8 +174,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.1.1" data-path="data-wrangling.html"><a href="data-wrangling.html#filter"><i class="fa fa-check"></i><b>4.1.1</b> Filter</a></li>
 <li class="chapter" data-level="4.1.2" data-path="data-wrangling.html"><a href="data-wrangling.html#joins"><i class="fa fa-check"></i><b>4.1.2</b> Joins</a></li>
 <li class="chapter" data-level="4.1.3" data-path="data-wrangling.html"><a href="data-wrangling.html#select"><i class="fa fa-check"></i><b>4.1.3</b> Select</a></li>
+<li class="chapter" data-level="4.1.4" data-path="data-wrangling.html"><a href="data-wrangling.html#mutate"><i class="fa fa-check"></i><b>4.1.4</b> Mutate</a></li>
+<li class="chapter" data-level="4.1.5" data-path="data-wrangling.html"><a href="data-wrangling.html#pivot"><i class="fa fa-check"></i><b>4.1.5</b> Pivot</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="data-wrangling.html"><a href="data-wrangling.html#tying-everything-together"><i class="fa fa-check"></i><b>4.2</b> Tying Everything Together</a></li>
+<li class="chapter" data-level="4.2" data-path="data-wrangling.html"><a href="data-wrangling.html#tying-everything-together"><i class="fa fa-check"></i><b>4.2</b> Tying Everything Together</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="data-wrangling.html"><a href="data-wrangling.html#checklist-1"><i class="fa fa-check"></i><b>4.2.1</b> Checklist</a></li>
+<li class="chapter" data-level="4.2.2" data-path="data-wrangling.html"><a href="data-wrangling.html#example"><i class="fa fa-check"></i><b>4.2.2</b> Example</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>5</b> Data Visualization</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="data-visualization.html"><a href="data-visualization.html#types-of-graphs"><i class="fa fa-check"></i><b>5.1</b> Types of Graphs</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="data-visualization.html"><a href="data-visualization.html#histogram"><i class="fa fa-check"></i><b>5.1.1</b> Histogram</a></li>
+<li class="chapter" data-level="5.1.2" data-path="data-visualization.html"><a href="data-visualization.html#violin-plot"><i class="fa fa-check"></i><b>5.1.2</b> Violin Plot</a></li>
+<li class="chapter" data-level="5.1.3" data-path="data-visualization.html"><a href="data-visualization.html#box-plot"><i class="fa fa-check"></i><b>5.1.3</b> Box Plot</a></li>
+<li class="chapter" data-level="5.1.4" data-path="data-visualization.html"><a href="data-visualization.html#scatter-plot"><i class="fa fa-check"></i><b>5.1.4</b> Scatter Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="data-visualization.html"><a href="data-visualization.html#extra-resources"><i class="fa fa-check"></i><b>5.2</b> Extra Resources</a></li>
 </ul></li>
 <li class="appendix"><span><b>Old Labs (2024)</b></span></li>
 <li class="chapter" data-level="A" data-path="lab-1-r-data-and-the-rstudio-panels.html"><a href="lab-1-r-data-and-the-rstudio-panels.html"><i class="fa fa-check"></i><b>A</b> Lab 1: R, data, and the RStudio panels</a>
@@ -314,7 +331,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="data-wrangling" class="section level1 hasAnchor" number="4">
 <h1><span class="header-section-number"> 4</span> Data Wrangling<a href="data-wrangling.html#data-wrangling" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>#going from raw data to neat data (lab data being so neat and going to raw data)</p>
 <p>Data wrangling is an important factor in WFC 70. It will be a major aspect in aiding in your Data Story, and in any future class in which you will need to utilize data. However, it can be a bit confusing as to how to tie everything together. This module is meant to aid you through knowing how to apply certain data wrangling features.</p>
 <div id="review" class="section level2 hasAnchor" number="4.1">
 <h2><span class="header-section-number">4.1</span> Review<a href="data-wrangling.html#review" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -323,10 +339,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>filter</li>
 <li>joins</li>
 <li>select</li>
+<li>mutate</li>
+<li>pivot</li>
 </ul>
 <div id="filter" class="section level3 hasAnchor" number="4.1.1">
 <h3><span class="header-section-number">4.1.1</span> Filter<a href="data-wrangling.html#filter" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Filter, as the name suggests, selects only the rows which meets the conditions you want. This is helpful if you want to select only a particular species in a big data set.</p>
+<p>Filter, as the name suggests, selects only the <em>rows</em> which meets the conditions you want. This is helpful if you want to select only a particular species in a big data set.</p>
 </div>
 <div id="joins" class="section level3 hasAnchor" number="4.1.2">
 <h3><span class="header-section-number">4.1.2</span> Joins<a href="data-wrangling.html#joins" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -337,29 +355,87 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>full_join → keeps all observations in x and y</li>
 </ul>
 <p>This is an article which goes deeper into joins if you are interested in playing around! The best way to learn is to also play around with your code and inputting the different joins to see what changes.</p>
-<p><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="uri">https://dplyr.tidyverse.org/reference/mutate-joins.html</a></p>
+<ul>
+<li><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="uri">https://dplyr.tidyverse.org/reference/mutate-joins.html</a></li>
+</ul>
 </div>
 <div id="select" class="section level3 hasAnchor" number="4.1.3">
 <h3><span class="header-section-number">4.1.3</span> Select<a href="data-wrangling.html#select" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>As the name suggests, select will only the columns of the data set you want to focus on. This is helpful in a large data set to only select certain columns such as weight, sex, length, etc.</p>
+<p>As the name suggests, select will only the <em>columns</em> of the data set you want to focus on. This is helpful in a large data set to only select certain columns such as weight, sex, length, etc.</p>
 <p>Now that we have done a quick review of some of the essential codes needed for Data Wrangling, we now question how to tie them together for the Data Story.</p>
+</div>
+<div id="mutate" class="section level3 hasAnchor" number="4.1.4">
+<h3><span class="header-section-number">4.1.4</span> Mutate<a href="data-wrangling.html#mutate" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Mutating allows you to form new columns. This can be done with any functions as long as it is the same length of all the other column. A single value will make that value be the same for the entire column length.</p>
+</div>
+<div id="pivot" class="section level3 hasAnchor" number="4.1.5">
+<h3><span class="header-section-number">4.1.5</span> Pivot<a href="data-wrangling.html#pivot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Pivot allows you to change the data from wide data (horizontal typically) to long data (vertical typically) and vice versa. This is helpful when you have data in which perhaps the columns are multiple weeks (Week 1, Week 2, etc.) with two taxa. It is difficult to plot data of multiple weeks–<em>unless you want to compare certain weeks</em>–so by combining all the columns of Weeks into “Weeks” so that the Week 1, Week 2, etc., become values rather than columns.</p>
+<ul>
+<li>pivot_longer</li>
+<li>pivot_wider</li>
+</ul>
 </div>
 </div>
 <div id="tying-everything-together" class="section level2 hasAnchor" number="4.2">
 <h2><span class="header-section-number">4.2</span> Tying Everything Together<a href="data-wrangling.html#tying-everything-together" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>All these factors are simple on their own, especially in lab with simple, clean examples and what you want is known. These factors get a bit more complicated when you have to find and select the factors you want yourself. Data Wrangling may be the thing you find the most difficult when working with your own data.</p>
+<div id="checklist-1" class="section level3 hasAnchor" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Checklist<a href="data-wrangling.html#checklist-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>It is important to go through a checklist to plan out your data wrangling plan. This checklist is for when you <em>find</em> your data.</p>
+<p><strong><em>Note: It is easier to find data and then pose a question than to pose a question and then find data.</em></strong></p>
+<ol style="list-style-type: decimal">
+<li><p><strong>What factors do you want to compare?</strong> Do not be scared about how big or messy looking your data may look like. Read the READ ME file and see what the data is about.</p></li>
+<li><p><strong>Select the factors</strong> This project is only as complicated as you make it. You do not need to compare a bunch of factors. If you found a data set of a survey of a ton of birds, which specific species do you want to focus on?</p></li>
+<li><p><strong>How do you get the factors?</strong> After you decide which rows and columns, which one of the data wrangling tools will you use? Think generally. The most common ones you would use would be select and filter. Utilize the other tools if they are necessary.</p></li>
+<li><p><strong>Get those factors</strong> Once you have considered the big picture, it is time to think of the more specifics. You should look back at previous labs and lectures for examples of codes you can utilize. Remember, a lot of coding is copying and paste.</p></li>
+</ol>
+</div>
+<div id="example" class="section level3 hasAnchor" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> Example<a href="data-wrangling.html#example" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let us look at the penguin data once more.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="data-wrangling.html#cb13-1" tabindex="-1"></a><span class="co">#installing the packages and running it</span></span>
+<span id="cb13-2"><a href="data-wrangling.html#cb13-2" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="data-wrangling.html#cb13-3" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;palmerpenguins&quot;</span>)</span>
+<span id="cb13-4"><a href="data-wrangling.html#cb13-4" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span></code></pre></div>
+<p>Let us look at the raw data set.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="data-wrangling.html#cb14-1" tabindex="-1"></a>penguins_raw</span></code></pre></div>
+<pre><code>## # A tibble: 344 × 17
+##    studyName `Sample Number` Species         Region Island Stage `Individual ID`
+##    &lt;chr&gt;               &lt;dbl&gt; &lt;chr&gt;           &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;          
+##  1 PAL0708                 1 Adelie Penguin… Anvers Torge… Adul… N1A1           
+##  2 PAL0708                 2 Adelie Penguin… Anvers Torge… Adul… N1A2           
+##  3 PAL0708                 3 Adelie Penguin… Anvers Torge… Adul… N2A1           
+##  4 PAL0708                 4 Adelie Penguin… Anvers Torge… Adul… N2A2           
+##  5 PAL0708                 5 Adelie Penguin… Anvers Torge… Adul… N3A1           
+##  6 PAL0708                 6 Adelie Penguin… Anvers Torge… Adul… N3A2           
+##  7 PAL0708                 7 Adelie Penguin… Anvers Torge… Adul… N4A1           
+##  8 PAL0708                 8 Adelie Penguin… Anvers Torge… Adul… N4A2           
+##  9 PAL0708                 9 Adelie Penguin… Anvers Torge… Adul… N5A1           
+## 10 PAL0708                10 Adelie Penguin… Anvers Torge… Adul… N5A2           
+## # ℹ 334 more rows
+## # ℹ 10 more variables: `Clutch Completion` &lt;chr&gt;, `Date Egg` &lt;date&gt;,
+## #   `Culmen Length (mm)` &lt;dbl&gt;, `Culmen Depth (mm)` &lt;dbl&gt;,
+## #   `Flipper Length (mm)` &lt;dbl&gt;, `Body Mass (g)` &lt;dbl&gt;, Sex &lt;chr&gt;,
+## #   `Delta 15 N (o/oo)` &lt;dbl&gt;, `Delta 13 C (o/oo)` &lt;dbl&gt;, Comments &lt;chr&gt;</code></pre>
+<p>Let me say that I want to make a data set of Gentoo penguins and am only concern with the columns of sex and flipper length. Which code would I use?</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="data-wrangling.html#cb16-1" tabindex="-1"></a>gentoo <span class="ot">&lt;-</span> <span class="fu">filter</span>(penguins_raw, species<span class="sc">==</span><span class="st">&quot;gentoo penguin (Pygoscelis papua)&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb16-2"><a href="data-wrangling.html#cb16-2" tabindex="-1"></a>  <span class="fu">select</span>(Sex, <span class="fu">flipper_length</span> (mm))</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="data-wrangling.html#cb17-1" tabindex="-1"></a>gentoo <span class="ot">&lt;-</span> <span class="fu">filter</span>(penguins_raw, <span class="at">species=</span><span class="st">&quot;Gentoo penguin (Pygoscelis papua)&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb17-2"><a href="data-wrangling.html#cb17-2" tabindex="-1"></a>  <span class="fu">select</span>(penguins_raw Sex, Flipper <span class="fu">Length</span> (mm))</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="data-wrangling.html#cb18-1" tabindex="-1"></a>gentoo <span class="ot">&lt;-</span> <span class="fu">filter</span>(penguins_raw, species<span class="sc">==</span><span class="st">&quot;Gentoo penguin (Pygoscelis papua)&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb18-2"><a href="data-wrangling.html#cb18-2" tabindex="-1"></a>  <span class="fu">select</span>(Sex, Flipper <span class="fu">Length</span> (mm))</span></code></pre></div>
 
 </div>
 </div>
-
-
-
+</div>
             </section>
 
           </div>
         </div>
       </div>
 <a href="importing-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="lab-1-r-data-and-the-rstudio-panels.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="data-visualization.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
