@@ -12,7 +12,7 @@ Here is a small little review of some of the graphs talked about in WFC 70 and w
 
 A histogram is useful when comparing one categorical factor with values. For histograms, you can play with bin width and alpha (transparency).
 
-![A histogram from lecture]()
+![A histogram from lecture](https://github.com/rahhernandez/wfc70/raw/refs/heads/main/histogram.png)
 
 ### Violin Plot
 
