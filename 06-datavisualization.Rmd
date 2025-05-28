@@ -12,19 +12,25 @@ Here is a small little review of some of the graphs talked about in WFC 70 and w
 
 A histogram is useful when comparing one categorical factor with values. For histograms, you can play with bin width and alpha (transparency).
 
-![A histogram from lecture](https://github.com/rahhernandez/wfc70/raw/refs/heads/main/histogram.png)
+![](https://github.com/rahhernandez/wfc70/raw/refs/heads/main/histogram.png)
 
 ### Violin Plot
 
 A violin plot is a great way to visualize distribution of a sample, especially with seeing the variation present. It is a great way to visualize data if you feel as though a box plot does not truly convey the variation in your numeric values.
 
+![](https://github.com/rahhernandez/wfc70/raw/refs/heads/main/violin.png)
+
 ### Box Plot
 
 A box plot is a more uniformed way to visualize and display your data. This is most effective when there is a grand difference between the comparisons. If the box plots are too similar, then it can be more effective to utilize a violin plot.
 
+![](https://github.com/rahhernandez/wfc70/raw/refs/heads/main/boxplot.png)
+
 ### Scatter Plot
 
 A scatter plot plots each value as an individual point. It is useful when you have two numerical values as your x-value and y-value. It is also possible to plot multiple categorical values and have them represented through color. 
+
+![](https://github.com/rahhernandez/wfc70/raw/refs/heads/main/scatterplot.png)
 
 ## Extra Resources 
 
@@ -37,3 +43,7 @@ https://r-graph-gallery.com/ ← Collection of R studio examples! A good resourc
 https://r-graph-gallery.com/ggplot2-package.html ← ggplot! Shows the different possibilities with ggplot, including annotation, labels, and titles
 
 http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html ← 50 Different ggplots! Fun to see the extent of ggplot
+
+---
+
+All images from past WFC 70 Lectures from Instructor Rob Furrow

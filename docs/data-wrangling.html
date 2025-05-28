@@ -394,12 +394,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="example" class="section level3 hasAnchor" number="4.2.2">
 <h3><span class="header-section-number">4.2.2</span> Example<a href="data-wrangling.html#example" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Let us look at the penguin data once more.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="data-wrangling.html#cb13-1" tabindex="-1"></a><span class="co">#installing the packages and running it</span></span>
-<span id="cb13-2"><a href="data-wrangling.html#cb13-2" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="data-wrangling.html#cb13-3" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;palmerpenguins&quot;</span>)</span>
-<span id="cb13-4"><a href="data-wrangling.html#cb13-4" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="data-wrangling.html#cb12-1" tabindex="-1"></a><span class="co">#installing the packages and running it</span></span>
+<span id="cb12-2"><a href="data-wrangling.html#cb12-2" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="data-wrangling.html#cb12-3" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;palmerpenguins&quot;</span>)</span>
+<span id="cb12-4"><a href="data-wrangling.html#cb12-4" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span></code></pre></div>
 <p>Let us look at the raw data set.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="data-wrangling.html#cb14-1" tabindex="-1"></a>penguins_raw</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="data-wrangling.html#cb13-1" tabindex="-1"></a>penguins_raw</span></code></pre></div>
 <pre><code>## # A tibble: 344 × 17
 ##    studyName `Sample Number` Species         Region Island Stage `Individual ID`
 ##    &lt;chr&gt;               &lt;dbl&gt; &lt;chr&gt;           &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;          
@@ -419,12 +419,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## #   `Flipper Length (mm)` &lt;dbl&gt;, `Body Mass (g)` &lt;dbl&gt;, Sex &lt;chr&gt;,
 ## #   `Delta 15 N (o/oo)` &lt;dbl&gt;, `Delta 13 C (o/oo)` &lt;dbl&gt;, Comments &lt;chr&gt;</code></pre>
 <p>Let me say that I want to make a data set of Gentoo penguins and am only concern with the columns of sex and flipper length. Which code would I use?</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="data-wrangling.html#cb16-1" tabindex="-1"></a>gentoo <span class="ot">&lt;-</span> <span class="fu">filter</span>(penguins_raw, species<span class="sc">==</span><span class="st">&quot;gentoo penguin (Pygoscelis papua)&quot;</span>) <span class="sc">|&gt;</span></span>
-<span id="cb16-2"><a href="data-wrangling.html#cb16-2" tabindex="-1"></a>  <span class="fu">select</span>(Sex, <span class="fu">flipper_length</span> (mm))</span></code></pre></div>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="data-wrangling.html#cb17-1" tabindex="-1"></a>gentoo <span class="ot">&lt;-</span> <span class="fu">filter</span>(penguins_raw, <span class="at">species=</span><span class="st">&quot;Gentoo penguin (Pygoscelis papua)&quot;</span>) <span class="sc">|&gt;</span></span>
-<span id="cb17-2"><a href="data-wrangling.html#cb17-2" tabindex="-1"></a>  <span class="fu">select</span>(penguins_raw Sex, Flipper <span class="fu">Length</span> (mm))</span></code></pre></div>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="data-wrangling.html#cb18-1" tabindex="-1"></a>gentoo <span class="ot">&lt;-</span> <span class="fu">filter</span>(penguins_raw, species<span class="sc">==</span><span class="st">&quot;Gentoo penguin (Pygoscelis papua)&quot;</span>) <span class="sc">|&gt;</span></span>
-<span id="cb18-2"><a href="data-wrangling.html#cb18-2" tabindex="-1"></a>  <span class="fu">select</span>(Sex, Flipper <span class="fu">Length</span> (mm))</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="data-wrangling.html#cb15-1" tabindex="-1"></a>gentoo <span class="ot">&lt;-</span> <span class="fu">filter</span>(penguins_raw, species<span class="sc">==</span><span class="st">&quot;gentoo penguin (Pygoscelis papua)&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb15-2"><a href="data-wrangling.html#cb15-2" tabindex="-1"></a>  <span class="fu">select</span>(Sex, <span class="fu">flipper_length</span> (mm))</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="data-wrangling.html#cb16-1" tabindex="-1"></a>gentoo <span class="ot">&lt;-</span> <span class="fu">filter</span>(penguins_raw, <span class="at">species=</span><span class="st">&quot;Gentoo penguin (Pygoscelis papua)&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb16-2"><a href="data-wrangling.html#cb16-2" tabindex="-1"></a>  <span class="fu">select</span>(penguins_raw Sex, Flipper <span class="fu">Length</span> (mm))</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="data-wrangling.html#cb17-1" tabindex="-1"></a>gentoo <span class="ot">&lt;-</span> <span class="fu">filter</span>(penguins_raw, species<span class="sc">==</span><span class="st">&quot;Gentoo penguin (Pygoscelis papua)&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb17-2"><a href="data-wrangling.html#cb17-2" tabindex="-1"></a>  <span class="fu">select</span>(Sex, Flipper <span class="fu">Length</span> (mm))</span></code></pre></div>
 
 </div>
 </div>

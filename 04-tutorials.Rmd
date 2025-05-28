@@ -8,19 +8,23 @@ There are some common mistakes people often overlook which cause the code not to
 
 1.  Check Spelling
     -   Does all your spelling match? Is the data you are referencing spelled ***exactly*** the same? For example, "cats" is not the same as "Cats".
+    
 2.  Reread Code
     -   A common mistake is missing an aspect of the code, such as a parenthesis, comma or plus sign. Reread and check to make sure you have all aspects of of your code.
+    
 3.  Compare to Previous Code
     -   A big aspect of coding is copying and pasting and altering to get what you need. If you altered previous code which previously worked, compare it to ensure it is the same.
+    
 4.  Seeking for Help
     - ***DO NOT RELY ON AI!*** AI will typically complicate your code and make you do more work. It is safer, and more reliable, to ask the instructor or TA!
-    -   If you have gone through the previous steps and the code is *still* not working, ask the instructor or TA! You can also Google your issue, as it is likely that other people have experienced the same issue and are looking for solutions.
+    
+If you have gone through the previous steps and the code is *still* not working, ask the instructor or TA! You can also Google your issue, as it is likely that other people have experienced the same issue and are looking for solutions.
 
 ### Example: Fix the Code
 
 As a practice, see if you can identify what is wrong in this code and fix it! We will be using the Palmer penguins package.
 
-```{r, warning=FALSE, message=FALSE, echo=FALSE}
+```{r, warning=FALSE, message=FALSE, echo=FALSE,results='hide'}
 install.packages("palmerpenguins")
 library(palmerpenguins)
 ```
@@ -44,12 +48,19 @@ You will be working with a lot of data in this class (as expected). While lab ma
 As discussed in lecture, there are many places online to find data. The ones recommended in lecture include:
 
 - Dryad
+- Environmental Data Initiative
 - University of Minnesota
-- 
+- National Ecological Observatory Network
+- Knowledge Network for Biocomplexity
+- Breeding Bird Survey
 
-Once you find your data, how do you determine if it is good or not? Below is a small checklist to go through to make sure you are not biting off more than you can chew.
+Once you find your data, how do you determine if it is good or not? 
 
-1.
+Do not be shy about working with messy data. Working with messy data is good and helps increase your data literacy skills. However, there is a difference between messy good data and messy bad data.  
+
+Below is a small checklist to go through to make sure you are not biting off more than you can chew.
+
+1. 
 2.
 3.
 

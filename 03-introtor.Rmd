@@ -45,7 +45,6 @@ Here some useful lists of essential R packages!
 -   <https://medium.com/data-science/a-comprehensive-list-of-handy-r-packages-e85dad294b3d>
 
 
-
 ## Knitting
 
 The way RMarkdown (Rmd) files are saved is through a process called knitting. Knitting saves the files into an HTML, PDF or Word. In WFC 70, we mainly save our Rmd files into HTML files. Knitting, in the beginning, can be a bit difficult.

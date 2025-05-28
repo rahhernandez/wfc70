@@ -351,17 +351,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Seeking for Help
 <ul>
 <li><strong><em>DO NOT RELY ON AI!</em></strong> AI will typically complicate your code and make you do more work. It is safer, and more reliable, to ask the instructor or TA!</li>
-<li>If you have gone through the previous steps and the code is <em>still</em> not working, ask the instructor or TA! You can also Google your issue, as it is likely that other people have experienced the same issue and are looking for solutions.</li>
 </ul></li>
 </ol>
+<p>If you have gone through the previous steps and the code is <em>still</em> not working, ask the instructor or TA! You can also Google your issue, as it is likely that other people have experienced the same issue and are looking for solutions.</p>
 <div id="example-fix-the-code" class="section level3 hasAnchor" number="2.1.1">
 <h3><span class="header-section-number">2.1.1</span> Example: Fix the Code<a href="code-not-working.html#example-fix-the-code" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>As a practice, see if you can identify what is wrong in this code and fix it! We will be using the Palmer penguins package.</p>
-<pre><code>## package &#39;palmerpenguins&#39; successfully unpacked and MD5 sums checked
-## 
-## The downloaded binary packages are in
-##  C:\Users\bookw\AppData\Local\Temp\RtmpumPduP\downloaded_packages</code></pre>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="code-not-working.html#cb10-1" tabindex="-1"></a>penguins_raw </span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="code-not-working.html#cb9-1" tabindex="-1"></a>penguins_raw </span></code></pre></div>
 <pre><code>## # A tibble: 344 × 17
 ##    studyName `Sample Number` Species         Region Island Stage `Individual ID`
 ##    &lt;chr&gt;               &lt;dbl&gt; &lt;chr&gt;           &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;          
@@ -380,7 +376,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## #   `Culmen Length (mm)` &lt;dbl&gt;, `Culmen Depth (mm)` &lt;dbl&gt;,
 ## #   `Flipper Length (mm)` &lt;dbl&gt;, `Body Mass (g)` &lt;dbl&gt;, Sex &lt;chr&gt;,
 ## #   `Delta 15 N (o/oo)` &lt;dbl&gt;, `Delta 13 C (o/oo)` &lt;dbl&gt;, Comments &lt;chr&gt;</code></pre>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="code-not-working.html#cb12-1" tabindex="-1"></a>penguins_torgersen <span class="ot">&lt;-</span> <span class="fu">filter</span>(Penguins_raw, island <span class="sc">==</span> <span class="st">&quot;Torgersen&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="code-not-working.html#cb11-1" tabindex="-1"></a>penguins_torgersen <span class="ot">&lt;-</span> <span class="fu">filter</span>(Penguins_raw, island <span class="sc">==</span> <span class="st">&quot;Torgersen&quot;</span>)</span></code></pre></div>
 </div>
 </div>
 </div>
