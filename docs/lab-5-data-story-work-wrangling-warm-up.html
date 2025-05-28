@@ -23,7 +23,7 @@
 <meta name="author" content="Rob Furrow" />
 
 
-<meta name="date" content="2025-05-26" />
+<meta name="date" content="2025-05-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -421,9 +421,8 @@ each species.</p>
 <span id="cb110-2"><a href="lab-5-data-story-work-wrangling-warm-up.html#cb110-2" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dipodomys,</span>
 <span id="cb110-3"><a href="lab-5-data-story-work-wrangling-warm-up.html#cb110-3" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> hindfoot_length, <span class="at">y =</span> weight, <span class="at">color =</span> species_id)) <span class="sc">+</span></span>
 <span id="cb110-4"><a href="lab-5-data-story-work-wrangling-warm-up.html#cb110-4" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-<pre><code>## Warning: Removed 832 rows containing
-## missing values or values outside
-## the scale range
+<pre><code>## Warning: Removed 832 rows containing missing values
+## or values outside the scale range
 ## (`geom_point()`).</code></pre>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-59-1.png" width="672" /></p>
 <div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="lab-5-data-story-work-wrangling-warm-up.html#cb112-1" tabindex="-1"></a><span class="co"># faceting by species</span></span>
@@ -431,9 +430,8 @@ each species.</p>
 <span id="cb112-3"><a href="lab-5-data-story-work-wrangling-warm-up.html#cb112-3" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> hindfoot_length, <span class="at">y =</span> weight)) <span class="sc">+</span></span>
 <span id="cb112-4"><a href="lab-5-data-story-work-wrangling-warm-up.html#cb112-4" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb112-5"><a href="lab-5-data-story-work-wrangling-warm-up.html#cb112-5" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>species)</span></code></pre></div>
-<pre><code>## Warning: Removed 832 rows containing
-## missing values or values outside
-## the scale range
+<pre><code>## Warning: Removed 832 rows containing missing values
+## or values outside the scale range
 ## (`geom_point()`).</code></pre>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-59-2.png" width="672" /></p>
 <div id="your-task-10-minutes" class="section level3 hasAnchor" number="10.3.1">
@@ -512,9 +510,9 @@ at each plot for each year.</p>
 <span id="cb115-19"><a href="lab-5-data-story-work-wrangling-warm-up.html#cb115-19" tabindex="-1"></a>                                <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">10</span>,<span class="dv">16</span>,<span class="dv">23</span>,<span class="dv">24</span>) <span class="sc">~</span> <span class="st">&quot;all rodent exclosure&quot;</span>,</span>
 <span id="cb115-20"><a href="lab-5-data-story-work-wrangling-warm-up.html#cb115-20" tabindex="-1"></a>                                <span class="fu">c</span>(<span class="dv">6</span>,<span class="dv">13</span>,<span class="dv">18</span>,<span class="dv">20</span>) <span class="sc">~</span> <span class="st">&quot;krat short-term exclosure&quot;</span>,</span>
 <span id="cb115-21"><a href="lab-5-data-story-work-wrangling-warm-up.html#cb115-21" tabindex="-1"></a>                                <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">9</span>) <span class="sc">~</span> <span class="st">&quot;spectab exclosure&quot;</span>))</span></code></pre></div>
-<pre><code>## `summarise()` has grouped output
-## by &#39;plot_id&#39;. You can override
-## using the `.groups` argument.</code></pre>
+<pre><code>## `summarise()` has grouped output by
+## &#39;plot_id&#39;. You can override using the
+## `.groups` argument.</code></pre>
 <p>We have two different measurements of diversity. The <code>richness</code> column
 is just a count of exactly how many different rodent species were found
 in that plot in that year. The <code>shannon_d</code> column is a measure of

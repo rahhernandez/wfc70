@@ -12,9 +12,15 @@ Here is a small little review of some of the graphs talked about in WFC 70 and w
 
 A histogram is useful when comparing one categorical factor with values. For histograms, you can play with bin width and alpha (transparency).
 
+![A histogram from lecture]()
+
 ### Violin Plot
 
+A violin plot is a great way to visualize distribution of a sample, especially with seeing the variation present. It is a great way to visualize data if you feel as though a box plot does not truly convey the variation in your numeric values.
+
 ### Box Plot
+
+A box plot is a more uniformed way to visualize and display your data. This is most effective when there is a grand difference between the comparisons. If the box plots are too similar, then it can be more effective to utilize a violin plot.
 
 ### Scatter Plot
 
