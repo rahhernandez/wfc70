@@ -8,6 +8,16 @@ The main point of this section is to help guide you for which plots you can make
 
 Here is a small little review of some of the graphs talked about in WFC 70 and when they may be useful.
 
+Remember that the general code to generate graphs is:
+
+```{r, eval=FALSE}
+ggplot(data = "dataname",
+  mapping = aes(x = "x-variable", y = "y-variable")) +
+  geom_"graphtype"() 
+```
+
+Where "dataname" is the name of your dataset, x-variable and y-variable are the chosen columns for compariso (ex. length, weight, sex) and "graphtype" being one of the possible graphs from below (ex. geom_violin, geom_point,etc.)
+
 ### Histogram
 
 A histogram is useful when comparing one categorical factor with values. For histograms, you can play with bin width and alpha (transparency).
@@ -31,6 +41,11 @@ A box plot is a more uniformed way to visualize and display your data. This is m
 A scatter plot plots each value as an individual point. It is useful when you have two numerical values as your x-value and y-value. It is also possible to plot multiple categorical values and have them represented through color. 
 
 ![](https://github.com/rahhernandez/wfc70/raw/refs/heads/main/scatterplot.png)
+## Making Pretty Graphs
+
+You are able edit and add certain aspects to your graph to make them clearer. These include colors, labels and themes.
+
+
 
 ## Extra Resources 
 

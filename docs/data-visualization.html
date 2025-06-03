@@ -338,6 +338,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="types-of-graphs" class="section level2 hasAnchor" number="5.1">
 <h2><span class="header-section-number">5.1</span> Types of Graphs<a href="data-visualization.html#types-of-graphs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Here is a small little review of some of the graphs talked about in WFC 70 and when they may be useful.</p>
+<p>Remember that the general code to generate graphs is:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="data-visualization.html#cb18-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="st">&quot;dataname&quot;</span>,</span>
+<span id="cb18-2"><a href="data-visualization.html#cb18-2" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">&quot;x-variable&quot;</span>, <span class="at">y =</span> <span class="st">&quot;y-variable&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb18-3"><a href="data-visualization.html#cb18-3" tabindex="-1"></a>  geom_<span class="st">&quot;graphtype&quot;</span>() </span></code></pre></div>
+<p>Where “dataname” is the name of your dataset, x-variable and y-variable are the chosen columns for compariso (ex. length, weight, sex) and “graphtype” being one of the possible graphs from below (ex. geom_violin, geom_point,etc.)</p>
 <div id="histogram" class="section level3 hasAnchor" number="5.1.1">
 <h3><span class="header-section-number">5.1.1</span> Histogram<a href="data-visualization.html#histogram" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A histogram is useful when comparing one categorical factor with values. For histograms, you can play with bin width and alpha (transparency).</p>
@@ -356,7 +361,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="scatter-plot" class="section level3 hasAnchor" number="5.1.4">
 <h3><span class="header-section-number">5.1.4</span> Scatter Plot<a href="data-visualization.html#scatter-plot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A scatter plot plots each value as an individual point. It is useful when you have two numerical values as your x-value and y-value. It is also possible to plot multiple categorical values and have them represented through color.</p>
-<p><img src="https://github.com/rahhernandez/wfc70/raw/refs/heads/main/scatterplot.png" /></p>
+<p><img src="https://github.com/rahhernandez/wfc70/raw/refs/heads/main/scatterplot.png" />
+## Making Pretty Graphs</p>
+<p>You are able edit and add certain aspects to your graph to make them clearer. These include colors, labels and themes.</p>
 </div>
 </div>
 <div id="extra-resources" class="section level2 hasAnchor" number="5.2">
