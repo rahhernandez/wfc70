@@ -29,7 +29,7 @@ This is mostly review about the data introduced at the end of Monday's lecture.
 
 ### Loading data
 
-```{r}
+```{r,eval=FALSE}
 # loading a csv file from this URL. The header argument just tells R
 # that the first row is not data, but is instead a header
 # with column names
@@ -45,7 +45,7 @@ The data are part of the Portal Project Teaching Database [https://figshare.com/
 They come from a long-term mammal and plant monitoring study in the Chihuahuan 
 Desert near Portal, Arizona.
 
-```{r}
+```{r,eval=FALSE}
 # getting a sense of our variables
 glimpse(mammals)
 ```
@@ -68,7 +68,7 @@ Your first activity is to explore size relationships on a filtered subset
 of these data, looking at just a few species. We will get you started with
 some code to filter the data.
 
-```{r}
+```{r, eval=FALSE}
 # selecting only genus Dipodomys, and only for the control plots
 # then removing any individuals who were not identified to species (the "sp.")
 dipodomys <- filter(mammals, genus == "Dipodomys" & plot_type == "Control") |>
@@ -87,7 +87,7 @@ We now have a simplified data frame for only the three kangaroo rat species.
 Here are two examples of visualizing the hindfoot and weight relationships for 
 each species.
 
-```{r}
+```{r, eval=FALSE}
 # scatterplot with color
 ggplot(data = dipodomys,
        mapping = aes(x = hindfoot_length, y = weight, color = species_id)) +
@@ -176,7 +176,7 @@ folder on Google Drive.
 Run the code below to create a new data frame that summarizes the diversity 
 at each plot for each year.
 
-```{r}
+```{r, eval=FALSE}
 # creating a function to calculate Shannon's diversity index
 shannon <- function(x)
 {

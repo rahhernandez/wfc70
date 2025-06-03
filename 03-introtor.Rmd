@@ -29,7 +29,11 @@ library(tidyverse)
 ```
 
 Below is a video to guide you through downloading packages!
-
+<video width="420" height="340" controls loop="">
+  <source src="https://github.com/rahhernandez/wfc70/raw/refs/heads/main/Installing%20a%20Package.mov 
+">
+</video>
+ 
 ### Finding Packages
 
 **Tidyverse** and **ggplot2** may be the most used package in this class, but there are plenty of packages out there!

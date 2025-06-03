@@ -24,3 +24,8 @@ A main component of WFC70 are the labs. The labs will be where you get to really
 
 As expected, most homework assignments will be completed at home. At times, you will need to refer back to lab material to help accomplish the homework assignments, including the Data Story. Navigating things at home may be difficult, especially if you are utilizing your personal computer. Below is a video to help guide you through navigating R Studio from home! 
 
+## Shortcuts
+
+There are lots of helpful keyboard shortcuts available to increase your workflow, not only for coding, but in general. Below is a link to a guide of shortcuts and their use, created by fellow Learning Assistant Zoe Smith.
+
+https://zoesmithucd.github.io/ 
