@@ -1,6 +1,6 @@
 installing-r-and-r-studio
-getting-started-with-labs
-working-from-home
+tips-for-getting-started-with-labs
+tips-for-working-from-home
 shortcuts
 intro-to-r-and-r-studio
 packages

@@ -23,7 +23,7 @@
 <meta name="author" content="Rob Furrow" />
 
 
-<meta name="date" content="2025-06-03" />
+<meta name="date" content="2025-06-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,6 +52,7 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -144,8 +145,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i>Getting Started</a>
 <ul>
 <li class="chapter" data-level="0.1" data-path="getting-started.html"><a href="getting-started.html#installing-r-and-r-studio"><i class="fa fa-check"></i><b>0.1</b> Installing R and R Studio</a></li>
-<li class="chapter" data-level="0.2" data-path="getting-started.html"><a href="getting-started.html#getting-started-with-labs"><i class="fa fa-check"></i><b>0.2</b> Getting Started With Labs</a></li>
-<li class="chapter" data-level="0.3" data-path="getting-started.html"><a href="getting-started.html#working-from-home"><i class="fa fa-check"></i><b>0.3</b> Working From Home</a></li>
+<li class="chapter" data-level="0.2" data-path="getting-started.html"><a href="getting-started.html#tips-for-getting-started-with-labs"><i class="fa fa-check"></i><b>0.2</b> Tips for Getting Started With Labs</a></li>
+<li class="chapter" data-level="0.3" data-path="getting-started.html"><a href="getting-started.html#tips-for-working-from-home"><i class="fa fa-check"></i><b>0.3</b> Tips for Working From Home</a></li>
 <li class="chapter" data-level="0.4" data-path="getting-started.html"><a href="getting-started.html#shortcuts"><i class="fa fa-check"></i><b>0.4</b> Shortcuts</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="intro-to-r-and-r-studio.html"><a href="intro-to-r-and-r-studio.html"><i class="fa fa-check"></i><b>1</b> Intro to R and R Studio</a>
@@ -406,11 +407,11 @@ points that are on top of each other more clearly.</p>
 <div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="lab-4-visualizing-data-in-r-part-2.html#cb95-1" tabindex="-1"></a><span class="co"># many points have the exact same weight, making this look sparse</span></span>
 <span id="cb95-2"><a href="lab-4-visualizing-data-in-r-part-2.html#cb95-2" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> lizards, <span class="fu">aes</span>(<span class="at">y =</span> common_name, <span class="at">x =</span> weight)) <span class="sc">+</span></span>
 <span id="cb95-3"><a href="lab-4-visualizing-data-in-r-part-2.html#cb95-3" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-47-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-49-1.png" width="672" /></p>
 <div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="lab-4-visualizing-data-in-r-part-2.html#cb96-1" tabindex="-1"></a><span class="co"># the jitter will reveal just how many measurements we have</span></span>
 <span id="cb96-2"><a href="lab-4-visualizing-data-in-r-part-2.html#cb96-2" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> lizards, <span class="fu">aes</span>(<span class="at">y =</span> common_name, <span class="at">x =</span> weight)) <span class="sc">+</span></span>
 <span id="cb96-3"><a href="lab-4-visualizing-data-in-r-part-2.html#cb96-3" tabindex="-1"></a>  <span class="fu">geom_jitter</span>()</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-47-2.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-49-2.png" width="672" /></p>
 <div id="task-1-working-with-geom_jitter" class="section level3 hasAnchor" number="10.3.1">
 <h3><span class="header-section-number">D.3.1</span> Task 1: working with <code>geom_jitter()</code><a href="lab-4-visualizing-data-in-r-part-2.html#task-1-working-with-geom_jitter" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Make the same two plots for snout-vent length (<code>sv_length</code>) rather than
@@ -427,7 +428,7 @@ or red shapes, or larger lines. Here is an example.</p>
 <span id="cb98-2"><a href="lab-4-visualizing-data-in-r-part-2.html#cb98-2" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">color =</span> <span class="st">&quot;blue&quot;</span>,</span>
 <span id="cb98-3"><a href="lab-4-visualizing-data-in-r-part-2.html#cb98-3" tabindex="-1"></a>              <span class="at">fill =</span> <span class="st">&quot;light green&quot;</span>,</span>
 <span id="cb98-4"><a href="lab-4-visualizing-data-in-r-part-2.html#cb98-4" tabindex="-1"></a>              <span class="at">linetype =</span> <span class="st">&quot;dotted&quot;</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-49-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-51-1.png" width="672" /></p>
 </div>
 <div id="task-2-changing-attributes-throughout-a-plot" class="section level3 hasAnchor" number="10.3.3">
 <h3><span class="header-section-number">D.3.3</span> Task 2: changing attributes throughout a plot<a href="lab-4-visualizing-data-in-r-part-2.html#task-2-changing-attributes-throughout-a-plot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -445,7 +446,7 @@ not-super-attractive theme, and then you can explore.</p>
 <span id="cb100-2"><a href="lab-4-visualizing-data-in-r-part-2.html#cb100-2" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> lizards, <span class="fu">aes</span>(<span class="at">y =</span> common_name, <span class="at">x =</span> sv_length)) <span class="sc">+</span></span>
 <span id="cb100-3"><a href="lab-4-visualizing-data-in-r-part-2.html#cb100-3" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">fill =</span> <span class="st">&quot;light blue&quot;</span>) <span class="sc">+</span></span>
 <span id="cb100-4"><a href="lab-4-visualizing-data-in-r-part-2.html#cb100-4" tabindex="-1"></a>  <span class="fu">theme_dark</span>()</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-51-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
 <p>Check out the other themes here: <a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">https://ggplot2.tidyverse.org/reference/ggtheme.html</a>.</p>
 </div>
 <div id="task-3-themes" class="section level3 hasAnchor" number="10.3.5">
@@ -467,7 +468,7 @@ labels that are clearer to your reader.</p>
 <span id="cb102-5"><a href="lab-4-visualizing-data-in-r-part-2.html#cb102-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;snout-vent length (mm)&quot;</span>, </span>
 <span id="cb102-6"><a href="lab-4-visualizing-data-in-r-part-2.html#cb102-6" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;&quot;</span>,</span>
 <span id="cb102-7"><a href="lab-4-visualizing-data-in-r-part-2.html#cb102-7" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Length distributions for New Mexico lizards&quot;</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-55-1.png" width="672" /></p>
 <p>The <code>sv_length</code> variable was unclear, so I make the new x-axis label state
 the full name (and units, which are listed in section 2.2 of Allison Horst’s tutorial).
 I also elected make the y-axis label blank, because common name is self-explanatory.
