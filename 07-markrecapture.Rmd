@@ -1,2 +1,11 @@
 # Mark-Recapture
 
+A concept that comes up not only in this class, but in Biology and future WFC classes, is mark-recapture. Mark-recapture is a great method of estimating the population of a species in an area. Obviously, it is difficult, well impossible, to count each individual and keep track of them. This is what makes mark-recapture very helpful. 
+
+In mark-recapture, you catch individuals from the population and mark them (hence the name). After you mark the individual, you release them. You do this through a period of time, and obviously, during this period, you will be getting individuals that are already marked. 
+
+The equation for mark-recapture is:
+
+$\frac{M}{\hat{N}}$ = $\frac{R}{T}$ 
+
+Where *M* is individuals marked initially, $\hat{N}$ is estimated population size, *R* is marked recaptured and *T* is the total in the next sample. 

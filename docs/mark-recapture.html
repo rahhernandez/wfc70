@@ -334,6 +334,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="mark-recapture" class="section level1 hasAnchor" number="6">
 <h1><span class="header-section-number"> 6</span> Mark-Recapture<a href="mark-recapture.html#mark-recapture" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>A concept that comes up not only in this class, but in Biology and future WFC classes, is mark-recapture. Mark-recapture is a great method of estimating the population of a species in an area. Obviously, it is difficult, well impossible, to count each individual and keep track of them. This is what makes mark-recapture very helpful.</p>
+<p>In mark-recapture, you catch individuals from the population and mark them (hence the name). After you mark the individual, you release them. You do this through a period of time, and obviously, during this period, you will be getting individuals that are already marked.</p>
+<p>The equation for mark-recapture is:</p>
+<p><span class="math inline">\(\frac{M}{\hat{N}}\)</span> = <span class="math inline">\(\frac{R}{T}\)</span></p>
+<p>Where <em>M</em> is individuals marked initially, <span class="math inline">\(\hat{N}\)</span> is estimated population size, <em>R</em> is marked recaptured and <em>T</em> is the total in the next sample.</p>
 
 </div>
 
@@ -399,6 +404,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
