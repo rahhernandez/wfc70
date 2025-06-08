@@ -23,7 +23,7 @@
 <meta name="author" content="Rob Furrow" />
 
 
-<meta name="date" content="2025-06-05" />
+<meta name="date" content="2025-06-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -196,7 +196,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="5.2" data-path="data-visualization.html"><a href="data-visualization.html#extra-resources"><i class="fa fa-check"></i><b>5.2</b> Extra Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="mark-recapture.html"><a href="mark-recapture.html"><i class="fa fa-check"></i><b>6</b> Mark-Recapture</a></li>
+<li class="chapter" data-level="6" data-path="mark-recapture.html"><a href="mark-recapture.html"><i class="fa fa-check"></i><b>6</b> Mark-Recapture</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="mark-recapture.html"><a href="mark-recapture.html#example-1"><i class="fa fa-check"></i><b>6.1</b> Example</a></li>
+<li class="chapter" data-level="6.2" data-path="mark-recapture.html"><a href="mark-recapture.html#practice-estimating-population-size"><i class="fa fa-check"></i><b>6.2</b> Practice: Estimating population size</a></li>
+<li class="chapter" data-level="6.3" data-path="mark-recapture.html"><a href="mark-recapture.html#mark-recaptured-in-r"><i class="fa fa-check"></i><b>6.3</b> Mark-Recaptured in R</a></li>
+</ul></li>
 <li class="appendix"><span><b>Old Labs (2024)</b></span></li>
 <li class="chapter" data-level="A" data-path="lab-1-r-data-and-the-rstudio-panels.html"><a href="lab-1-r-data-and-the-rstudio-panels.html"><i class="fa fa-check"></i><b>A</b> Lab 1: R, data, and the RStudio panels</a>
 <ul>
@@ -338,8 +343,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>In mark-recapture, you catch individuals from the population and mark them (hence the name). After you mark the individual, you release them. You do this through a period of time, and obviously, during this period, you will be getting individuals that are already marked.</p>
 <p>The equation for mark-recapture is:</p>
 <p><span class="math inline">\(\frac{M}{\hat{N}}\)</span> = <span class="math inline">\(\frac{R}{T}\)</span></p>
-<p>Where <em>M</em> is individuals marked initially, <span class="math inline">\(\hat{N}\)</span> is estimated population size, <em>R</em> is marked recaptured and <em>T</em> is the total in the next sample.</p>
+<ul>
+<li><em>M</em> is individuals marked initially</li>
+<li><span class="math inline">\(\hat{N}\)</span> is estimated population size</li>
+<li><em>R</em> is marked recaptured</li>
+<li><em>T</em> is the total in the next sample</li>
+</ul>
+<p>The population size (<span class="math inline">\(\hat{N}\)</span>) is typically unknown and what we want to find, and so the equation can be rewritten as:</p>
+<p><span class="math inline">\(\hat{N}\)</span> = <span class="math inline">\(\frac{M*T}{R}\)</span></p>
+<div id="example-1" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Example<a href="mark-recapture.html#example-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In a sample of 60 mice, you catch and mark 12 mice. The second time you catch mice, you catch 11 mice with 2 being marked.</p>
+<p>From the equation we get that:</p>
+<ul>
+<li><em>M</em> = 12</li>
+<li><em>R</em> = 2</li>
+<li><em>T</em> = 11</li>
+</ul>
+<p>We plug these into the equation <span class="math inline">\(\frac{M}{\hat{N}}\)</span> = <span class="math inline">\(\frac{R}{T}\)</span> to get:</p>
+<p><span class="math inline">\(\frac{12}{\hat{N}}\)</span> = <span class="math inline">\(\frac{2}{11}\)</span></p>
+<p>This formula can be rearranged into:</p>
+<p><span class="math inline">\(\hat{N}\)</span> = <span class="math inline">\(\frac{12*11}{2}\)</span> = 66 estimated population</p>
+</div>
+<div id="practice-estimating-population-size" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Practice: Estimating population size<a href="mark-recapture.html#practice-estimating-population-size" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You mark 25 individuals initially. In your second sample of 20, you find 5 marked. What is the estimated population size?</p>
+</div>
+<div id="mark-recaptured-in-r" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Mark-Recaptured in R<a href="mark-recapture.html#mark-recaptured-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Things get a bit more complicated in R Studio. It is difficult to take a large data set and count for each individual. In R, we take a data set and utilize table() function.</p>
+<p><img src="img/markrecapturetable.png" /></p>
 
+</div>
 </div>
 
 

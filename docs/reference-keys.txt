@@ -31,6 +31,9 @@ box-plot
 scatter-plot
 extra-resources
 mark-recapture
+example-1
+practice-estimating-population-size
+mark-recaptured-in-r
 lab-1-r-data-and-the-rstudio-panels
 part-1-orienting-ourselves-to-rstudio-10-minutes-instructor-will-lead
 the-command-line-console-versus-a-r-script
